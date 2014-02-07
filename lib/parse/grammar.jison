@@ -8,6 +8,9 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 
 %%
 
+/***************** block comments ****/
+\/\*[\s\S]*?\*\/   // ignore
+
 /***************** Double-quoted strings ****/
 <dquot>\\\"        yytext = '"'; this.more()
 <dquot>\"          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
@@ -39,7 +42,10 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 \.{IDENT}          return 'CLASS'
 
 /***************** :pseudo ****/
-\:\:?{IDENT}       return 'PSEUDO'
+\:(\:|{IDENT})+    return 'PSEUDO'
+
+/***************** ^^^ ****/
+\^+                return 'PARENT'
 
 /***************** [attr] ****/
 \[[^\]]+\]         return 'ATTR'
@@ -108,13 +114,10 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 
 Root
   : Assignment* Element? EOF {
-    $2.class = yy.class
     return {
       type: 'root',
       variables: $1,
       root: $2,
-      file: yy.file,
-      deps: yy.deps
     }
   };
 
@@ -150,8 +153,8 @@ Fragment
   ;
 
 Element
-  : IDENT CLASSNAME? '{' Declaration* '}'
-    -> yy.pos({ type: 'element', tag: $1, class: $2, declarations: $4}, @1, @5)
+  : IDENT CLASSNAME? Declarations
+    -> yy.pos({ type: 'element', tag: $1, class: $2, declarations: $3 }, @1, @3)
   | Reference
   ;
 
@@ -159,16 +162,18 @@ Reference
   : PATH '{' Declaration* '}' {
     $$ = yy.pos({
       type: 'reference',
-      path: yy.dep($1),
+      path: $1,
       declarations: $3,
-      params: yy.grep($3, 'attribute'),
-      content: yy.pluck(yy.grep($3, 'content'), 'content')
     }, @1, @4)
   };
 
 Attribute
   : IDENT '=' Exp -> { type: 'attribute', name: $1, value: $3 }
   | IDENT         -> { type: 'attribute', name: $1, value: $1 }
+  ;
+
+Declarations
+  : '{' Declaration* '}' -> $2
   ;
 
 Declaration
@@ -181,7 +186,7 @@ Declaration
   ;
 
 StyleDeclarations
-  : '{' Property* '}' -> $2
+  : '{' (Property|Style)* '}' -> $2
   ;
 
 Style
@@ -203,6 +208,7 @@ Selector
   : CLASS
   | PSEUDO
   | ATTR
+  | PARENT Selector -> { parent: $1.length, selector: $2 }
   ;
 
 Content
@@ -224,8 +230,7 @@ Property
   ;
 
 Macro
-  : FUNC '(' (Exp ',')* Exp? ')'
-    -> $$ = yy.expand($1, $3.concat($4))
+  : FUNC '(' (Exp ',')* Exp? ')' -> yy.expand($1, $3.concat($4))
   ;
 
 Directive

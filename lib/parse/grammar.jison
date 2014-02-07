@@ -8,22 +8,21 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 
 %%
 
-/***************** block comments ****/
-\/\*[\s\S]*?\*\/   // ignore
-
-/***************** Double-quoted strings ****/
+/***************** double-quoted strings ****/
 <dquot>\\\"        yytext = '"'; this.more()
 <dquot>\"          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
 <dquot>.           this.more()
 \"                 this.begin('dquot');
 
-/***************** Single-quoted strings ****/
+/***************** single-quoted strings ****/
 <squot>\\\'        yytext = "'"; this.more()
 <squot>\'          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
 <squot>.           this.more()
 \'                 this.begin('squot')
 
-/***************** TOKENS ****/
+\/\*[\s\S]*?\*\/   /* multi-line comment */
+
+/***************** tokens ****/
 <line>\\\n         yytext = '\n'; this.more()
 /* FIX FOR JISON OFF-BY-ONE BUG: */
 <line>[;\n}]       this.popState(); var fix = yytext.slice(-2,-1); this.less(yyleng-1); yytext += fix; return 'TOKEN'
@@ -91,6 +90,8 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 "@if"              return 'IF'
 "@else"            return 'ELSE'
 "@each"            return 'EACH'
+"true"             return 'TRUE'
+"false"            return 'FALSE'
 
 \@media\s+         this.begin('media'); return 'MEDIA'
 
@@ -126,10 +127,12 @@ Assignment
   ;
 
 Exp
-  : STRING
-  | NUMBER
-  | Variable
+  : Variable
   | Macro
+  | STRING
+  | NUMBER
+  | TRUE -> true
+  | FALSE -> false
   | Exp '+' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '-' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '*' Exp -> { type: $2, left: $1, right: $3 }
@@ -159,13 +162,9 @@ Element
   ;
 
 Reference
-  : PATH '{' Declaration* '}' {
-    $$ = yy.pos({
-      type: 'reference',
-      path: $1,
-      declarations: $3,
-    }, @1, @4)
-  };
+  : PATH Declarations?
+    -> yy.pos({ type: 'reference', path: $1, declarations: $2 }, @1, @2)
+  ;
 
 Attribute
   : IDENT '=' Exp -> { type: 'attribute', name: $1, value: $3 }

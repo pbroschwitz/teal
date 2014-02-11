@@ -2,25 +2,23 @@
 
 IDENT \w[\w_-]*
 PATH ([\w_-]|\.)*\/[\w/_-]+
+ANY [\s\S]
 
-%s squot dquot
-%x media tag line
+%x squot dquot media tag line
 
 %%
 
-/***************** double-quoted strings ****/
-<dquot>\\\"        yytext = '"'; this.more()
-<dquot>\"          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
-<dquot>.           this.more()
-\"                 this.begin('dquot');
-
-/***************** single-quoted strings ****/
-<squot>\\\'        yytext = "'"; this.more()
-<squot>\'          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
-<squot>.           this.more()
+/***************** strings ****/
+\"                 this.begin('dquot')
 \'                 this.begin('squot')
+<dquot>\\\"        yytext = '"'; this.more()
+<squot>\\\'        yytext = "'"; this.more()
+<dquot>\"          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
+<squot>\'          this.popState(); yytext=yytext.slice(0, -1); return 'STRING'
+<squot,dquot>\\\n  yytext=yytext.slice(0, -2); this.more()
+<squot,dquot>{ANY} this.more()
 
-\/\*[\s\S]*?\*\/   /* multi-line comment */
+\/\*{ANY}*?\*\/    /* multi-line comment */
 
 /***************** tokens ****/
 <line>\\\n         yytext = '\n'; this.more()
@@ -40,17 +38,20 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 /***************** .class ****/
 \.{IDENT}          return 'CLASS'
 
+/***************** :[attr] ****/
+\:\[[^\]]+\]       return 'ATTR'
+
 /***************** :pseudo ****/
 \:(\:|{IDENT})+    return 'PSEUDO'
 
 /***************** ^^^ ****/
 \^+                return 'PARENT'
 
-/***************** [attr] ****/
-\[[^\]]+\]         return 'ATTR'
-
 /***************** foo/bar ****/
 {PATH}             return 'PATH'
+
+"true"             return 'TRUE'
+"false"            return 'FALSE'
 
 {IDENT}\.          this.begin('tag'); yytext = yytext.slice(0, -1); return 'IDENT'
 <tag>{IDENT}       this.popState(); return 'CLASSNAME'
@@ -63,6 +64,8 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 ","                return ','
 "("                return '('
 ")"                return ')'
+"["                return '['
+"]"                return ']'
 "{"                return '{'
 "}"                return '}'
 
@@ -90,8 +93,6 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 "@if"              return 'IF'
 "@else"            return 'ELSE'
 "@each"            return 'EACH'
-"true"             return 'TRUE'
-"false"            return 'FALSE'
 
 \@media\s+         this.begin('media'); return 'MEDIA'
 
@@ -114,7 +115,7 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 %%
 
 Root
-  : Assignment* Element? EOF {
+  : Assignment* (Element|Fragment)? EOF {
     return {
       type: 'root',
       variables: $1,
@@ -126,6 +127,11 @@ Assignment
   : Variable '=' Exp -> { type: 'assignment', variable: $1.name, value: $3 }
   ;
 
+Values
+  : Exp -> [$1]
+  | Exp ',' Values -> [$1].concat($3)
+  ;
+
 Exp
   : Variable
   | Macro
@@ -133,6 +139,7 @@ Exp
   | NUMBER
   | TRUE -> true
   | FALSE -> false
+  | '[' Values ']' -> { type: 'array', items: $2 }
   | Exp '+' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '-' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '*' Exp -> { type: $2, left: $1, right: $3 }
@@ -167,7 +174,7 @@ Reference
   ;
 
 Attribute
-  : IDENT '=' Exp -> { type: 'attribute', name: $1, value: $3 }
+  : IDENT '=' (Exp|Fragment) -> { type: 'attribute', name: $1, value: $3 }
   | IDENT         -> { type: 'attribute', name: $1, value: $1 }
   ;
 
@@ -177,7 +184,7 @@ Declarations
 
 Declaration
   : Style
-  | Content -> yy.pos({ type: 'content', content: $1 }, @1, @1)
+  | Content
   | Directive
   | Property
   | Attribute
@@ -211,9 +218,7 @@ Selector
   ;
 
 Content
-  : Exp
-  | Element
-  | Comment
+  : (Exp|Element|Comment) -> yy.pos({ type: 'content', content: $1 }, @1, @1)
   ;
 
 Comment
@@ -229,7 +234,7 @@ Property
   ;
 
 Macro
-  : FUNC '(' (Exp ',')* Exp? ')' -> yy.expand($1, $3.concat($4))
+  : FUNC '(' Values? ')' -> yy.expand($1, $3)
   ;
 
 Directive
@@ -246,7 +251,7 @@ If
 
 Each
   : EACH Exp Action
-    -> { type: 'each', expression: $2, body: { type: 'content', content: $3 }}
+    -> { type: 'each', expression: $2, body: $3 }
   ;
 
 Action

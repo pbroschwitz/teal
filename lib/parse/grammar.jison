@@ -1,6 +1,7 @@
 %lex
 
 IDENT \w[\w_-]*
+VAR \w[\w_\.]*
 PATH ([\w_-]|\.)*\/[\w/_-]+
 ANY [\s\S]
 
@@ -30,7 +31,7 @@ ANY [\s\S]
 <media>\{\s*       this.popState(); return '{'
 
 /***************** $var ****/
-\${IDENT}?         yytext = yytext.slice(1); return 'VAR'
+\${VAR}?           yytext = yytext.slice(1); return 'VAR'
 
 /***************** property: ****/
 [\w-]+[ \t]*\:     this.begin('line'); yytext=yytext.slice(0, -1).trim(); return 'PROP'
@@ -46,6 +47,9 @@ ANY [\s\S]
 
 /***************** ^^^ ****/
 \^+                return 'PARENT'
+
+/***************** ./foo() ****/
+{PATH}(?=\()       return 'MODULE'
 
 /***************** foo/bar ****/
 {PATH}             return 'PATH'
@@ -166,6 +170,11 @@ Element
   : IDENT CLASSNAME? Declarations
     -> yy.pos({ type: 'element', tag: $1, class: $2, declarations: $3 }, @1, @3)
   | Reference
+  | Module
+  ;
+
+Module
+  : MODULE '(' Values? ')' -> { type: 'module', path: $1, arguments: $3 }
   ;
 
 Reference

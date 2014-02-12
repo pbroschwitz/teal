@@ -98,7 +98,7 @@ The compiled teal templates can be used either server-side or in the browser via
 a browserify transform:
 
 ```js
-var teaser = require('./teaser.tl')
+var teaser = require('./teaser')
 var el = teaser({ title: 'Hello', text: 'world' })
 document.body.appendChild(el)
 ```

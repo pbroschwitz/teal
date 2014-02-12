@@ -90,6 +90,7 @@ ANY [\s\S]
 ")"                return ')'
 "&&"               return '&&'
 "||"               return '||'
+"|"                return '|'
 "="                return '='
 "?"                return '?'
 ":"                return ':'
@@ -108,7 +109,7 @@ ANY [\s\S]
 
 %ebnf
 
-%left '?' '==' '!=' '<=' '<' '>=' '>'
+%left '?' '==' '!=' '<=' '<' '>=' '>' '|'
 %left '||' '&&' '!'
 %left '+' '-'
 %left '*' '/' '%'
@@ -158,6 +159,7 @@ Exp
   | Exp '||' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '&&' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '?' Exp ':' Exp -> { type: 'ternary', expression: $1, truthy: $3, falsy: $5 }
+  | Exp '|' Exp -> { type: 'default', expression: $1, default: $3 }
   | '!' Exp -> { type: 'not', expression: $2 }
   | '(' Exp ')' -> { type: 'group', expression: $2 }
   ;

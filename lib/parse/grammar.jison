@@ -37,9 +37,7 @@ ANY [\s\S]
 \.{IDENT}          return 'CLASS'
 \:\[[^\]]+\]       return 'ATTR'
 \:(\:|{IDENT})+    return 'PSEUDO'
-
 \^+                return 'PARENT'
-\*                 return 'STAR'
 
 {PATH}(?=\()       return 'MODULE'
 {PATH}             return 'PATH'
@@ -55,6 +53,7 @@ ANY [\s\S]
 {IDENT}            return 'IDENT'
 
 "--"               return '--'
+"&"                return '&'
 ","                return ','
 "("                return '('
 ")"                return ')'
@@ -208,14 +207,16 @@ NestedStyle
 
 NestedSelector
   : Selector
-  | IDENT Selector? -> ' > ' + $1 + ($2||'')
+  | '>' NestedSelector -> ' >' + $2
+  | '*' NestedSelector -> ' ' + $2
+  | IDENT NestedSelector? -> ' ' + $1 + ($2||'')
   ;
 
 Selector
   : CLASS
   | PSEUDO
   | ATTR
-  | STAR NestedSelector -> $2
+  | '&' NestedSelector -> $2
   | PARENT Selector -> { parent: $1.length-1, selector: $2 }
   ;
 

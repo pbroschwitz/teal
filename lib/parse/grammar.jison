@@ -3,13 +3,13 @@
 IDENT \w[\w_-]*
 VAR \w[\w_\.]*
 PATH ([\w_-]|\.)*\/[\w/_-]+
+PROPERTY [\w-]+[ \t]*\:
 ANY [\s\S]
 
 %x squot dquot media tag line
 
 %%
 
-/***************** strings ****/
 \"                 this.begin('dquot')
 \'                 this.begin('squot')
 <dquot>\\\"        yytext = '"'; this.more()
@@ -19,9 +19,11 @@ ANY [\s\S]
 <squot,dquot>\\\n  yytext=yytext.slice(0, -2); this.more()
 <squot,dquot>{ANY} this.more()
 
-\/\*{ANY}*?\*\/    /* multi-line comment */
 
-/***************** tokens ****/
+\/\*{ANY}*?\*\/    /* multi-line comment */
+\/\/.*             /* single-line comment */
+
+/* opaque tokens */
 <line>\\\n         yytext = '\n'; this.more()
 /* FIX FOR JISON OFF-BY-ONE BUG: */
 <line>[;\n}]       this.popState(); var fix = yytext.slice(-2,-1); this.less(yyleng-1); yytext += fix; return 'TOKEN'
@@ -30,28 +32,16 @@ ANY [\s\S]
 <media>[^\{]+      return 'TOKEN'
 <media>\{\s*       this.popState(); return '{'
 
-/***************** $var ****/
 \${VAR}?           yytext = yytext.slice(1); return 'VAR'
-
-/***************** property: ****/
-[\w-]+[ \t]*\:     this.begin('line'); yytext=yytext.slice(0, -1).trim(); return 'PROP'
-
-/***************** .class ****/
+{PROPERTY}         this.begin('line'); yytext=yytext.slice(0, -1).trim(); return 'PROP'
 \.{IDENT}          return 'CLASS'
-
-/***************** :[attr] ****/
 \:\[[^\]]+\]       return 'ATTR'
-
-/***************** :pseudo ****/
 \:(\:|{IDENT})+    return 'PSEUDO'
 
-/***************** ^^^ ****/
 \^+                return 'PARENT'
+\*                 return 'STAR'
 
-/***************** ./foo() ****/
 {PATH}(?=\()       return 'MODULE'
-
-/***************** foo/bar ****/
 {PATH}             return 'PATH'
 
 "true"             return 'TRUE'
@@ -181,12 +171,12 @@ Module
 
 Reference
   : PATH Declarations?
-    -> yy.pos({ type: 'reference', path: $1, declarations: $2 }, @1, @2)
+    -> yy.pos({ type: 'reference', path: $1, declarations: $2 || [] }, @1, @2)
   ;
 
 Attribute
   : IDENT '=' (Exp|Fragment) -> { type: 'attribute', name: $1, value: $3 }
-  | IDENT         -> { type: 'attribute', name: $1, value: true }
+  | IDENT -> { type: 'attribute', name: $1, value: true }
   ;
 
 Declarations
@@ -203,29 +193,30 @@ Declaration
   ;
 
 StyleDeclarations
-  : '{' (Property|Style)* '}' -> $2
+  : '{' (Property|NestedStyle)* '}' -> $2
   ;
 
 Style
-  : (Selector ',')* Selector StyleDeclarations {
-    var sel = $1.concat($2)
-    var states = sel
-      .filter(function(s) { return s[0] == '.' })
-      .map(function(s) { return s.slice(1) })
+  : (Selector ',')* Selector StyleDeclarations
+    -> yy.pos({ type: 'style', selectors: $1.concat($2), declarations: $3 }, @1, @3)
+  ;
 
-    $$ = yy.pos({
-      type: 'style',
-      selectors: sel,
-      states: states,
-      declarations: $3
-    }, @1, @3)
-  };
+NestedStyle
+  : (NestedSelector ',')* NestedSelector StyleDeclarations
+    -> yy.pos({ type: 'style', selectors: $1.concat($2), states: [], declarations: $3 }, @1, @3)
+  ;
+
+NestedSelector
+  : Selector
+  | IDENT Selector? -> ' > ' + $1 + ($2||'')
+  ;
 
 Selector
   : CLASS
   | PSEUDO
   | ATTR
-  | PARENT Selector -> { parent: $1.length, selector: $2 }
+  | STAR NestedSelector -> $2
+  | PARENT Selector -> { parent: $1.length-1, selector: $2 }
   ;
 
 Content

@@ -1,6 +1,6 @@
 {
   "name": "teal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Modular stylesheets and templates",
   "main": "lib/index.js",
   "scripts": {

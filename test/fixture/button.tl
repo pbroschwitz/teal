@@ -6,5 +6,5 @@ button {
   .primary {
     color: blue
   }
-  $label
+  $content
 }

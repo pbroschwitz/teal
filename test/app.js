@@ -3,10 +3,9 @@ var request = require('supertest')
   , teal = require('../lib')
 
 var app = express()
-  , view = teal()
 
-app.use(view.resources)
-view.process(__dirname + '/fixture')
+app.set('views', __dirname + '/fixture')
+app.use(teal())
 
 describe('app', function() {
   it('should ...', function(done) {

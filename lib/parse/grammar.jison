@@ -128,7 +128,7 @@ Values
 
 Exp
   : Variable
-  | Macro
+  | Function
   | STRING
   | NUMBER
   | TRUE -> true
@@ -236,8 +236,8 @@ Property
   : PROP TOKEN -> yy.pos({ type: 'property', name: $1, value: $2.trim() }, @1, @2)
   ;
 
-Macro
-  : FUNC '(' Values? ')' -> yy.expand($1, $3)
+Function
+  : FUNC '(' Values? ')' -> { type: 'function', name: $1, arguments: $3 || [] }
   ;
 
 Directive

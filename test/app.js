@@ -8,9 +8,11 @@ app.set('views', __dirname + '/fixture')
 app.use(teal())
 
 describe('app', function() {
+
   it('should ...', function(done) {
     request(app)
-      .get('/main.css')
+      .get('/assets/main.css')
       .expect(200, done)
   })
+
 })

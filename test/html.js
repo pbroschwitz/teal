@@ -4,17 +4,13 @@ var should = require('should')
 
 describe('all', function() {
 
-  it('should generate HTML', function(done) {
+  it('should generate HTML', function() {
     var dir = path.join(__dirname, 'fixture')
     var tl = teal(dir)
     tl.init()
 
-    var file = path.join(dir, 'box.tl')
-    var data = { title: 'Hello', label: 'Click Me' }
-    tl.html.engine(file, data, function(err, html) {
-      html.should.equal('<div class="box"><h1>Hello</h1><button class="button">Click Me</button></div>')
-      done()
-    })
+    tl.html.render(dir + '/button.tl', { content: 'Click Me'}).should.equal('<button class="button">Click Me</button>')
+    tl.html.render(dir + '/box.tl', { title: 'Hello', label: 'Click Me' }).should.equal('<div class="box"><h1 class="box_h1">Hello</h1><button class="button">Click Me</button></div>')
   })
 
 })

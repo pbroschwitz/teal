@@ -4,5 +4,5 @@ div {
     font-size: 2em
     $title
   }
-  ./button { label=$label }
+  ./button { $label }
 }

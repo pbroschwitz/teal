@@ -4,7 +4,7 @@ Teal is a language to write small reusable HTML components. The CSS properties
 defined in a `.tl` file are extracted and put into a stylesheet. At the same
 time each teal file is turned into a compiled template.
 
-Now here's the twist: You don't have to write any CSS selectors. Since markup
+__Here's the twist:__ You don't have to write any CSS selectors. Since markup
 and style are defined in one place, Teal can figure out the appropriate rules
 and assign class names as needed. You no longer have to apply naming conventions
 like BEM or SMACSS by hand, instead Teal will do this for you.
@@ -77,6 +77,46 @@ div {
     text = "Lorem ipsum dolor sit amet"
   }
 }
+```
+
+You not only pass primitive values as parameter but also other elements or
+document fragments:
+
+```scss
+./two-cols {
+  left: ./teaser { title = "Left" }
+  right: ./teaser { title = "Right" }
+}
+```
+
+## States
+
+A component may define different states (aka modifiers):
+
+```scss
+button {
+  background: gray
+  .primary {
+    background: blue
+    font-size: 2em
+  }
+  .danger {
+    background: red
+  }
+}
+```
+
+To activate a state just pass a truthy parameter with the name of the state:
+
+```scss
+./button { primary=true }
+```
+
+__Note:__ If you omit the value and just specify a name `true` is implied.
+Hence the following code yields the same result:
+
+```scss
+./button { primary }
 ```
 
 ## Assets

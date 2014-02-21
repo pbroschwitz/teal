@@ -15,17 +15,18 @@
   "dependencies": {
     "jison": "~0.4.13",
     "dommy": "~1.0.0",
-    "exposed": "~2.1.1",
+    "exposed": "~2.2.0",
     "instant": "~1.2.0",
     "stacked": "~1.0.1",
-    "rework": "~0.18.3",
-    "css": "~1.6.0",
-    "autoprefixer": "~0.8.20131213",
     "through": "~2.3.4",
+    "browserify": "~3.28.2",
+    "convert-source-map": "~0.3.3",
     "dirwatcher": "~2.0.0",
     "filewatcher": "~1.1.0",
-    "browserify": "~3.28.2",
-    "toposort": "~0.2.10"
+    "toposort": "~0.2.10",
+    "rework": "~0.18.3",
+    "css-stringify": "~1.4.1",
+    "autoprefixer": "~0.8.20131213"
   },
   "devDependencies": {
     "should": "~1.3.0",

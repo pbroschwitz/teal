@@ -6,7 +6,7 @@ PATH ([\w_-]|\.)*\/[\w/_-]+
 PROPERTY [\w-]+[ \t]*\:
 ANY [\s\S]
 
-%x squot dquot media tag line
+%x squot dquot token tag line
 
 %%
 
@@ -23,14 +23,13 @@ ANY [\s\S]
 \/\*{ANY}*?\*\/    /* multi-line comment */
 \/\/.*             /* single-line comment */
 
-/* opaque tokens */
 <line>\\\n         yytext = '\n'; this.more()
 /* FIX FOR JISON OFF-BY-ONE BUG: */
 <line>[;\n}]       this.popState(); var fix = yytext.slice(-2,-1); this.less(yyleng-1); yytext += fix; return 'TOKEN'
 <line>.            this.more()
 
-<media>[^\{]+      return 'TOKEN'
-<media>\{\s*       this.popState(); return '{'
+<token>[^\{]+      return 'TOKEN'
+<token>\{\s*       this.popState(); return '{'
 
 \${VAR}?           yytext = yytext.slice(1); return 'VAR'
 {PROPERTY}         this.begin('line'); yytext=yytext.slice(0, -1).trim(); return 'PROP'
@@ -48,6 +47,7 @@ ANY [\s\S]
 {IDENT}\.          this.begin('tag'); yytext = yytext.slice(0, -1); return 'IDENT'
 <tag>{IDENT}       this.popState(); return 'CLASSNAME'
 
+\d+\%              return 'PERCENTAGE'
 \-?\d+             return 'NUMBER'
 {IDENT}(?=\()      return 'FUNC'
 {IDENT}            return 'IDENT'
@@ -88,7 +88,8 @@ ANY [\s\S]
 "@else"            return 'ELSE'
 "@each"            return 'EACH'
 
-\@media\s+         this.begin('media'); return 'MEDIA'
+\@animation\s+     this.begin('token'); return 'ANIMATION'
+\@media\s+         this.begin('token'); return 'MEDIA'
 
 [\s;]+             /* ignore */
 <<EOF>>            return 'EOF'
@@ -189,6 +190,7 @@ Declaration
   | Property
   | Attribute
   | Media
+  | Animation
   ;
 
 StyleDeclarations
@@ -217,7 +219,7 @@ Selector
   | PSEUDO
   | ATTR
   | '&' NestedSelector -> $2
-  | PARENT Selector -> { parent: $1.length-1, selector: $2 }
+  | PARENT Selector -> { parent: $1.length, selector: $2 }
   ;
 
 Content
@@ -233,7 +235,7 @@ Variable
   ;
 
 Property
-  : PROP TOKEN -> yy.pos({ type: 'property', name: $1, value: $2.trim() }, @1, @2)
+  : PROP TOKEN -> yy.pos({ type: 'declaration', property: $1, value: $2.trim() }, @1, @2)
   ;
 
 Function
@@ -262,7 +264,22 @@ Action
   | Directive
   ;
 
+Animation
+  : ANIMATION TOKEN '{' Keyframe* '}'
+    -> yy.pos({ type: 'animation', value: $2.trim(), keyframes: $4 }, @1, @5)
+  ;
+
+Keyframe
+  : (KeyframeValue ',')* KeyframeValue StyleDeclarations
+    -> yy.pos({ type: 'keyframe', values: $1.concat($2), declarations: $3 }, @1, @3)
+  ;
+
+KeyframeValue
+  : IDENT
+  | PERCENTAGE
+  ;
+
 Media
   : MEDIA TOKEN StyleDeclarations
-    -> $$ = yy.pos({ type: 'media', media: $2, declarations: $3 }, @1, @3)
+    -> yy.pos({ type: 'media', media: $2.trim(), declarations: $3 }, @1, @3)
   ;

@@ -25,7 +25,7 @@
     "filewatcher": "~1.1.0",
     "toposort": "~0.2.10",
     "rework": "~0.18.3",
-    "css-stringify": "~1.4.1",
+    "css": "~1.6.0",
     "autoprefixer": "~0.8.20131213"
   },
   "devDependencies": {

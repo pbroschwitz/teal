@@ -240,7 +240,7 @@ Property
 
 Function
   : FUNC '(' Values? ')'
-    -> yy.pos({ type: 'function', name: $1, arguments: $3 || [] }, @1, @4)
+    -> yy.expand(yy.pos({ type: 'function', name: $1, arguments: $3 || [] }, @1, @4))
   ;
 
 Directive

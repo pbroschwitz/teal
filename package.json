@@ -15,7 +15,7 @@
   "dependencies": {
     "jison": "~0.4.13",
     "dommy": "~1.0.0",
-    "exposed": "~2.2.0",
+    "exposed": "~2.3.0",
     "instant": "~1.2.0",
     "stacked": "~1.0.1",
     "through": "~2.3.4",

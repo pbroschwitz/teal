@@ -155,7 +155,7 @@ Exp
   ;
 
 Fragment
-  : Declarations -> yy.pos({ type: 'fragment', content: $1 }, @1, @1)
+  : Declarations -> yy.pos({ type: 'fragment', declarations: $1 }, @1, @1)
   ;
 
 Element

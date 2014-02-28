@@ -6,5 +6,6 @@ html {
     color: white
     background: teal
     "Hello world"
+    ./lib/ui/button { "Click Me" }
   }
 }

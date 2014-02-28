@@ -1,7 +1,7 @@
 %lex
 
-IDENT \w[\w_-]*
-VAR \w[\w_\.]*
+IDENT [A-Za-z][\w_-]*
+VAR [A-Za-z][\w_\.]*
 PATH ([\w_-]|\.)*\/[\w/_-]+
 PROPERTY [\w-]+[ \t]*\:
 ANY [\s\S]
@@ -48,7 +48,7 @@ ANY [\s\S]
 <tag>{IDENT}       this.popState(); return 'CLASSNAME'
 
 \d+\%              return 'PERCENTAGE'
-\-?\d+             return 'NUMBER'
+[-+]?(\d*\.)?\d+   return 'NUMBER'
 {IDENT}(?=\()      return 'FUNC'
 {IDENT}            return 'IDENT'
 

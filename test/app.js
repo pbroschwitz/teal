@@ -4,7 +4,7 @@ var request = require('supertest')
 
 var app = express()
 
-app.set('views', __dirname + '/fixture')
+app.set('views', __dirname + '/fixture/views')
 app.use(teal())
 
 describe('app', function() {

@@ -12,6 +12,10 @@ describe('all', function() {
     css('box.tl', '.button{border:none;border-radius:4px;background:#333;color:#fff;}.button.primary{color:blue;}.box{background:silver;}.box_h1{font-size:2em;}')
   })
 
+  it('should style anonymous inline blocks', function() {
+    css('anon.tl', '')
+  })
+
   it('should support inline animations', function() {
     css('animation.tl', '@keyframes animation-eye{0%{margin-left:-20%;}to{margin-left:100%;}}.animation{background:black;height:25px;width:200px;overflow:hidden;}.animation_eye{height:100%;width:20%;background:red;animation:animation-eye 4s linear 0s infinite alternate;}')
   })

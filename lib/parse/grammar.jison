@@ -175,7 +175,7 @@ Reference
   ;
 
 Attribute
-  : IDENT '=' (Exp|Fragment) -> { type: 'attribute', name: $1, value: $3 }
+  : IDENT '=' (Exp|Fragment|Element) -> { type: 'attribute', name: $1, value: $3 }
   | IDENT -> { type: 'attribute', name: $1, value: true }
   ;
 

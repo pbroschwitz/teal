@@ -52,6 +52,8 @@ ANY [\s\S]
 {IDENT}(?=\()      return 'FUNC'
 {IDENT}            return 'IDENT'
 
+\!doctype          return 'DOCTYPE'
+
 "--"               return '--'
 "&"                return '&'
 ","                return ','
@@ -110,13 +112,18 @@ ANY [\s\S]
 %%
 
 Root
-  : Assignment* (Element|Fragment)? EOF {
+  : Doctype? Assignment* (Element|Fragment)? EOF {
     return {
       type: 'root',
-      variables: $1,
-      root: $2,
+      doctype: $1,
+      variables: $2,
+      root: $3,
     }
   };
+
+Doctype
+  : DOCTYPE '{' (IDENT|STRING) '}' { $$ = $3 }
+  ;
 
 Assignment
   : Variable '=' Exp -> { type: 'assignment', variable: $1.name, value: $3 }

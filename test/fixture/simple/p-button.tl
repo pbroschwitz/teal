@@ -1,0 +1,3 @@
+./para {
+  ./button { "Click" }
+}

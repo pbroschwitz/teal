@@ -193,7 +193,6 @@ Declarations
 Declaration
   : Style
   | Content
-  | Directive
   | Property
   | Attribute
   | Media
@@ -230,7 +229,7 @@ Selector
   ;
 
 Content
-  : (Exp|Element|Comment) -> yy.pos({ type: 'content', content: $1 }, @1, @1)
+  : (Exp|Directive|Element|Comment) -> { type: 'content', content: $1 }
   ;
 
 Comment
@@ -256,20 +255,15 @@ Directive
   ;
 
 If
-  : IF '(' Exp ')' Action %prec THEN
+  : IF '(' Exp ')' Content %prec THEN
     -> $$ = { type: 'if', condition: $3, then: $5 }
-  | IF '(' Exp ')' Action ELSE Action
+  | IF '(' Exp ')' Content ELSE Content
     -> $$ = { type: 'if', condition: $3, then: $5, else: $7 }
   ;
 
 Each
-  : EACH Exp Action
+  : EACH Exp Content
     -> { type: 'each', expression: $2, body: $3 }
-  ;
-
-Action
-  : Content
-  | Directive
   ;
 
 Animation

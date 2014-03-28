@@ -1,0 +1,4 @@
+{
+  ./para { "Hello" }
+  ./para { "World" }
+}

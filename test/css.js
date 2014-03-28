@@ -13,7 +13,7 @@ describe('all', function() {
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '')
+    css('anon.tl', '.cols_div2{float:right;width:50%;}.cols_div{float:left;width:50%;}')
   })
 
   it('should support inline animations', function() {

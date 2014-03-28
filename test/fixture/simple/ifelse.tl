@@ -1,4 +1,4 @@
 {
-  @if ($hey) ./para { $hey }
-  @else "Ho"
+  ./heyho { hey="Hey!" }
+  ./heyho { }
 }

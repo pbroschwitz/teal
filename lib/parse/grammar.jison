@@ -90,7 +90,7 @@ ANY [\s\S]
 
 "@if"              return 'IF'
 "@else"            return 'ELSE'
-"@each"            return 'EACH'
+"@for"             return 'FOR'
 
 \@animation\s+     this.begin('token'); return 'ANIMATION'
 \@media\s+         this.begin('token'); return 'MEDIA'
@@ -253,7 +253,7 @@ Function
 
 Directive
   : If
-  | Each
+  | For
   ;
 
 If
@@ -263,9 +263,9 @@ If
     -> $$ = { type: 'if', condition: $3, then: $5, else: $7 }
   ;
 
-Each
-  : EACH Exp Content
-    -> { type: 'each', expression: $2, body: $3 }
+For
+  : FOR Exp Content
+    -> { type: 'for', expression: $2, body: $3 }
   ;
 
 Animation

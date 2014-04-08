@@ -140,7 +140,7 @@ Exp
   : Variable
   | Function
   | STRING
-  | NUMBER
+  | NUMBER -> +$1
   | TRUE -> true
   | FALSE -> false
   | '[' Values ']' -> { type: 'array', items: $2 }

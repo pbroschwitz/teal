@@ -1,7 +1,7 @@
 %lex
 
 IDENT [A-Za-z][\w_-]*
-VAR [A-Za-z][\w_\.]*
+VAR [\w_]*
 PATH ([\w_-]|\.)*\/[\w/_-]+
 PROPERTY [\w-]+[ \t]*\:
 ANY [\s\S]
@@ -31,7 +31,7 @@ ANY [\s\S]
 <token>[^\{]+      return 'TOKEN'
 <token>\{\s*       this.popState(); return '{'
 
-\${VAR}?           yytext = yytext.slice(1); return 'VAR'
+\${VAR}            yytext = yytext.slice(1); return 'VAR'
 {PROPERTY}         this.begin('line'); yytext=yytext.slice(0, -1).trim(); return 'PROP'
 \.{IDENT}          return 'CLASS'
 \:\[[^\]]+\]       return 'ATTR'

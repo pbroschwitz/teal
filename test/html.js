@@ -29,5 +29,34 @@ describe('all', function() {
       tl.html.render(template(f), data).should.equal(html)
     })
   })
+})
 
+describe('scope', function() {
+  var scope = require('../lib/html/scope')
+
+  it('should expose global vars', function() {
+    var s = scope({ foo: 42 })
+    s.get('foo').should.equal(42)
+  })
+
+  it('sub-scope should shadow parent', function() {
+    var s = scope({ foo: 42 })
+    s.sub({ foo: 23 }).get('foo').should.equal(23)
+  })
+
+  it('should expose global vars to sub-scopes', function() {
+    var s = scope({ foo: 42 })
+    s.sub({}).get('foo').should.equal(42)
+  })
+
+  it('should expose global vars to fresh scopes', function() {
+    var s = scope({ foo: 42 })
+    s.fresh({}).get('foo').should.equal(42)
+  })
+
+  it('should not expose local vars to fresh scopes', function() {
+    var s = scope({ foo: 42 })
+    s.set('foo', 23)
+    s.fresh({}).get('foo').should.equal(42)
+  })
 })

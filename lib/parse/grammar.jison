@@ -143,24 +143,28 @@ Exp
   | NUMBER -> +$1
   | TRUE -> true
   | FALSE -> false
-  | '[' Values ']' -> { type: 'array', items: $2 }
+  | Exp '?' Exp ':' Exp -> { type: 'ternary', expression: $1, truthy: $3, falsy: $5 }
+  | Exp '|' Exp -> { type: 'default', expression: $1, default: $3 }
+  | '!' Exp -> { type: 'not', expression: $2 }
   | Exp '+' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '-' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '*' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '/' Exp -> { type: $2, left: $1, right: $3 }
   | Exp '%' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '>' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '<' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '>=' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '<=' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '==' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '!=' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '||' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '&&' Exp -> { type: $2, left: $1, right: $3 }
-  | Exp '?' Exp ':' Exp -> { type: 'ternary', expression: $1, truthy: $3, falsy: $5 }
-  | Exp '|' Exp -> { type: 'default', expression: $1, default: $3 }
-  | '!' Exp -> { type: 'not', expression: $2 }
-  | '(' Exp ')' -> { type: 'group', expression: $2 }
+  | '(' XExp ')' -> { type: 'group', expression: $2 }
+  ;
+
+XExp
+  : Exp
+  | '[' Values ']' -> { type: 'array', items: $2 }
+  | XExp '>' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '<' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '>=' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '<=' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '==' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '!=' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '||' XExp -> { type: $2, left: $1, right: $3 }
+  | XExp '&&' XExp -> { type: $2, left: $1, right: $3 }
   ;
 
 Fragment
@@ -170,22 +174,18 @@ Fragment
 Element
   : IDENT CLASSNAME? Declarations
     -> yy.pos({ type: 'element', tag: $1, class: $2, declarations: $3 }, @1, @3)
-  | Reference
+
+  | '<' Exp '>' CLASSNAME? Declarations
+    -> yy.pos({ type: 'element', tag: $2, class: $4, declarations: $5 }, @1, @5)
+  
+  | PATH Declarations?
+    -> yy.pos({ type: 'reference', path: $1, declarations: $2 || [] }, @1, @2)
+
   | Module
   ;
 
 Module
   : MODULE '(' Values? ')' -> { type: 'module', path: $1, arguments: $3 }
-  ;
-
-Reference
-  : PATH Declarations?
-    -> yy.pos({ type: 'reference', path: $1, declarations: $2 || [] }, @1, @2)
-  ;
-
-Attribute
-  : IDENT '=' (Exp|Fragment|Element) -> { type: 'attribute', name: $1, value: $3 }
-  | IDENT -> { type: 'attribute', name: $1, value: true }
   ;
 
 Declarations
@@ -228,6 +228,11 @@ Selector
   | ATTR
   | '&' NestedSelector -> $2
   | PARENT Selector -> { parent: $1.length, selector: $2 }
+  ;
+
+Attribute
+  : IDENT '=' (Exp|Fragment|Element) -> { type: 'attribute', name: $1, value: $3 }
+  | IDENT -> { type: 'attribute', name: $1, value: true }
   ;
 
 Content

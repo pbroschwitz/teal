@@ -13,7 +13,7 @@
   "author": "Felix Gnass",
   "license": "MIT",
   "dependencies": {
-    "jison": "^0.4.13",
+    "pegjs": "^0.8.0",
     "dommy": "^1.0.0",
     "exposed": "^2.3.0",
     "stacked": "^1.0.1",

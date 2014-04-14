@@ -1,3 +1,1 @@
-{
-  ./button { primary "Click Me" }
-}
+./button { primary "Click Me" }

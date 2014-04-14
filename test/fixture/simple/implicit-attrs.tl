@@ -1,7 +1,5 @@
-{
-  ./link {
-    url="example.com"
-    id="el1"
-    data-foo="bar"
-  }
+./link {
+  url="example.com"
+  id="el1"
+  data-foo="bar"
 }

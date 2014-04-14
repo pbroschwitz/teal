@@ -1,3 +1,1 @@
-{
-  ./box { title="Hello" label="Click Me" }
-}
+./box { title="Hello" label="Click Me" }

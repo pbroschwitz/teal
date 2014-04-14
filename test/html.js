@@ -25,8 +25,8 @@ describe('all', function() {
 
   files.forEach(function(f) {
     it(path.basename(f), function() {
-      var html = fs.readFileSync(f, 'utf8').trim()
-      tl.html.render(template(f), data).should.equal(html)
+      var html = fs.readFileSync(f, 'utf8').trim();
+      tl.html.render(template(f), data).replace(/&#x2f;/g, '/').should.equal(html)
     })
   })
 })

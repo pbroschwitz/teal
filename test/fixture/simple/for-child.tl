@@ -1,4 +1,4 @@
-{
+div {
   ./ul {
     "foo" "bar"
   }

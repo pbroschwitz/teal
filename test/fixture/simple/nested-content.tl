@@ -1,5 +1,3 @@
-{  
-  ./para {
-    ./button { "Click" }
-  }
+./para {
+  ./button { "Click" }
 }

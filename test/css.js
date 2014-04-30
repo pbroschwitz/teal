@@ -13,7 +13,7 @@ describe('all', function() {
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '.cols > .div2{float:right;width:50%;}.cols > .div{float:left;width:50%;}')
+    css('anon.tl', '.cols > .div{float:left;width:50%;}.cols > .div2{float:right;width:50%;}')
   })
 
   it('should support inline animations', function() {
@@ -21,11 +21,11 @@ describe('all', function() {
   })
 
   it('should support parent selectors', function() {
-    css('parent.tl', '.a{color:#000;}.parent:hover > .a{color:blue;}.parent:hover > .c{color:yellow;}.parent:hover > b > div{color:pink;}.parent:hover > b{color:green;}')
+    css('parent.tl', '.a{color:#000;}.parent:hover > b{color:green;}.parent:hover > b > div{color:pink;}.parent:hover > .c{color:yellow;}.parent:hover > .a{color:blue;}')
   })
 
   it('should generate state rules', function() {
-    css('button.tl', '.button{border:none;border-radius:4px;background:#333;color:#fff;}.button.primary{color:blue;}.button.disabled.primary{color:#000;}.button.disabled{background:#999;}')
+    css('button.tl', '.button{border:none;border-radius:4px;background:#333;color:#fff;}.button.disabled{background:#999;}.button.primary{color:blue;}.button.disabled.primary{color:#000;}')
   })
 
 })

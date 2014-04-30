@@ -1,3 +1,3 @@
 img {
-  src=url("./func.tl")
+  src=src("./func.tl")
 }

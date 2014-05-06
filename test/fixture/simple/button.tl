@@ -3,12 +3,12 @@ button {
   border-radius: 4px
   background: #333
   color: #fff
-  .disabled {
+  is-disabled {
     background: #999
   }
-  .primary {
+  is-primary {
     color: blue
-    .disabled {
+    is-disabled {
       color: #000
     }
   }

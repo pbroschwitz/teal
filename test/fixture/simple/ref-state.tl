@@ -1,8 +1,8 @@
-$left=true
+$is-left=true
 div {
   ./button {
     "Hello"
-    .left {
+    is-left {
       left: 0
     }
   }

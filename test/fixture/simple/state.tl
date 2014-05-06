@@ -1,1 +1,1 @@
-./button { primary "Click Me" }
+./button { is-primary "Click Me" }

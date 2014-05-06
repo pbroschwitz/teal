@@ -9,11 +9,11 @@ describe('all', function() {
   })
 
   it('should include dependencies', function() {
-    css('box.tl', '.a{color:#000;}.box{background:silver;}.box > .h1{font-size:2em;}')
+    css('box.tl', '.a{color:#000;}.box{background:silver;}.box > .h1-2{font-size:2em;}')
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '.cols > .div{float:left;width:50%;}.cols > .div2{float:right;width:50%;}')
+    css('anon.tl', '.cols > .div-3{float:left;width:50%;}.cols > .div-4{float:right;width:50%;}')
   })
 
   it('should support inline animations', function() {
@@ -25,7 +25,7 @@ describe('all', function() {
   })
 
   it('should generate state rules', function() {
-    css('button.tl', '.button{border:none;border-radius:4px;background:#333;color:#fff;}.button.disabled{background:#999;}.button.primary{color:blue;}.button.disabled.primary{color:#000;}')
+    css('button.tl', '.button{border:none;border-radius:4px;background:#333;color:#fff;}.button.is-disabled{background:#999;}.button.is-primary{color:blue;}.button.is-disabled.is-primary{color:#000;}')
   })
 
 })

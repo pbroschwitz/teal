@@ -4,7 +4,7 @@ button {
   background: #333
   padding: 0.5em 2em
   color: #fff
-  .primary {
+  is-primary {
     color: blue
   }
   $content

@@ -1,4 +1,0 @@
-{
-  ./para { "Hello" }
-  ./para { "World" }
-}

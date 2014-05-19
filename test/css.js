@@ -12,6 +12,10 @@ describe('all', function() {
     css('box.tl', '.el-a{color:#000;}.el-box{background:silver;}.el-box > .hd{font-size:2em;}')
   })
 
+  it('should output css functions verbatim', function() {
+    css('p.tl', '.el-p{color:rgba(0,0,0,0.8);}')
+  })
+
   it('should style anonymous inline blocks', function() {
     css('anon.tl', '.el-cols > .div-5{float:left;width:50%;}.el-cols > .div-6{float:right;width:50%;}')
   })

@@ -1,13 +1,13 @@
 button {
   border: none;
-  border-radius: 4px
-  background: #333
-  color: #fff
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
   .disabled {
     background: #999
   }
   .primary {
-    color: blue
+    color: blue;
     .disabled {
       color: #000
     }

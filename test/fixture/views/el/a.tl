@@ -1,5 +1,5 @@
 a {
-  color: #000
+  color: #000;
   href=$href
   $content
 }

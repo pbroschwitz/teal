@@ -1,3 +1,3 @@
 ul {
-  @each $name in $names li { $name.first }
+  @each $c in $contributors li { $c.first }
 }

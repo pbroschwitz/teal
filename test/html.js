@@ -9,9 +9,15 @@ describe('all', function() {
   var el = path.join(root, 'el')
   var tl = teal()
   var data = {
-    names: [
-      { first: 'Felix' },
-      { first: 'Malte' }
+    author: {
+      name: {
+        first: 'Felix',
+        last: 'Gnass'
+      }
+    },
+    contributors: [
+      { first: 'Malte' },
+      { first: 'Peter' }
     ]
   }
   var files = fs.readdirSync(el)

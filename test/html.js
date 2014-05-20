@@ -5,17 +5,24 @@ var fs = require('fs')
 
 describe('all', function() {
 
-  var root = path.join(__dirname, 'fixture', 'simple')
+  var root = path.join(__dirname, 'fixture', 'views')
+  var el = path.join(root, 'el')
   var tl = teal()
   var data = {
-    names: [
-      { first: 'Felix' },
-      { first: 'Malte' }
+    author: {
+      name: {
+        first: 'Felix',
+        last: 'Gnass'
+      }
+    },
+    contributors: [
+      { first: 'Malte' },
+      { first: 'Peter' }
     ]
   }
-  var files = fs.readdirSync(root)
+  var files = fs.readdirSync(el)
     .filter(function(f) { return path.extname(f) =='.html' })
-    .map(function(f) { return path.join(root, f) })
+    .map(function(f) { return path.join(el, f) })
 
   function template(f) {
     return f.replace('.html', '.tl')
@@ -35,27 +42,27 @@ describe('scope', function() {
   var scope = require('../lib/html/scope')
 
   it('should expose global vars', function() {
-    var s = scope({ foo: 42 })
+    var s = scope([{ foo: 42 }])
     s.get('foo').should.equal(42)
   })
 
   it('sub-scope should shadow parent', function() {
-    var s = scope({ foo: 42 })
-    s.sub({ foo: 23 }).get('foo').should.equal(23)
+    var s = scope([{ foo: 42 }])
+    s.sub(23, 'foo').get('foo').should.equal(23)
   })
 
   it('should expose global vars to sub-scopes', function() {
-    var s = scope({ foo: 42 })
-    s.sub({}).get('foo').should.equal(42)
+    var s = scope([{ foo: 42 }])
+    s.sub(23, 'bar').get('foo').should.equal(42)
   })
 
   it('should expose global vars to fresh scopes', function() {
-    var s = scope({ foo: 42 })
+    var s = scope([{ foo: 42 }])
     s.fresh({}).get('foo').should.equal(42)
   })
 
   it('should not expose local vars to fresh scopes', function() {
-    var s = scope({ foo: 42 })
+    var s = scope([{ foo: 42 }])
     s.set('foo', 23)
     s.fresh({}).get('foo').should.equal(42)
   })

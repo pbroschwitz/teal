@@ -18,7 +18,7 @@ take you straight to location where it has been defined.
 
 ## Basic Example
 
-Here is a simple example, lets call it `teaser.tl`:
+Here is a simple example, lets call it `el/teaser.tl`:
 
 ```scss
 div {
@@ -41,7 +41,7 @@ div {
 This, when rendered, will generate the following HTML:
 
 ```html
-<div class="teaser">
+<div class="el-teaser">
   <h1>...</h1>
   <p>...</p>
   <a href="...">Read more</a>
@@ -51,11 +51,11 @@ This, when rendered, will generate the following HTML:
 Also the following rules will be added to the generated stylesheet:
 
 ```css
-.teaser {
+.el-teaser {
   background: #888
   padding: 1em
 }
-.teaser > h1 {
+.el-teaser > h1 {
   font-size: 2em
 }
 ```
@@ -68,24 +68,24 @@ passed attributes as template variables.
 
 ```scss
 div {
-  ./teaser {
+  /el/teaser {
     title = "Hello world"
     text = "Lorem ipsum"
   }
-  ./teaser {
-    title = "Another teaser"
+  ./foo {
+    title = "Another component"
     text = "Lorem ipsum dolor sit amet"
   }
 }
 ```
 
-You not only pass primitive values as parameter but also other elements or
+You can not only pass primitive values as parameter but also other elements or
 document fragments:
 
 ```scss
 ./two-cols {
-  left: ./teaser { title = "Left" }
-  right: ./teaser { title = "Right" }
+  left: /el/teaser { title = "Left" }
+  right: /el/teaser { title = "Right" }
 }
 ```
 
@@ -123,12 +123,12 @@ Hence the following code yields the same result:
 
 If a component uses an external asset, Teal resolves the path relative to the
 `.tl` file and (if used with express) exposes it. This is done by using the
-built-in `url()` function:
+built-in `src()` function:
 
 ```scss
 div {
-  background: url("./sky.jpg")
-  img { src=url("./rainbow.gif") }
+  img { src=src("./rainbow.gif") }
+  background: url(src("./sky.jpg"))
 }
 ```
 
@@ -151,3 +151,18 @@ app.get('/', function(req, res) {
   res.render('page', { title: 'Hello', content: 'Hello World.' })
 })
 ```
+
+# Add-Ons
+
+* [teal-browserify](https://github.com/fgnass/teal-browserify) to use teal
+  components in browser apps and/or to easily create browserify bundles from
+  within a .tl file.
+
+* [teal-instant](https://github.com/fgnass/teal-instant) to live-reload the
+  HTML/CSS when a file is modified
+
+* [teal-autoprefixer](https://github.com/fgnass/teal-autoprefixer) to
+  automatically add vendor prefixes
+
+* [teal-react](https://github.com/fgnass/teal-react) to compile .tl files into
+  React components

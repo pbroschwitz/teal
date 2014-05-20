@@ -17,9 +17,7 @@
     "dommy": "^1.0.0",
     "exposed": "^2.3.0",
     "stacked": "^1.0.1",
-    "rework": "^0.18.3",
     "css-stringify": "^1.4.1",
-    "autoprefixer": "^0.8.20131213",
     "detective": "^3.0.0",
     "browser-resolve-sync": "^1.0.0"
   },

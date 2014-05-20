@@ -151,3 +151,18 @@ app.get('/', function(req, res) {
   res.render('page', { title: 'Hello', content: 'Hello World.' })
 })
 ```
+
+# Add-Ons
+
+* [teal-browserify](https://github.com/fgnass/teal-browserify) to use teal
+  components in browser apps and/or to easily create browserify bundles from
+  within a .tl file.
+
+* [teal-instant](https://github.com/fgnass/teal-instant) to live-reload the
+  HTML/CSS when a file is modified
+
+* [teal-autoprefixer](https://github.com/fgnass/teal-autoprefixer) to
+  automatically add vendor prefixes
+
+* [teal-react](https://github.com/fgnass/teal-react) to compile .tl files into
+  React components

@@ -1,3 +1,4 @@
 div {
-  ./button { "Click Me" }  
+  ./button {}  
+  ./button { "Click Me" }
 }

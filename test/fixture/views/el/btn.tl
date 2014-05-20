@@ -1,1 +1,1 @@
-<$tag> {}
+<$href ? "a" : "button"> { href=$href }

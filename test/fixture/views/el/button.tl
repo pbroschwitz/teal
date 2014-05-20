@@ -13,5 +13,5 @@ button {
     }
   }
 
-  $content
+  $content|"Submit"
 }

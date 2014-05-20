@@ -56,6 +56,7 @@ describe('scope', function() {
     s.sub(23, 'bar').get('foo').should.equal(42)
   })
 
+  /*
   it('should expose global vars to fresh scopes', function() {
     var s = scope([{ foo: 42 }])
     s.fresh({}).get('foo').should.equal(42)
@@ -66,4 +67,6 @@ describe('scope', function() {
     s.set('foo', 23)
     s.fresh({}).get('foo').should.equal(42)
   })
+  */
+  
 })

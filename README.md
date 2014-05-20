@@ -52,8 +52,8 @@ Also the following rules will be added to the generated stylesheet:
 
 ```css
 .el-teaser {
-  background: #888
-  padding: 1em
+  background: #888;
+  padding: 1em;
 }
 .el-teaser > h1 {
   font-size: 2em
@@ -95,13 +95,13 @@ A component may define different states (aka modifiers):
 
 ```scss
 button {
-  background: gray
+  background: gray;
   .primary {
-    background: blue
-    font-size: 2em
+    background: blue;
+    font-size: 2em;
   }
   .danger {
-    background: red
+    background: red;
   }
 }
 ```

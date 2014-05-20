@@ -38,8 +38,6 @@ function css(file, expected) {
   var root = path.join(__dirname, 'fixture', 'views')
   var tl = teal({ root: root })
   tl.css.sourcemap = false
-  tl.css.normalize = false
-  tl.css.autoprefix = false
   tl.process([ path.join(root, 'el', file) ])
   tl.resources.get('/main.css').data.should.equal(expected)
 }

@@ -1,4 +1,5 @@
 div {
   @if $hey ./para { $hey }
-  @else "Ho!"
+  @else "Ho"
+  @if not $hey "ho"
 }

@@ -1,4 +1,3 @@
 div {
-  ./btn { href="#" "Link" }
-  ./btn { "Submit" }
+  ./hx { tag="h1" "H1" }
 }

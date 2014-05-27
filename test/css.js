@@ -17,7 +17,11 @@ describe('all', function() {
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '.el-cols > .div-5{float:left;width:50%;}.el-cols > .div-6{float:right;width:50%;}')
+    css('anon.tl', '.el-cols > .div-6{float:left;width:50%;}.el-cols > .div-7{float:right;width:50%;}')
+  })
+
+  it('should support css params', function() {
+    css('css-params.tl', '.el-parambox{background:#fff;}.el-parambox > .hd{font-size:1em;}.el-css-params > .el-parambox{background:silver;}.el-css-params > .el-parambox > .hd{font-size:2em;}')
   })
 
   it('should support inline animations', function() {
@@ -30,6 +34,10 @@ describe('all', function() {
 
   it('should generate state rules', function() {
     css('button.tl', '.el-button{border:none;border-radius:4px;background:#333;color:#fff;}.el-button.disabled{background:#999;}.el-button.primary{color:blue;}.el-button.disabled.primary{color:#000;}')
+  })
+
+  it('should include mixins', function() {
+    css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;}.el-include > ul:after{content:"in the mix";}')
   })
 
 })

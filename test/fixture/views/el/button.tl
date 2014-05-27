@@ -1,3 +1,6 @@
+@defaults {
+  content="Submit"
+}
 button {
   border: none;
   border-radius: 4px;
@@ -13,5 +16,5 @@ button {
     }
   }
 
-  $content|"Submit"
+  $content
 }

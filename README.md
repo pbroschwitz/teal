@@ -1,31 +1,33 @@
-# Teal
+# .tl
 
-Teal is a language to write small reusable HTML components. The CSS properties
-defined in a `.tl` file are extracted and put into a stylesheet. At the same
-time each teal file is turned into a compiled template.
 
-__Here's the twist:__ You don't have to write any CSS selectors. Since markup
-and style are defined in one place, Teal can figure out the appropriate rules
-and assign class names as needed. You no longer have to apply naming conventions
-like BEM or SMACSS by hand, instead Teal will do this for you.
+Keeping CSS in sync with the markup (or the other way round) is often hard and
+error-prone. Developers have to apply strict naming conventions to prevent
+unwanted side effects.
 
-This makes refactoring your frontend code a lot easier. You'll never ever have
-to wonder where a given line of CSS is actually used. And you can be sure that
-altering a property won't have any undesired side effects.
+Teal addresses these issues by using a totally different approach:
 
-And thanks to the built-in source maps support, inspecting an HTML element will
-take you straight to location where it has been defined.
+You define markup and style together in one place
+(one `.tl` file for each component) and teal figures out the
+appropriate CSS rules and class names in a BEM/SMACSS-like fashion.
 
-## Basic Example
+In other words Teal compiles `.tl` files into a __stylesheet__ and a bunch of
+__templates__.
+
+
+# Syntax
+
+A teal file looks a lot like LESS or SCSS at the first glance – except that it
+also contains placeholders which tell teal where content should be placed:
 
 Here is a simple example, lets call it `el/teaser.tl`:
 
-```scss
+```less
 div {
-  background: #888
-  padding: 1em
+  background: #888;
+  padding: 1em;
   h1 {
-    font-size: 2em
+    font-size: 2em;
     $title
   }
   p {
@@ -38,7 +40,7 @@ div {
 }
 ```
 
-This, when rendered, will generate the following HTML:
+This, when rendered, will generate the following HTML structure:
 
 ```html
 <div class="el-teaser">
@@ -60,13 +62,18 @@ Also the following rules will be added to the generated stylesheet:
 }
 ```
 
+Since there are no styles specified for the `a` and the `p` element, the `h1`
+is the only additional rule in this case. And as teal exactly knows where the
+H1 will end up in the DOM, it can use a very short, yet unique selector to
+target it.
+
 ## Components
 
-You can also think about a `.tl` file as a custom HTML element. If you use a
-path instead of a tag name, teal will render the specified file and expose the
-passed attributes as template variables.
+You can also think about a `.tl` file as kind of custom HTML element with custom
+attributes. If you use a tag name that contains at least one slash, teal will
+interpret it as path, resolve it and render the specified file:
 
-```scss
+```less
 div {
   /el/teaser {
     title = "Hello world"
@@ -79,21 +86,41 @@ div {
 }
 ```
 
-You can not only pass primitive values as parameter but also other elements or
+You can not only pass primitive values as attributes but also other elements or
 document fragments:
 
-```scss
+```less
 ./two-cols {
   left: /el/teaser { title = "Left" }
   right: /el/teaser { title = "Right" }
 }
 ```
 
-## States
+### Passing children
+
+If you pass children to a component teal will expose them as `$content`.
+So the following two examples are equivalent:
+```less
+./foo {
+  "Hello" b { "World!" }
+}
+```
+```less
+./foo {
+  content = {
+    "Hello" b { "World!" }
+  }
+}
+```
+
+__Note:__ If a component does not explicitly define a `$content` placeholder
+any content is appended to the component's root element.
+
+### States
 
 A component may define different states (aka modifiers):
 
-```scss
+```less
 button {
   background: gray;
   .primary {
@@ -108,34 +135,49 @@ button {
 
 To activate a state just pass a truthy parameter with the name of the state:
 
-```scss
+```less
 ./button { primary=true }
 ```
 
 __Note:__ If you omit the value and just specify a name `true` is implied.
 Hence the following code yields the same result:
 
-```scss
+```less
 ./button { primary }
 ```
 
-## Assets
+By default Teal uses double-class selectors to target states:
+
+```css
+.el-button.primary {
+  background: blue;
+  font-size: 2em;
+}
+.el-button.danger {
+  background: red;
+}
+```
+
+__Note:__ State names must not contain dashes to prevent name clashes with
+components.
+
+### Assets
 
 If a component uses an external asset, Teal resolves the path relative to the
 `.tl` file and (if used with express) exposes it. This is done by using the
 built-in `src()` function:
 
-```scss
+```less
 div {
   img { src=src("./rainbow.gif") }
-  background: url(src("./sky.jpg"))
+  background: url(src("./sky.jpg"));
 }
 ```
 
 
 # Usage
 
-## Within an express app
+### Within an express app
 
 
 ```js

@@ -20,6 +20,10 @@ describe('all', function() {
     css('anon.tl', '.el-cols > .div-6{float:left;width:50%;}.el-cols > .div-7{float:right;width:50%;}')
   })
 
+  it('should call functions', function() {
+    css('func.tl', '.el-func{background:url(/assets/el/func.html);}')
+  })
+
   it('should support css params', function() {
     css('css-params.tl', '.el-parambox{background:#fff;}.el-parambox > .hd{font-size:1em;}.el-css-params > .el-parambox{background:silver;}.el-css-params > .el-parambox > .hd{font-size:2em;}')
   })

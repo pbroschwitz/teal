@@ -194,6 +194,14 @@ app.get('/', function(req, res) {
 })
 ```
 
+# Syntax Highlighting
+
+* [teal.tmLanguage](https://github.com/fgnass/teal.tmLanguage) for TextMate and Sublime Text
+
+* [atom-teal](https://github.com/fgnass/atom-teal) for Atom
+
+![screenshot](https://fgnass.github.io/images/atom-teal.png)
+
 # Add-Ons
 
 * [teal-browserify](https://github.com/fgnass/teal-browserify) to use teal

@@ -18,6 +18,7 @@
     "detective": "^3.0.0",
     "dommy": "^1.0.0",
     "exposed": "^2.3.0",
+    "materialize": "^1.0.0",
     "pegjs": "^0.8.0",
     "plck": "^1.0.0",
     "stacked": "^1.0.1"

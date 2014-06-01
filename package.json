@@ -13,13 +13,14 @@
   "author": "Felix Gnass",
   "license": "MIT",
   "dependencies": {
-    "pegjs": "^0.8.0",
-    "dommy": "^1.0.0",
-    "exposed": "^2.3.0",
-    "stacked": "^1.0.1",
+    "browser-resolve-sync": "^1.0.0",
     "css-stringify": "^1.4.1",
     "detective": "^3.0.0",
-    "browser-resolve-sync": "^1.0.0"
+    "dommy": "^1.0.0",
+    "exposed": "^2.3.0",
+    "pegjs": "^0.8.0",
+    "plck": "^1.0.0",
+    "stacked": "^1.0.1"
   },
   "devDependencies": {
     "should": "^1.3.0",

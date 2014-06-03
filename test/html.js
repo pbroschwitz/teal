@@ -2,12 +2,15 @@ var fs = require('fs')
   , should = require('should')
   , path = require('path')
   , teal = require('../lib')
+  , lsr = require('../lib/lsr')
 
 describe('all', function() {
 
   var root = path.join(__dirname, 'fixture', 'views')
-  var el = path.join(root, 'el')
+  var settings = path.join(root, 'settings.tl')
+  
   var tl = teal()
+
   var data = {
     author: {
       name: {
@@ -20,15 +23,16 @@ describe('all', function() {
       { first: 'Peter' }
     ]
   }
-  var files = fs.readdirSync(el)
-    .filter(function(f) { return path.extname(f) =='.html' })
-    .map(function(f) { return path.join(el, f) })
+
+  var files = lsr(root).filter(function(f) {
+    return path.extname(f) =='.html'
+  })
 
   function template(f) {
     return f.replace('.html', '.tl')
   }
 
-  tl.process(files.map(template))
+  tl.process([settings].concat(files.map(template)))
 
   files.forEach(function(f) {
     it(path.basename(f), function() {

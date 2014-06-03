@@ -22,4 +22,9 @@ describe('scope', function() {
     s1.get('foo').should.equal('foo')
   })
 
+  it('should pick values', function() {
+    var s = scope({ foo: 23, bar: 42 })
+    s.pick(['foo']).should.eql({ foo: 23 })
+  })
+
 })

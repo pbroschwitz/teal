@@ -28,6 +28,10 @@ describe('all', function() {
     css('css-params.tl', '.el-parambox{background:#fff;}.el-parambox > .hd{font-size:1em;}.el-css-params > .el-parambox{background:silver;}.el-css-params > .el-parambox > .hd{font-size:2em;}')
   })
 
+  it('should support global defaults', function() {
+    css('defaults.tl', '.el-defaults{color:#f00;}')
+  })
+
   it('should support inline animations', function() {
     css('animation.tl', '@keyframes el-animation_eye{0%{margin-left:-20%;}to{margin-left:100%;}}.el-animation{background:black;height:25px;width:200px;overflow:hidden;}.el-animation > .eye{height:100%;width:20%;background:red;animation:el-animation_eye 4s linear 0s infinite alternate;}')
   })
@@ -50,6 +54,9 @@ function css(file, expected) {
   var root = path.join(__dirname, 'fixture', 'views')
   var tl = teal({ root: root })
   tl.css.sourcemap = false
-  tl.process([ path.join(root, 'el', file) ])
+  tl.process([
+    path.join(root, 'settings.tl'),
+    path.join(root, 'el', file)
+  ])
   tl.resources.get('/main.css').data.should.equal(expected)
 }

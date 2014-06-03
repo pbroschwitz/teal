@@ -1,0 +1,4 @@
+div {
+  color: $red;
+  $foo
+}

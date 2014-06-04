@@ -17,7 +17,7 @@ describe('all', function() {
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '.el-cols > .div-6{float:left;width:50%;}.el-cols > .div-7{float:right;width:50%;}')
+    css('anon.tl', '.el-cols > .div-1{float:left;width:50%;}.el-cols > .div-2{float:right;width:50%;}')
   })
 
   it('should call functions', function() {
@@ -38,6 +38,10 @@ describe('all', function() {
 
   it('should support parent selectors', function() {
     css('parent.tl', '.el-a{color:#000;}.el-parent:hover > b{color:green;}.el-parent:hover > b > div{color:pink;}.el-parent:hover > .c{color:yellow;}.el-parent:hover > .el-a{color:blue;}')
+  })
+
+  it('should support sibling selectors', function() {
+    css('siblings.tl', '.el-siblings > .a{color:red;}.el-siblings > .b{color:green;}.el-siblings > .a:hover~.b{color:yellow;}.el-siblings > .a:hover~.c{color:pink;}')
   })
 
   it('should generate state rules', function() {

@@ -21,6 +21,7 @@
     "flatten": "0.0.1",
     "matching": "^1.0.0",
     "materialize": "^1.0.0",
+    "mime": "^1.2.11",
     "pegjs": "^0.8.0",
     "plck": "^1.0.0",
     "stacked": "^1.0.1",

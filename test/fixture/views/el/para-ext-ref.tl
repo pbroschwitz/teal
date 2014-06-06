@@ -1,0 +1,3 @@
+div {
+  ./para-ext { "Hello" }
+}

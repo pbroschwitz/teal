@@ -21,7 +21,7 @@ describe('all', function() {
   })
 
   it('should call functions', function() {
-    css('func.tl', '.el-func{background:url(/assets/el/func.html);}')
+    css('func.tl', '.el-func{background:url("/assets/el/func.html");}')
   })
 
   it('should support css params', function() {

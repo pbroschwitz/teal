@@ -1,0 +1,14 @@
+@defaults {
+  foo = 42
+  foo-bar = 23
+  bar = { foo: 23 }
+}
+div {
+  b { ("3 > 2: " + (3 > 2)) }
+  b { ($foo == 42? "twentyfour" : $foo) }
+  b { ($foo - 2) }
+  b { ($foo - $foo-bar) }
+  b { (true && 42) }
+  b { length([1,2,3]) }
+  b { ($bar.foo) }
+}

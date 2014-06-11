@@ -8,8 +8,8 @@ describe('all', function() {
 
   var root = path.join(__dirname, 'fixture', 'views')
   var settings = path.join(root, 'settings.tl')
-  
-  var tl = teal()
+
+  var tl = teal({ root: root })
 
   var data = {
     author: {

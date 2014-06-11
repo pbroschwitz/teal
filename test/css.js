@@ -2,7 +2,7 @@ var should = require('should')
   , path = require('path')
   , teal = require('../lib')
 
-describe('all', function() {
+describe('teal/css', function() {
 
   it('should generate CSS', function() {
     css('a.tl', '.el-a{color:#000;}')
@@ -54,6 +54,10 @@ describe('all', function() {
 
   it('should include mixins', function() {
     css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;}.el-include > ul:after{content:"in the mix";}')
+  })
+
+  it('should group media queries', function() {
+    css('media.tl', '.el-media-test{font-size:1em;}.el-media{background:lime;}@media (min-width:960px){.el-media-test{font-size:2em;}.el-media{background:red;}}')
   })
 
 })

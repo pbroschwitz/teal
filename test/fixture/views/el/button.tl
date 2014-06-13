@@ -6,8 +6,10 @@ button {
   border-radius: 4px;
   background: #333;
   color: #fff;
-  .disabled {
-    background: #999
+  @media screen {
+    .disabled {
+      background: #999
+    }
   }
   .primary {
     color: blue;

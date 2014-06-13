@@ -2,7 +2,7 @@ var should = require('should')
   , path = require('path')
   , teal = require('../lib')
 
-describe('all', function() {
+describe('teal/css', function() {
 
   it('should generate CSS', function() {
     css('a.tl', '.el-a{color:#000;}')
@@ -25,7 +25,7 @@ describe('all', function() {
   })
 
   it('should support css params', function() {
-    css('css-params.tl', '.el-parambox{background:#fff;color:#333;}.el-parambox > .hd{font-size:1em;}.el-css-params_el-parambox{background:silver;}.el-css-params_el-parambox > .hd{font-size:2em;}')
+    css('css-params.tl', '.el-parambox{background:#fff;color:#333;}.el-parambox > .hd{font-size:1em;}.el-css-params_parambox{background:silver;}.el-css-params_parambox > .hd{font-size:2em;}')
   })
 
   it('should support referencing parameterized elements', function() {
@@ -41,7 +41,7 @@ describe('all', function() {
   })
 
   it('should support parent selectors', function() {
-    css('parent.tl', '.el-a{color:#000;}.el-parent:hover > b{color:green;}.el-parent:hover > b > div{color:pink;}.el-parent:hover > .c{color:yellow;}.el-parent:hover > .el-a{color:blue;}')
+    css('parent.tl', '.el-a{color:#000;}.el-parent:hover > .b-1{color:green;}.el-parent:hover > .b-1 > div{color:pink;}.el-parent:hover > .c{color:yellow;}.el-parent:hover > .el-parent_a{color:blue;}')
   })
 
   it('should support sibling selectors', function() {
@@ -49,22 +49,37 @@ describe('all', function() {
   })
 
   it('should generate state rules', function() {
-    css('button.tl', '.el-button{border:none;border-radius:4px;background:#333;color:#fff;}.el-button.disabled{background:#999;}.el-button.primary{color:blue;}.el-button.disabled.primary{color:#000;}')
+    css('button.tl', '.el-button{border:none;border-radius:4px;background:#333;color:#fff;}.el-button.primary{color:blue;}.el-button.disabled.primary{color:#000;}@media screen{.el-button.disabled{background:#999;}}')
   })
 
   it('should include mixins', function() {
-    css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;}.el-include > ul:after{content:"in the mix";}')
+    css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;padding:0;}.el-include > ul:after{content:"in the mix";}')
+  })
+
+  it('should group media queries', function() {
+    css('media.tl', '.el-media-test{font-size:1em;}.el-media{background:lime;}@media (min-width:960px){.el-media-test{font-size:2em;}.el-media{background:red;}}')
+  })
+
+  it('should support media queries inside loops', function() {
+    css('each.tl', '.el-each > li{color:#000;}@media screen{.el-each > li{padding:0;}}')
+  })
+
+  it('should include media queries only once', function() {
+    css('media-2x.tl', '.el-media-test{font-size:1em;}.el-media{background:lime;}@media (min-width:960px){.el-media-test{font-size:2em;}.el-media{background:red;}}')
   })
 
 })
 
-function css(file, expected) {
+function css(files, expected) {
+  if (!Array.isArray(files)) files = [files]
   var root = path.join(__dirname, 'fixture', 'views')
   var tl = teal({ root: root })
   tl.css.sourcemap = false
-  tl.process([
-    path.join(root, 'settings.tl'),
-    path.join(root, 'el', file)
-  ])
+  tl.process(
+    [path.join(root, 'settings.tl')]
+    .concat(files.map(function(f) {
+      return path.join(root, 'el', f)
+    }))
+  )
   tl.resources.get('/main.css').data.should.equal(expected)
 }

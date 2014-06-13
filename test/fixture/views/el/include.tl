@@ -1,7 +1,7 @@
 div {
   color: #000;
   ul {
-    @include ./mixin {
+    ./mixin {
       bg-color: #fff;
       color: #000
     }

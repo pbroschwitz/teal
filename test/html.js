@@ -1,15 +1,15 @@
 var fs = require('fs')
-  , should = require('should')
   , path = require('path')
+  , readdirrsync = require('readdirrsync')
+  , should = require('should')
   , teal = require('../lib')
-  , lsr = require('../lib/lsr')
 
 describe('all', function() {
 
   var root = path.join(__dirname, 'fixture', 'views')
   var settings = path.join(root, 'settings.tl')
-  
-  var tl = teal()
+
+  var tl = teal({ root: root })
 
   var data = {
     author: {
@@ -24,7 +24,7 @@ describe('all', function() {
     ]
   }
 
-  var files = lsr(root).filter(function(f) {
+  var files = readdirrsync(root).filter(function(f) {
     return path.extname(f) =='.html'
   })
 

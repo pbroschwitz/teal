@@ -53,7 +53,8 @@ describe('teal/css', function() {
   })
 
   it('should include mixins', function() {
-    css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;padding:0;}.el-include > ul:after{content:"in the mix";}')
+    css('include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;padding:0;}.el-include > ul:after{content:"in the mix";}@media screen{.el-include{background:red;padding:0;}.el-include:after{content:"in the mix";}}')
+    css('ref-include.tl', '.el-include{color:#000;}.el-include > ul{background:#fff;padding:0;}.el-include > ul:after{content:"in the mix";}@media screen{.el-include{background:red;padding:0;}.el-include:after{content:"in the mix";}}')
   })
 
   it('should group media queries', function() {

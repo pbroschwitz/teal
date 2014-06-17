@@ -6,4 +6,9 @@ div {
       color: #000
     }
   }
+  @media screen {
+    ./mixin {
+      bg-color: red;
+    }
+  }
 }

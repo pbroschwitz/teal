@@ -1,4 +1,7 @@
-img {
+div {
   background: url(src('./func.html'));
-  src=src("./func.tl")
+  ./a({
+    href: src("./func.tl"),
+    content: ["Hello"]
+  })
 }

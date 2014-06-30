@@ -1,6 +1,3 @@
-@defaults {
-  foo = "world"
-}
 div {
-  --{ Hello ${foo} }--
+  --{ Hello ${world} }--
 }

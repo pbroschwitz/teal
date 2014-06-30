@@ -1,6 +1,6 @@
 html {
   head {
-    teal/css {}
+    stylesheet()
   }
   body {
   }

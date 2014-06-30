@@ -12,6 +12,10 @@ describe('all', function() {
   var tl = teal({ root: root })
 
   var data = {
+    world: 'World',
+    foo: 42,
+    "foo-bar": 23,
+    bar: { foo: 23 },
     author: {
       name: {
         first: 'Felix',

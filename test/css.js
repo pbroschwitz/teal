@@ -24,16 +24,8 @@ describe('teal/css', function() {
     css('func.tl', '.el-a{color:#000;}.el-func{background:url("/assets/el/func.html");}')
   })
 
-  it('should support css params', function() {
-    css('css-params.tl', '.el-parambox{background:#fff;color:#333;}.el-parambox > .hd{font-size:1em;}.el-css-params_parambox{background:silver;}.el-css-params_parambox > .hd{font-size:2em;}')
-  })
-
-  it('should support referencing parameterized elements', function() {
-    css('para-ext-ref.tl', '.el-p{color:rgba(0,0,0,0.8);}.el-para-ext{background:#f00;color:#333;}')
-  })
-
-  it('should support global defaults', function() {
-    css('defaults.tl', '.el-defaults{color:#f00;}')
+  it('should support consts', function() {
+    css('const.tl', '.el-const{color:#f00;}')
   })
 
   it('should support inline animations', function() {

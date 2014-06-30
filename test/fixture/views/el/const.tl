@@ -1,4 +1,3 @@
 div {
   color: $red;
-  $foo
 }

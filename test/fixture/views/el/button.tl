@@ -1,6 +1,3 @@
-@defaults {
-  content="Submit"
-}
 button {
   border: none;
   border-radius: 4px;
@@ -17,6 +14,5 @@ button {
       color: #000
     }
   }
-
   $content
 }

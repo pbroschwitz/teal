@@ -5,5 +5,6 @@ div {
   b { ($foo - $foo-bar) }
   b { (true && 42) }
   b { length([1,2,3]) }
+  b { length($content) }
   b { ($bar.foo) }
 }

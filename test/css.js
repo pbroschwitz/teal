@@ -17,7 +17,7 @@ describe('teal/css', function() {
   })
 
   it('should style anonymous inline blocks', function() {
-    css('anon.tl', '.el-cols > .div-1{float:left;width:50%;}.el-cols > .div-2{float:right;width:50%;}.el-anon > .p-1{color:red;}.el-anon > .p-2{color:green;}')
+    css('anon.tl', '.el-cols > .div-1{float:left;width:50%;}.el-cols > .div-2{float:right;width:50%;}.el-anon_p-1{color:red;}.el-anon_p-2{color:green;}')
   })
 
   it('should call functions', function() {

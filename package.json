@@ -15,7 +15,6 @@
   "dependencies": {
     "browser-resolve-sync": "^1.0.0",
     "css-stringify": "^1.4.1",
-    "detective": "^3.0.0",
     "dommy": "^1.0.0",
     "exposed": "^2.3.0",
     "findup-sync": "^0.1.3",

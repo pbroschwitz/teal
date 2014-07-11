@@ -1,14 +1,16 @@
 p {
   b {
-    ^:hover { color: green }
+    ^1:hover { color: green }
     div {
-      ^^:hover { color: pink }
+      ^2:hover { color: pink }
     }
+    ^.foo { color: teal }
   }
   b.c {
-    ^:hover { color: yellow }
+    ^1:hover { color: yellow }
+    ^3:hover { color: gold }
   }
   ./a {
-    ^:hover { color: blue }
+    ^1:hover { color: blue }
   }
 }

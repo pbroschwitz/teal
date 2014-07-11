@@ -33,7 +33,7 @@ describe('teal/css', function() {
   })
 
   it('should support parent selectors', function() {
-    css('parent.tl', '.el-a{color:#000;}.el-parent:hover > .b-1{color:green;}.el-parent:hover > .b-1 > div{color:pink;}.el-parent:hover > .c{color:yellow;}.el-parent:hover > .el-parent_a{color:blue;}')
+    css('parent.tl', '.el-a{color:#000;}.el-parent:hover > .b-1{color:green;}.el-parent:hover > .b-1 > div{color:pink;}.foo .el-parent > .b-1{color:teal;}.el-parent:hover > .c{color:yellow;}*:hover > * > .el-parent > .c{color:gold;}.el-parent:hover > .el-parent_a{color:blue;}')
   })
 
   it('should support sibling selectors', function() {

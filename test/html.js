@@ -1,6 +1,6 @@
 var fs = require('fs')
   , path = require('path')
-  , readdirrsync = require('readdirrsync')
+  , ls = require('../lib/util/ls')
   , should = require('should')
   , teal = require('../lib')
 
@@ -28,7 +28,7 @@ describe('all', function() {
     ]
   }
 
-  var files = readdirrsync(root).filter(function(f) {
+  var files = ls(root).filter(function(f) {
     return path.extname(f) =='.html'
   })
 

@@ -21,7 +21,7 @@ describe('teal/css', function() {
   })
 
   it('should call functions', function() {
-    css('func.tl', '.el-a{color:#000;}.el-func{background:url("/assets/el/func.html#foo");}')
+    css('func.tl', '.el-a{color:#000;}.el-func{background:url("/assets/el/func.html#foo");font:1em/1.2 serif;}')
   })
 
   it('should support consts', function() {
@@ -59,6 +59,10 @@ describe('teal/css', function() {
 
   it('should include media queries only once', function() {
     css('media-2x.tl', '.el-media-test{font-size:1em;}.el-media{background:lime;}@media (min-width:960px){.el-media-test{font-size:2em;}.el-media{background:red;}}')
+  })
+
+  it('should filter @sheet by name', function() {
+    css('sheet.tl', '.el-sheet{color:#000;}.el-sheet{background:#fff;}')
   })
 
 })

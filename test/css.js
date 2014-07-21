@@ -40,6 +40,10 @@ describe('teal/css', function() {
     css('siblings.tl', '.el-siblings > .a{color:red;}.el-siblings > .b{color:green;}.el-siblings > .a:hover~.b{color:yellow;}.el-siblings > .a:hover~.c{color:pink;}')
   })
 
+  it('should support star selectors', function() {
+    css('star.tl', '.el-star > *{color:#000;}.el-star > *:hover{color:red;}')
+  })
+
   it('should generate state rules', function() {
     css('button.tl', '.el-button{border:none;border-radius:4px;background:#333;color:#fff;}.el-button.primary{color:blue;}.el-button.disabled.primary{color:#000;}@media screen{.el-button.disabled{background:#999;}}')
   })

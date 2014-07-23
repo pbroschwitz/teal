@@ -1,6 +1,5 @@
 # Teal – Stylesheets without selectors
 
-
 Teal is a new take on CSS that throws away the concept of selectors to make
 it easy to reason about the styles that get actually applied.
 

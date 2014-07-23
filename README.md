@@ -1,18 +1,31 @@
-# .tl
+# Teal – Stylesheets without selectors
 
 
-Keeping CSS in sync with the markup (or the other way round) is often hard and
-error-prone. Developers have to apply strict naming conventions to prevent
-unwanted side effects.
+Teal is a new take on CSS that throws away the concept of selectors to make
+it easy to reason about the styles that get actually applied.
 
-Teal addresses these issues by using a totally different approach:
+With teal, stylesheets turn into an implementation detail: It feels as if you
+were writing inline styles (just with a much nicer syntax) and teal converts
+them into rules and class names for you.
+
+This allows you to split your whole frontend into separate components that are
+guaranteed to be free of side effects.
+
+Unlike preprocessors which which only look at one side (the CSS), teal also
+addresses the other part: the generation of markup.
 
 You define markup and style together in one place
 (one `.tl` file for each component) and teal figures out the
 appropriate CSS rules and class names in a BEM/SMACSS-like fashion.
 
-In other words Teal compiles `.tl` files into a __stylesheet__ and a bunch of
-__templates__.
+In other words Teal transforms `.tl` files into a stylesheet and a bunch of
+templates. By default these templates are compiled to JavaScript (supporting
+both Node.JS and browsers) but you can also plug in other language adapters to
+compile them to PHP or whatever runtime you would like to use.
+
+The [teal-react](https://github.com/fgnass/teal-react) add-on for example
+compiles `.tl` files into React components. Adapters for [kirby](getkirby.com)
+and [WebComponents](http://webcomponents.org/) will follow soon.
 
 
 # Syntax
@@ -31,7 +44,7 @@ div {
     $title
   }
   p {
-    $text
+    $content
   }
   a {
     href = $link
@@ -67,7 +80,7 @@ is the only additional rule in this case. And as teal exactly knows where the
 H1 will end up in the DOM, it can use a very short, yet unique selector to
 target it.
 
-## Components
+## Referencing Components
 
 You can also think about a `.tl` file as kind of custom HTML element with custom
 attributes. If you use a tag name that contains at least one slash, teal will
@@ -77,11 +90,10 @@ interpret it as path, resolve it and render the specified file:
 div {
   /el/teaser {
     title = "Hello world"
-    text = "Lorem ipsum"
+    content = "Lorem ipsum"
   }
   ./foo {
     title = "Another component"
-    text = "Lorem ipsum dolor sit amet"
   }
 }
 ```
@@ -96,25 +108,42 @@ document fragments:
 }
 ```
 
-### Passing children
+### Nested content
 
 If you pass children to a component teal will expose them as `$content`.
 So the following two examples are equivalent:
+
 ```less
-./foo {
-  "Hello" b { "World!" }
-}
-```
-```less
-./foo {
+/el/teaser {
   content = {
     "Hello" b { "World!" }
   }
 }
+// this can be written as:
+
+/el/teaser {
+  "Hello" b { "World!" }
+}
 ```
 
-__Note:__ If a component does not explicitly define a `$content` placeholder
-any content is appended to the component's root element.
+### Implicit content and attributes
+
+If a component does not contain a `$content` variable any content is appended
+to the component's root element. All other unknown parameters are set as
+attributes. This allows you to style HTML elements without having to list all
+possible attributes. See how the following example does neither contain
+`$content` nor `$href`:
+
+```less
+a {
+  text-decoration: none;
+  color: inherit;
+  :hover {
+    color: teal;
+  }
+}
+```
+
 
 ### States
 
@@ -146,20 +175,104 @@ Hence the following code yields the same result:
 ./button { primary }
 ```
 
-By default Teal uses double-class selectors to target states:
+If multiple elements inside a component need to be styled when a certain state
+is active, just repeat the same modifier and teal will figure out the
+appropriate selectors:
 
-```css
-.el-button.primary {
-  background: blue;
-  font-size: 2em;
-}
-.el-button.danger {
-  background: red;
+```less
+button {
+  .primary {
+    background: blue;
+  }
+  i {
+    .primary {
+      color: green
+    }
+  }
 }
 ```
 
-__Note:__ State names must not contain dashes to prevent name clashes with
-components.
+### Disambiguation
+
+Sometimes it can be hard for teal to generate meaningful selectors:
+
+```less
+div {
+  div {
+    float: left;
+    $left
+  }
+  div {
+    float: right;
+    $right
+  }
+}
+```
+
+Teal could use `nth-child()` to select the inner divs but in order to stay
+compatible with IE < 9 Teal assigns _synthetic classes_ instead, something like
+`.el-teaser > .div-1`. To help Teal generate better class names you can provide
+_naming hints_ like this:
+
+```less
+div {
+  div.left {
+    ...
+  }
+  div.right {
+    ...
+  }
+}
+```
+
+### Constants
+
+You can define constants for colors or sizes using the `@const` directive.
+You just have to make sure that the `.tl` file in which the constants are
+defined is processed _before_ the files in which they are used. The easiest
+way to guarantee this is to put `@const` into a file placed in Teal's root
+directory.
+
+```css
+@const {
+  error: #f00;
+  gutter: 12px;
+  desktop: (min-width:960px);
+}
+```
+
+### Media Queries
+
+With Teal you can define all media-specific styles right next to the rest of
+a component's style declarations:
+
+```less
+a {
+  display: block;
+  @media $desktop {
+    float: left;
+    width: 50%;
+  }
+}
+```
+
+When building the CSS, Teal will collect all identical media queries and
+group them in one single `@media` block at the end of the stylesheet.
+
+### Mixins
+
+
+
+### Directives
+
+### Inline animations
+
+### Macros and functions
+
+### Multiline Strings
+
+
+
 
 ### Assets
 

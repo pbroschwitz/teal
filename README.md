@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/teal-lang/teal.svg?branch=master)](https://travis-ci.org/teal-lang/teal)
-
 # Teal – Stylesheets without selectors
+
+[![Build Status](https://travis-ci.org/teal-lang/teal.svg?branch=master)](https://travis-ci.org/teal-lang/teal)
 
 Teal is a new take on CSS that throws away the concept of selectors to make
 it easy to reason about the styles that get actually applied.
@@ -318,15 +318,18 @@ app.get('/', function(req, res) {
 
 # Add-Ons
 
-* [teal-browserify](https://github.com/fgnass/teal-browserify) to use teal
+* [teal-browserify](https://github.com/teal-lang/teal-browserify) to use Teal
   components in browser apps and/or to easily create browserify bundles from
   within a .tl file.
 
-* [teal-instant](https://github.com/fgnass/teal-instant) to live-reload the
+* [teal-instant](https://github.com/teal-lang/teal-instant) to live-reload the
   HTML/CSS when a file is modified
 
-* [teal-autoprefixer](https://github.com/fgnass/teal-autoprefixer) to
+* [teal-autoprefixer](https://github.com/teal-lang/teal-autoprefixer) to
   automatically add vendor prefixes
 
-* [teal-react](https://github.com/fgnass/teal-react) to compile .tl files into
-  React components
+* [teal-react](https://github.com/teal-lang/teal-react) to compile .tl files
+  into React components
+
+* [teal-markdown](https://github.com/teal-lang/teal-markdown) to render
+  markdown text

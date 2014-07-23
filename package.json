@@ -1,6 +1,6 @@
 {
   "name": "teal",
-  "version": "0.3",
+  "version": "0.3.0",
   "description": "stylesheets without selectors",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fgnass/teal.git"
+    "url": "https://github.com/teal-lang/teal.git"
   },
   "author": "Felix Gnass",
   "license": "MIT",

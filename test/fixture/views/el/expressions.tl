@@ -6,5 +6,8 @@ div {
   b { (true && 42) }
   b { length([1,2,3]) }
   b { length($content) }
-  b { ($bar.foo) }
+  b { $bar.foo }
+  b { $getBar().foo }
+  b { ´Hello {{$foo}}!´ }
+  b { ´Twentythree: {{ $getBar().foo }}´ }
 }

@@ -16,6 +16,9 @@ describe('all', function() {
     foo: 42,
     "foo-bar": 23,
     bar: { foo: 23 },
+    getBar: function() {
+      return { foo: 23 }
+    },
     author: {
       name: {
         first: 'Felix',

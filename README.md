@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/teal-lang/teal.svg?branch=master)](https://travis-ci.org/teal-lang/teal)
+
 # Teal – Stylesheets without selectors
 
 Teal is a new take on CSS that throws away the concept of selectors to make

@@ -34,7 +34,7 @@ also contains placeholders which tell teal where content should be placed:
 
 Here is a simple example, lets call it `el/teaser.tl`:
 
-```less
+```css
 div {
   background: #888;
   padding: 1em;
@@ -85,7 +85,7 @@ You can also think about a `.tl` file as kind of custom HTML element with custom
 attributes. If you use a tag name that contains at least one slash, teal will
 interpret it as path, resolve it and render the specified file:
 
-```less
+```js
 div {
   /el/teaser {
     title = "Hello world"
@@ -100,7 +100,7 @@ div {
 You can not only pass primitive values as attributes but also other elements or
 document fragments:
 
-```less
+```js
 ./two-cols {
   left: /el/teaser { title = "Left" }
   right: /el/teaser { title = "Right" }
@@ -112,7 +112,7 @@ document fragments:
 If you pass children to a component teal will expose them as `$content`.
 So the following two examples are equivalent:
 
-```less
+```js
 /el/teaser {
   content = {
     "Hello" b { "World!" }
@@ -133,7 +133,7 @@ attributes. This allows you to style HTML elements without having to list all
 possible attributes. See how the following example does neither contain
 `$content` nor `$href`:
 
-```less
+```css
 a {
   text-decoration: none;
   color: inherit;
@@ -148,7 +148,7 @@ a {
 
 A component may define different states (aka modifiers):
 
-```less
+```css
 button {
   background: gray;
   .primary {
@@ -163,14 +163,14 @@ button {
 
 To activate a state just pass a truthy parameter with the name of the state:
 
-```less
+```js
 ./button { primary=true }
 ```
 
 __Note:__ If you omit the value and just specify a name `true` is implied.
 Hence the following code yields the same result:
 
-```less
+```js
 ./button { primary }
 ```
 
@@ -178,7 +178,7 @@ If multiple elements inside a component need to be styled when a certain state
 is active, just repeat the same modifier and teal will figure out the
 appropriate selectors:
 
-```less
+```css
 button {
   .primary {
     background: blue;
@@ -213,7 +213,7 @@ compatible with IE < 9 Teal assigns _synthetic classes_ instead, something like
 `.el-teaser > .div-1`. To help Teal generate better class names you can provide
 _naming hints_ like this:
 
-```less
+```js
 div {
   div.left {
     ...
@@ -245,7 +245,7 @@ directory.
 With Teal you can define all media-specific styles right next to the rest of
 a component's style declarations:
 
-```less
+```css
 a {
   display: block;
   @media $desktop {
@@ -279,7 +279,7 @@ If a component uses an external asset, Teal resolves the path relative to the
 `.tl` file and (if used with express) exposes it. This is done by using the
 built-in `src()` function:
 
-```less
+```js
 div {
   img { src=src("./rainbow.gif") }
   background: url(src("./sky.jpg"));

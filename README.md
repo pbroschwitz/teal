@@ -65,7 +65,7 @@ This, when rendered, will generate the following HTML structure:
 ```
 
 Also the following rules will be added to the generated stylesheet:
-
+x
 ```css
 .el-teaser {
   background: #888;
@@ -84,8 +84,8 @@ target it.
 ## Referencing Components
 
 You can also think about a `.tl` file as kind of custom HTML element with custom
-attributes. If you use a tag name that contains at least one slash, Teal will
-interpret it as path, resolve it and render the specified file:
+attributes. If you use a tag name that starts with either `/`, `./` or `../`
+Teal will interpret it as path, resolve it and render the specified file:
 
 ```
 div {
@@ -99,8 +99,8 @@ div {
 }
 ```
 
-You can not only pass primitive values as attributes but also other elements or
-document fragments:
+__Note:__ You can not only pass primitive values as attributes but also other
+elements or document fragments:
 
 ```
 ./two-cols {
@@ -127,12 +127,12 @@ So the following two examples are equivalent:
 }
 ```
 
-### Implicit content and attributes
+### Implicit children and attributes
 
 If a component does not contain a `$children` variable all nested content is
 appended to the component's root element. All other unknown parameters are set
-as attributes. This allows you to style HTML elements without having to list all
-possible attributes. See how the following example does neither contain
+as HTML attributes. This allows you to style HTML elements without having to
+list all possible attributes. See how the following example does neither contain
 `$children` nor `$href`:
 
 ```
@@ -144,7 +144,6 @@ a {
   }
 }
 ```
-
 
 ### States
 

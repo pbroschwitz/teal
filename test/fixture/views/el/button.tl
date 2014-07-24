@@ -14,5 +14,5 @@ button {
       color: #000
     }
   }
-  $content
+  $children
 }

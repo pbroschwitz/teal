@@ -1,3 +1,3 @@
 ul {
-  @each $item in $content li { $item }
+  @each $item in $children li { $item }
 }

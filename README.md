@@ -5,8 +5,8 @@
 Teal is a new take on CSS that throws away the concept of selectors to make
 it easy to reason about the styles that get actually applied.
 
-With teal, stylesheets turn into an implementation detail: It feels as if you
-were writing inline styles (just with a much nicer syntax) and teal converts
+With Teal, stylesheets turn into an implementation detail: It feels as if you
+were writing inline styles (just with a much nicer syntax) and Teal converts
 them into rules and class names for you.
 
 This allows you to split your whole frontend into separate components that are
@@ -31,8 +31,8 @@ and [WebComponents](http://webcomponents.org/) will follow soon.
 
 # Syntax
 
-A teal file looks a lot like LESS or SCSS at the first glance – except that it
-also contains placeholders which tell teal where content should be placed:
+A Teal file looks a lot like LESS or SCSS at the first glance – except that it
+also contains placeholders which tell Teal where content should be placed:
 
 Here is a simple example, lets call it `el/teaser.tl`:
 
@@ -45,7 +45,7 @@ div {
     $title
   }
   p {
-    $content
+    $children
   }
   a {
     href = $link
@@ -77,21 +77,21 @@ Also the following rules will be added to the generated stylesheet:
 ```
 
 Since there are no styles specified for the `a` and the `p` element, the `h1`
-is the only additional rule in this case. And as teal exactly knows where the
+is the only additional rule in this case. And as Teal exactly knows where the
 H1 will end up in the DOM, it can use a very short, yet unique selector to
 target it.
 
 ## Referencing Components
 
 You can also think about a `.tl` file as kind of custom HTML element with custom
-attributes. If you use a tag name that contains at least one slash, teal will
+attributes. If you use a tag name that contains at least one slash, Teal will
 interpret it as path, resolve it and render the specified file:
 
 ```
 div {
   /el/teaser {
     title = "Hello world"
-    content = "Lorem ipsum"
+    children = "Lorem ipsum"
   }
   ./foo {
     title = "Another component"
@@ -104,19 +104,19 @@ document fragments:
 
 ```
 ./two-cols {
-  left: /el/teaser { title = "Left" }
-  right: /el/teaser { title = "Right" }
+  left = /el/teaser { title = "Left" }
+  right = /el/teaser { title = "Right" }
 }
 ```
 
 ### Nested content
 
-If you pass children to a component teal will expose them as `$content`.
+If you pass children to a component Teal will expose them as `$children`.
 So the following two examples are equivalent:
 
 ```
 /el/teaser {
-  content = {
+  children = {
     "Hello" b { "World!" }
   }
 }
@@ -129,11 +129,11 @@ So the following two examples are equivalent:
 
 ### Implicit content and attributes
 
-If a component does not contain a `$content` variable any content is appended
-to the component's root element. All other unknown parameters are set as
-attributes. This allows you to style HTML elements without having to list all
+If a component does not contain a `$children` variable all nested content is
+appended to the component's root element. All other unknown parameters are set
+as attributes. This allows you to style HTML elements without having to list all
 possible attributes. See how the following example does neither contain
-`$content` nor `$href`:
+`$children` nor `$href`:
 
 ```
 a {
@@ -177,7 +177,7 @@ Hence the following code yields the same result:
 ```
 
 If multiple elements inside a component need to be styled when a certain state
-is active, just repeat the same modifier and teal will figure out the
+is active, just repeat the same modifier and Teal will figure out the
 appropriate selectors:
 
 ```
@@ -195,7 +195,7 @@ button {
 
 ### Disambiguation
 
-Sometimes it can be hard for teal to generate meaningful selectors:
+Sometimes it can be hard for Teal to generate meaningful selectors:
 
 ```
 div {
@@ -304,7 +304,7 @@ var app = express()
 app.use(tl)
 
 app.get('/', function(req, res) {
-  res.render('page', { title: 'Hello', content: 'Hello World.' })
+  res.render('page', { title: 'Hello', children: 'Hello World.' })
 })
 ```
 

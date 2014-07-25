@@ -25,8 +25,9 @@ both Node.JS and browsers) but you can also plug in other language adapters to
 compile them to PHP or whatever runtime you would like to use.
 
 The [teal-react](https://github.com/fgnass/teal-react) add-on for example
-compiles `.tl` files into React components. Adapters for [kirby](getkirby.com)
-and [WebComponents](http://webcomponents.org/) will follow soon.
+compiles `.tl` files into React components. Adapters for
+[kirby](http://getkirby.com) and [wintersmith](http://wintersmith.io) will
+follow soon.
 
 
 # Syntax

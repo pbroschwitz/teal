@@ -1,3 +1,3 @@
 div {
-  --{ Hello {{$world}} }--
+  comment('Hello World')
 }

@@ -7,6 +7,7 @@ div {
   b { length([1,2,3]) }
   b { length($children) }
   b { $bar.foo }
+  b { $bar.baz() }
   b { $getBar().foo }
   b { ´Hello {{$foo}}!´ }
   b { ´Twentythree: {{ $getBar().foo }}´ }

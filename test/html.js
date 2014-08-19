@@ -15,7 +15,10 @@ describe('all', function() {
     world: 'World',
     foo: 42,
     "foo-bar": 23,
-    bar: { foo: 23 },
+    bar: {
+      foo: 23,
+      baz: function() { return 42 }
+    },
     getBar: function() {
       return { foo: 23 }
     },

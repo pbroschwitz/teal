@@ -20,6 +20,10 @@ describe('teal/css', function() {
     css('anon.tl', '.el-cols > .div-1{float:left;width:50%;}.el-cols > .div-2{float:right;width:50%;}.el-anon_p-1{color:red;}.el-anon_p-2{color:green;}')
   })
 
+  it('should style nested elements', function() {
+    css('nested-style.tl', '.el-section{background:teal;}.el-section > div{margin:0 auto;}.el-nested-style_div-1{float:left;}.el-nested-style_div-2{float:right;}.el-nested-style_a{color:#fff;}.el-nested-style_bang{color:coral;}')
+  })
+
   it('should call functions', function() {
     css('func.tl', '.el-a{color:#000;}.el-func{background:url("/assets/el/func.html#foo");font:1em/1.2 serif;}')
   })

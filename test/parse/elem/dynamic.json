@@ -1,0 +1,13 @@
+{
+  "type": "element",
+  "name": {
+    "type": "ternary",
+    "expression": {
+      "type": "variable",
+      "name": "href"
+    },
+    "truthy": { "type": "string", "value": "a" },
+    "falsy": { "type": "string", "value": "button" }
+  },
+  "declarations": []
+}

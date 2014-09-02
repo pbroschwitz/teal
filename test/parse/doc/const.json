@@ -1,0 +1,16 @@
+{
+  "type": "root",
+  "root": null,
+  "settings": [
+    {
+      "type": "const",
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "font-color",
+          "value": [ "#333" ]
+        }
+      ]
+    }
+  ]
+}

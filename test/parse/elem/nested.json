@@ -1,0 +1,45 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    { "type": "string", "value": "Hello" },
+    {
+      "type": "element",
+      "name": {
+        "type": "ternary",
+        "expression": {
+          "type": "variable",
+          "name": "href"
+        },
+        "truthy": { "type": "string", "value": "a" },
+        "falsy": { "type": "string", "value": "button" }
+      },
+      "declarations": [
+        { "type": "string", "value": "World" },
+        {
+          "type": "declaration",
+          "name": "background",
+          "value": [ "teal" ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "name": "div",
+      "class": "foo",
+      "declarations": [{
+        "type": "string",
+        "value": "foo"
+       }]
+    },
+    {
+      "type": "element",
+      "name": "div",
+      "class": "bar",
+      "declarations": [{
+        "type": "string",
+        "value": "bar"
+      }]
+    }
+  ]
+}

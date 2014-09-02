@@ -1,0 +1,27 @@
+{
+  "type": "root",
+  "root": null,
+  "settings": [
+    {
+      "type": "font",
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "font-family",
+          "value": [ "foo" ]
+        },
+        {
+          "type": "declaration",
+          "name": "src",
+          "value": [
+            {
+              "type": "call",
+              "callee": "url",
+              "arguments": [ { "type": "value", "tokens": [ "./foo.ttf" ] } ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

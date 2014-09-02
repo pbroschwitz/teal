@@ -1,0 +1,60 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "declaration",
+      "name": "color",
+      "value": [ "white" ]
+    },
+    {
+      "type": "declaration",
+      "name": "background",
+      "value": [ "teal" ]
+    },
+    {
+      "type": "style",
+      "selectors": [ ":hover", ":active" ],
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "background",
+          "value": [ "coral", "\n  " ]
+        }
+      ]
+    },
+    {
+      "type": "style",
+      "selectors": [ { "state": "big" } ],
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "font-size",
+          "value": [ 4, "em" ]
+        }
+      ]
+    },
+    {
+      "type": "style",
+      "selectors": [ "[disabled]" ],
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "background",
+          "value": [ "gray" ]
+        }
+      ]
+    },
+    {
+      "type": "style",
+      "selectors": [ "*" ],
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "color",
+          "value": [ "inherit" ]
+        }
+      ]
+    }
+  ]
+}

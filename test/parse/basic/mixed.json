@@ -1,0 +1,22 @@
+{
+  "type": "element",
+  "name": "textarea",
+  "declarations": [
+    {
+      "type": "attribute",
+      "name": "name",
+      "value": { "type": "string", "value": "foo" }
+    },
+    {
+      "type": "attribute",
+      "name": "disabled",
+      "value": true
+    },
+    {
+      "type": "declaration",
+      "name": "background",
+      "value": [ "teal" ]
+    },
+    { "type": "string", "value": "Hello World" }
+  ]
+}

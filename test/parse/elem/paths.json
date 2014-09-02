@@ -1,0 +1,39 @@
+{
+  "type": "element",
+  "name": {
+    "type": "path",
+    "path": "teal-foo/teaser"
+  },
+  "declarations": [
+    {
+      "type": "attribute",
+      "name": "image",
+      "value": {
+        "type": "path",
+        "path": "./image"
+      }
+    },
+    {
+      "type": "block",
+      "content": []
+    },
+    { "type": "string", "value": "Hello" },
+    {
+      "type": "element",
+      "name": {
+        "type": "path",
+        "path": "/foo/bar"
+      },
+      "declarations": []
+    },
+    123,
+    {
+      "type": "element",
+      "name": {
+        "type": "path",
+        "path": "../world"
+      },
+      "declarations": []
+    }
+  ]
+}

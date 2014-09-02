@@ -1,0 +1,32 @@
+{
+  "type": "root",
+  "root": {
+    "type": "mixin",
+    "declarations": [
+      {
+        "type": "declaration",
+        "name": "background",
+        "value": [
+          {
+            "type" : "variable",
+            "name" : "bg-color"
+          }
+        ]
+      },
+      {
+        "type": "style",
+        "selectors" : [ ":after" ],
+        "declarations": [
+          {
+            "type" : "declaration",
+            "name" : "content",
+            "value" : [
+              { "type": "string", "value": "in the mix" },
+              "\n  "
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

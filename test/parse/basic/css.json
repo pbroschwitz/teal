@@ -1,0 +1,16 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "declaration",
+      "name": "background",
+      "value": [ "teal" ]
+    },
+    {
+      "type": "declaration",
+      "name": "color",
+      "value": [ "#fff" ]
+    }
+  ]
+}

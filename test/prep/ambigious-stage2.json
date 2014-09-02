@@ -1,0 +1,127 @@
+{
+  "type": "root",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "class": "ambigious",
+    "absolute": true,
+    "declarations": [
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo"
+        },
+        "declarations": [
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "name": "color",
+                "value": ["red"]
+              }
+            ],
+            "states": [],
+            "tag": "b",
+            "styled": true,
+            "class": "ambigious_b_1",
+            "absolute": true
+          },
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "name": "color",
+                "value": ["green"]
+              }
+            ],
+            "states": [],
+            "tag": "b",
+            "styled": true,
+            "class": "ambigious_b_2",
+            "absolute": true
+          },
+          {
+            "type": "element",
+            "name": {
+              "type": "path",
+              "path": "./el/h1"
+            },
+            "declarations": [
+              {
+                "type": "element",
+                "name": "b",
+                "declarations": [
+                  {
+                    "type": "declaration",
+                    "name": "color",
+                    "value": ["blue"]
+                  }
+                ],
+                "states": [],
+                "tag": "b",
+                "styled": true,
+                "class": "ambigious_b",
+                "absolute": true
+              }
+            ],
+            "states": [],
+            "tag": "h1",
+            "tags": {
+              "count": {
+                "b": 1
+              },
+              "styled": {
+                "b": true
+              }
+            }
+          }
+        ],
+        "states": [],
+        "tag": "div",
+        "tags": {
+          "count": {
+            "b": 2,
+            "h1": 1
+          },
+          "styled": {
+            "b": true
+          }
+        }
+      },
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo"
+        },
+        "declarations": [
+          {
+            "type": "declaration",
+            "name": "color",
+            "value": ["yellow"]
+          }
+        ],
+        "states": [],
+        "tag": "div",
+        "styled": true,
+        "class": "div_1"
+      }
+    ],
+    "states": [],
+    "tag": "div",
+    "tags": {
+      "count": {
+        "div": 2
+      },
+      "styled": {
+        "div": true
+      }
+    }
+  },
+  "states": []
+}

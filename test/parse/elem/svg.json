@@ -1,0 +1,15 @@
+{
+  "type": "element",
+  "name": { "type": "string", "value": "svg:path" },
+  "declarations": [
+    {
+      "type": "attribute",
+      "name": "path",
+      "value": {
+        "type": "call",
+        "callee": "read",
+        "arguments": [ { "type": "string", "value": "./path.txt" } ]
+      }
+    }
+  ]
+}

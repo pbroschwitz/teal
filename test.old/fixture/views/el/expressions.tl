@@ -1,0 +1,14 @@
+div {
+  b { ("3 > 2: " + (3 > 2)) }
+  b { ($foo == 42? "twentyfour" : $foo) }
+  b { ($foo - 2) }
+  b { ($foo - $foo-bar) }
+  b { (true && 42) }
+  b { length($children) }
+  b { length({ "1" }) }
+  b { $bar.foo }
+  b { $bar.baz() }
+  b { $getBar().foo }
+  b { ´Hello {{$foo}}!´ }
+  b { ´Twentythree: {{ $getBar().foo }}´ }
+}

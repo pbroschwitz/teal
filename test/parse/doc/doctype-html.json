@@ -1,0 +1,9 @@
+{
+  "type": "root",
+  "doctype": "html",
+  "root": {
+    "type": "element",
+    "name": "html",
+    "declarations": []
+  }
+}

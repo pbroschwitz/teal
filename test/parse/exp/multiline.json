@@ -1,0 +1,24 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "value",
+      "tokens": [
+        "\n  This is a multiline ",
+        {
+          "type": "variable",
+          "name": "string"
+        },
+        "\n  whith ",
+        {
+          "type": "binary",
+          "left": 42,
+          "op": "-",
+          "right": 40
+        },
+        " nested expressions.\n"
+      ]
+    }
+  ]
+}

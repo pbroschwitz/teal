@@ -1,0 +1,36 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    1,
+    2,
+    { "type": "binary", "left": 1, "op": "+", "right": 2 },
+    {
+      "type": "ternary",
+      "expression": { "type": "binary", "left": 3, "op": ">", "right": 2 },
+      "truthy": 3,
+      "falsy": 2
+    },
+    { "type": "unary", "op": "!", "expression": {
+        "type": "group",
+        "expression": { "type": "binary", "left": 2, "op": ">", "right": 3 }
+      }
+    },
+    { "type": "binary", "left": { "type": "variable", "name": "foo" }, "op": "-", "right": 3 },
+    {
+      "type": "call",
+      "callee": {
+        "type": "member",
+        "object": { "type": "variable", "name": "foo-bar" },
+        "property": "boo"
+      },
+      "arguments": [ 23 ]
+    },
+    {
+      "type": "member",
+      "object": { "type": "variable", "name": "foo-bar" },
+      "property": "boo"
+    },
+    { "type": "group", "expression": 23 }
+  ]
+}

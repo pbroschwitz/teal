@@ -1,0 +1,41 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+     "type": "declaration",
+     "name": "float",
+     "value": [ "left" ]
+    },
+    {
+      "type": "media",
+      "media": [ "sheet:oldie" ],
+      "sheet": "oldie",
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "float",
+          "value": [ "none" ]
+        }
+      ]
+    },
+    {
+      "type": "style",
+      "selectors": [ ":hover" ],
+      "declarations": [
+        {
+          "type": "media",
+          "media": [ "sheet:oldie" ],
+          "sheet": "oldie",
+          "declarations": [
+            {
+              "type": "declaration",
+              "name": "background",
+              "value": [ "red" ]
+            }
+          ]
+        }
+      ]
+     }
+   ]
+}

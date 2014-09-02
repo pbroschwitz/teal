@@ -1,0 +1,60 @@
+[
+  {
+    "type": "keyframes",
+    "name": "fade",
+    "keyframes": [
+      {
+        "type": "keyframe",
+        "values": [
+          "100%"
+        ],
+        "declarations": [
+          {
+            "type": "declaration",
+            "property": "opacity",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "rule",
+    "selectors": [
+      ".e-foo"
+    ],
+    "declarations": [
+      {
+        "type": "declaration",
+        "property": "background",
+        "value": "teal"
+      }
+    ]
+  },
+  {
+    "type": "rule",
+    "selectors": [
+      ".e-foo > h1"
+    ],
+    "declarations": [
+      {
+        "type": "declaration",
+        "property": "font-size",
+        "value": "2em"
+      }
+    ]
+  },
+  {
+    "type": "rule",
+    "selectors": [
+      ".l-bar"
+    ],
+    "declarations": [
+      {
+        "type": "declaration",
+        "property": "float",
+        "value": "left"
+      }
+    ]
+  }
+]

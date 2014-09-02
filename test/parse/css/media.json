@@ -1,0 +1,39 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+     "type" : "declaration",
+     "name" : "padding",
+     "value" : [ 1, "em" ]
+    },
+    {
+      "type" : "media",
+      "media" : [ "print" ],
+      "declarations" : [
+        {
+          "type" : "declaration",
+          "name" : "background",
+          "value" : [ "none" ]
+        }
+      ]
+    },
+    {
+      "type" : "media",
+      "media" : [
+        "(min-width:",
+        600,
+        "px",
+        ")",
+        { "type": "variable", "name": "desktop" }
+      ],
+      "declarations" : [
+        {
+          "type" : "declaration",
+          "name" : "margin",
+          "value" : [ 0, " ", "auto" ]
+        }
+      ]
+     }
+   ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "each",
+      "expression": {
+        "name": "foo",
+        "type": "variable"
+      },
+      "variable": {
+        "type": "variable",
+        "name": "f"
+      },
+      "body": {
+        "type": "element",
+        "name": "li",
+        "declarations": [
+          {
+            "type": "call",
+            "callee": "a",
+            "arguments": [
+              { "type": "variable", "name": "f" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

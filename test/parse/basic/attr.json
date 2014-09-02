@@ -1,0 +1,21 @@
+{
+  "type": "element",
+  "name": "input",
+  "declarations": [
+    {
+      "type": "attribute",
+      "name": "name",
+      "value": { "type": "string", "value": "foo" }
+    },
+    {
+      "type": "attribute",
+      "name": "disabled",
+      "value": true
+    },
+    {
+      "type": "attribute",
+      "name": "value",
+      "value": { "type": "string", "value": "bar" }
+    }
+  ]
+}

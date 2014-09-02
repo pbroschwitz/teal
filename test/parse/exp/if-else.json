@@ -1,0 +1,25 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "if",
+      "condition": {
+        "type": "variable",
+        "name": "foo"
+      },
+      "consequent": { "type": "string", "value": "foo!" },
+      "alternate": {
+        "type": "block",
+        "content": [
+          {
+            "type": "element",
+            "name": "h1",
+            "declarations": [ { "type": "string", "value": "sorry" } ]
+          },
+          { "type": "string", "value": "no foo for you" }
+        ]
+      }
+    }
+  ]
+}

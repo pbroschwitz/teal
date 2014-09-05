@@ -27,7 +27,6 @@ function Context(teal, files) {
 util.inherits(Context, EventEmitter)
 
 Context.prototype.parse = function(f) {
-  console.log("PARSING", f)
   if (Array.isArray(f)) return f.map(this.parse, this)
   if (f in this.parsed) return this.parsed[f]
 

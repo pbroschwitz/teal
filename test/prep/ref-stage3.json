@@ -12,13 +12,11 @@
           "type": "path",
           "path": "./el/mixin"
         },
+        "path": "<root>/el/mixin.tl",
         "attributes": [
           { "type": "attribute",
             "name": "bg",
-            "value": {
-              "type": "string",
-              "value": "red"
-            }
+            "value": "red"
           }
         ],
         "states": [],
@@ -34,8 +32,9 @@
           "type": "path",
           "path": "./el/h1"
         },
+        "path": "<root>/el/h1.tl",
         "children": [
-          { "type": "string", "value": "Hello world" }
+          "Hello world"
         ],
         "states": [],
         "tag": "h1"
@@ -46,10 +45,17 @@
           "type": "path",
           "path": "./el/js"
         },
+        "path": "<root>/el/js.js",
         "states": []
+      },
+      {
+        "type": "variable",
+        "name": "children"
       }
     ],
     "styled": true,
+    "absolute": true,
+    "class": "ref",
     "tags": {
       "count": {
         "h1": 1
@@ -59,5 +65,6 @@
     },
     "states": []
   },
-  "states": []
+  "states": [],
+  "vars": [ "children" ]
 }

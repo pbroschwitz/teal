@@ -16,6 +16,8 @@ function template(f) {
   return f.replace('.html', '.tl')
 }
 
+var tl = teal({ root: __dirname, throwOnError: true })
+tl.init()
 //tl.process([settings].concat(files.map(template)))
 
 files.forEach(function(f) {

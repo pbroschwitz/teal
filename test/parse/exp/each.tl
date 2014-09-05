@@ -1,5 +1,3 @@
 div {
-  @each $f in $foo li {
-    a($f)
-  }
+  @each $f in $foo /e/a($f)
 }

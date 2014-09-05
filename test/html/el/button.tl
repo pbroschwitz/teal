@@ -1,2 +1,5 @@
 button {
+  .primary {
+    background: lime;
+  }
 }

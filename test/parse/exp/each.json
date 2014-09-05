@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "children": [
     {
       "type": "each",
       "expression": {
@@ -13,15 +13,15 @@
         "name": "f"
       },
       "body": {
-        "type": "element",
-        "name": "li",
-        "declarations": [
+        "type": "call",
+        "callee": {
+          "type": "path",
+          "path": "/e/a"
+        },
+        "arguments" : [
           {
-            "type": "call",
-            "callee": "a",
-            "arguments": [
-              { "type": "variable", "name": "f" }
-            ]
+            "type" : "variable",
+            "name" : "f"
           }
         ]
       }

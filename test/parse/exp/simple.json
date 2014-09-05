@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "children": [
     1,
     2,
     { "type": "binary", "left": 1, "op": "+", "right": 2 },
@@ -31,6 +31,27 @@
       "object": { "type": "variable", "name": "foo-bar" },
       "property": "boo"
     },
-    { "type": "group", "expression": 23 }
+    { "type": "group", "expression": 23 },
+    {
+      "type": "call",
+      "callee": "foo",
+      "arguments": [
+        {
+          "type": "string",
+          "value": "bar"
+        },
+        123,
+        {
+          "type": "block",
+          "attributes": [
+            {
+              "type": "attribute",
+              "name": "foo",
+              "value": 23
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

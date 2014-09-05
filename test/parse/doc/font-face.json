@@ -1,5 +1,6 @@
 {
   "type": "root",
+  "file": "<root>/font-face.tl",
   "root": null,
   "settings": [
     {
@@ -18,6 +19,27 @@
               "type": "call",
               "callee": "url",
               "arguments": [ { "type": "value", "tokens": [ "./foo.ttf" ] } ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "font",
+      "declarations": [
+        {
+          "type": "declaration",
+          "name": "font-family",
+          "value": [ "bar" ]
+        },
+        {
+          "type": "declaration",
+          "name": "src",
+          "value": [
+            {
+              "type": "call",
+              "callee": "url",
+              "arguments": [ { "type": "value", "tokens": [ "./bar.ttf" ] } ]
             }
           ]
         }

@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "children": [
     {
       "type": "if",
       "condition": {
@@ -11,11 +11,11 @@
       "consequent": { "type": "string", "value": "foo!" },
       "alternate": {
         "type": "block",
-        "content": [
+        "children": [
           {
             "type": "element",
             "name": "h1",
-            "declarations": [ { "type": "string", "value": "sorry" } ]
+            "children": [ { "type": "string", "value": "sorry" } ]
           },
           { "type": "string", "value": "no foo for you" }
         ]

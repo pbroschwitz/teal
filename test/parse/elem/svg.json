@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": { "type": "string", "value": "svg:path" },
-  "declarations": [
+  "attributes": [
     {
       "type": "attribute",
       "name": "path",

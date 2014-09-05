@@ -1,5 +1,6 @@
 {
   "type": "root",
+  "file": "<root>/style.tl",
   "root": {
     "type": "element",
     "name": "div",
@@ -14,7 +15,6 @@
         "states": ["foo"]
       }
     ],
-    "attributes": [],
     "children": [
       {
         "type": "element",
@@ -28,9 +28,7 @@
           }
         ],
         "states": [ "bar" ],
-        "tag": "h1",
-        "attributes": [],
-        "children": []
+        "tag": "h1"
       },
       {
         "type": "element",
@@ -46,7 +44,6 @@
         "tag": "h1",
         "styled": true,
         "class": "h1_1",
-        "attributes": [] ,
         "children": [
           {
             "type": "variable",

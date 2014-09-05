@@ -7,4 +7,5 @@ div {
   (23) // calls the member from the line above
   $foo-bar->boo;
   (23) // just a group expression
+  foo("bar", 123, { foo=23 })
 }

@@ -3,4 +3,5 @@
   :after {
     content: "in the mix"
   }
+  "hello"
 }

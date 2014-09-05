@@ -50,6 +50,8 @@
       }
     ],
     "styled": true,
+    "absolute": true,
+    "class": "ref",
     "tags": {
       "count": {
         "h1": 1

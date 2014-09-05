@@ -1,5 +1,6 @@
 {
   "type": "root",
+  "file": "<root>/style.tl",
   "root": {
     "type": "element",
     "name": "div",
@@ -12,7 +13,9 @@
         "selectors": [{ "state": "foo" }],
         "declarations": [],
         "states": ["foo"]
-      },
+      }
+    ],
+    "children": [
       {
         "type": "element",
         "name": "h1",
@@ -35,11 +38,13 @@
             "type": "declaration",
             "name": "margin-top",
             "value": [0]
-          },
+          }
+        ],
+        "children": [
           {
-             "type": "variable",
-             "name": "children"
-           }
+            "type": "variable",
+            "name": "children"
+          }
         ],
         "states": [],
         "styled": true

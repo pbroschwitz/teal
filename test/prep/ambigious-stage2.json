@@ -1,18 +1,19 @@
 {
   "type": "root",
+  "file": "<root>/ambigious.tl",
   "root": {
     "type": "element",
     "name": "div",
     "class": "ambigious",
     "absolute": true,
-    "declarations": [
+    "children": [
       {
         "type": "element",
         "name": {
           "type": "path",
           "path": "./el/foo"
         },
-        "declarations": [
+        "children": [
           {
             "type": "element",
             "name": "b",
@@ -20,7 +21,7 @@
               {
                 "type": "declaration",
                 "name": "color",
-                "value": ["red"]
+                "value": [ "red" ]
               }
             ],
             "states": [],
@@ -51,7 +52,7 @@
               "type": "path",
               "path": "./el/h1"
             },
-            "declarations": [
+            "children": [
               {
                 "type": "element",
                 "name": "b",

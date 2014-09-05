@@ -1,9 +1,9 @@
 {
   "type": "root",
+  "file": "<root>/doctype-html.tl",
   "doctype": "html",
   "root": {
     "type": "element",
-    "name": "html",
-    "declarations": []
+    "name": "html"
   }
 }

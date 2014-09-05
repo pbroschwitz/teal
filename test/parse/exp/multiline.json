@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "children": [
     {
       "type": "value",
       "tokens": [

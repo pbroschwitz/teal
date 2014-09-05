@@ -1,7 +1,14 @@
 {
   "type": "root",
+  "file": "<root>/mixin.tl",
   "root": {
     "type": "mixin",
+    "children": [
+      {
+        "type": "string",
+        "value": "hello"
+      }
+    ],
     "declarations": [
       {
         "type": "declaration",

@@ -1,5 +1,6 @@
 {
   "type": "root",
+  "file": "<root>/const.tl",
   "root": null,
   "settings": [
     {
@@ -9,6 +10,16 @@
           "type": "declaration",
           "name": "font-color",
           "value": [ "#333" ]
+        }
+      ],
+      "attributes": [
+        {
+          "type": "attribute",
+          "name": "desktop",
+          "value": {
+            "type": "string",
+            "value": "screen and (min-width: 400px)"
+          }
         }
       ]
     }

@@ -4,19 +4,20 @@
     "type": "path",
     "path": "teal-foo/teaser"
   },
-  "declarations": [
+  "attributes": [
     {
       "type": "attribute",
       "name": "image",
       "value": {
-        "type": "path",
-        "path": "./image"
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./image"
+        }
       }
-    },
-    {
-      "type": "block",
-      "content": []
-    },
+    }
+  ],
+  "children": [
     { "type": "string", "value": "Hello" },
     {
       "type": "element",
@@ -24,7 +25,9 @@
         "type": "path",
         "path": "/foo/bar"
       },
-      "declarations": []
+      "children": [
+        { "type": "string", "value": " world." }
+      ]
     },
     123,
     {
@@ -32,8 +35,7 @@
       "name": {
         "type": "path",
         "path": "../world"
-      },
-      "declarations": []
+      }
     }
   ]
 }

@@ -1,4 +1,5 @@
 div {
-  ./el/mixin {}
-  ./el/h1 {}
+  ./el/mixin { bg="red" }
+  ./el/h1 { "Hello world" }
+  ./el/js { }
 }

@@ -50,8 +50,11 @@
     },
     {
       "type": "declaration",
-      "name": "font-size",
-      "value": [ { "type": "variable", "name": "f1" } ]
+      "name": "font",
+      "value": [
+        { "type": "variable", "name": "f1" },
+        "/", 1.2, " ", "sans-serif", " !important"
+      ]
     }
   ]
 }

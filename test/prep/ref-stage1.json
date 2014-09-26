@@ -15,18 +15,31 @@
         "attributes": [
           { "type": "attribute",
             "name": "bg",
-            "value": {
-              "type": "string",
-              "value": "red"
-            }
+            "value": "red"
           }
         ],
-        "states": [],
-        "mixin": [{
-          "type": "declaration",
-          "name": "color",
-          "value": ["teal"]
-        }]
+        "mixin": {
+          "type": "mixin",
+          "children": [ "Hello " ],
+          "declarations": [
+            {
+              "type": "declaration",
+              "property": "color",
+              "value": [ "teal" ]
+            },
+            {
+              "type": "declaration",
+              "property": "background",
+              "value": [
+                {
+                  "type": "variable",
+                  "name": "bg"
+                }
+              ]
+            }
+          ],
+          "styled": true
+        }
       },
       {
         "type": "element",
@@ -34,19 +47,8 @@
           "type": "path",
           "path": "./el/h1"
         },
-        "children": [
-          { "type": "string", "value": "Hello world" }
-        ],
-        "states": [],
-        "tag": "h1"
-      },
-      {
-        "type": "element",
-        "name": {
-          "type": "path",
-          "path": "./el/js"
-        },
-        "states": []
+        "tag": "h1",
+        "children": [ "world" ]
       }
     ],
     "styled": true,
@@ -56,8 +58,7 @@
       },
       "styled": {
       }
-    },
-    "states": []
+    }
   },
   "states": []
 }

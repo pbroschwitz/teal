@@ -8,17 +8,23 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "font-family",
+          "property": "font-family",
           "value": [ "foo" ]
         },
         {
           "type": "declaration",
-          "name": "src",
+          "property": "src",
           "value": [
             {
-              "type": "call",
-              "callee": "url",
-              "arguments": [ { "type": "value", "tokens": [ "./foo.ttf" ] } ]
+              "type": "function",
+              "name": "url",
+              "args": [ "./foo.ttf" ]
+            },
+            " ",
+            {
+              "type": "function",
+              "name": "format",
+              "args": [ "'truetype'" ]
             }
           ]
         }
@@ -29,17 +35,17 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "font-family",
+          "property": "font-family",
           "value": [ "bar" ]
         },
         {
           "type": "declaration",
-          "name": "src",
+          "property": "src",
           "value": [
             {
-              "type": "call",
-              "callee": "url",
-              "arguments": [ { "type": "value", "tokens": [ "./bar.ttf" ] } ]
+              "type": "function",
+              "name": "url",
+              "args": [ "./bar.ttf" ]
             }
           ]
         }

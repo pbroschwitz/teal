@@ -4,7 +4,7 @@
   "declarations": [
     {
      "type": "declaration",
-     "name": "float",
+     "property": "float",
      "value": [ "left" ]
     },
     {
@@ -14,7 +14,7 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "float",
+          "property": "float",
           "value": [ "none" ]
         }
       ]
@@ -30,7 +30,7 @@
           "declarations": [
             {
               "type": "declaration",
-              "name": "background",
+              "property": "background",
               "value": [ "red" ]
             }
           ]

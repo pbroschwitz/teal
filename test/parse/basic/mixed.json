@@ -5,7 +5,7 @@
     {
       "type": "attribute",
       "name": "name",
-      "value": { "type": "string", "value": "foo" }
+      "value": "foo"
     },
     {
       "type": "attribute",
@@ -16,11 +16,9 @@
   "declarations": [
     {
       "type": "declaration",
-      "name": "background",
+      "property": "background",
       "value": [ "teal" ]
     }
   ],
-  "children": [
-    { "type": "string", "value": "Hello World" }
-  ]
+  "children": [ "Hello World" ]
 }

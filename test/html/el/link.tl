@@ -1,3 +1,3 @@
 a {
-  href='http://{{$url}}'
+  href=´http://{{$url}}´
 }

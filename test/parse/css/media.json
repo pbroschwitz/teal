@@ -4,8 +4,8 @@
   "declarations": [
     {
      "type" : "declaration",
-     "name" : "padding",
-     "value" : [ 1, "em" ]
+     "property" : "padding",
+     "value" : [ "1em" ]
     },
     {
       "type" : "media",
@@ -13,7 +13,7 @@
       "declarations" : [
         {
           "type" : "declaration",
-          "name" : "background",
+          "property" : "background",
           "value" : [ "none" ]
         }
       ]
@@ -22,16 +22,15 @@
       "type" : "media",
       "media" : [
         "(min-width:",
-        600,
-        "px",
+        "600px",
         ")",
         { "type": "variable", "name": "desktop" }
       ],
       "declarations" : [
         {
           "type" : "declaration",
-          "name" : "margin",
-          "value" : [ 0, " ", "auto" ]
+          "property" : "margin",
+          "value" : [ "0", " ", "auto" ]
         }
       ]
      }

@@ -18,16 +18,14 @@
     }
   ],
   "children": [
-    { "type": "string", "value": "Hello" },
+    "Hello",
     {
       "type": "element",
       "name": {
         "type": "path",
         "path": "/foo/bar"
       },
-      "children": [
-        { "type": "string", "value": " world." }
-      ]
+      "children": [ " world." ]
     },
     123,
     {

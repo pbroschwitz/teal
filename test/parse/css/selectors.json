@@ -4,12 +4,12 @@
   "declarations": [
     {
       "type": "declaration",
-      "name": "color",
+      "property": "color",
       "value": [ "white" ]
     },
     {
       "type": "declaration",
-      "name": "background",
+      "property": "background",
       "value": [ "teal" ]
     },
     {
@@ -18,7 +18,7 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "background",
+          "property": "background",
           "value": [ "coral", "\n  " ]
         }
       ]
@@ -29,8 +29,8 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "font-size",
-          "value": [ 4, "em" ]
+          "property": "font-size",
+          "value": [ "4em" ]
         }
       ]
     },
@@ -40,7 +40,7 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "background",
+          "property": "background",
           "value": [ "gray" ]
         }
       ]
@@ -51,7 +51,7 @@
       "declarations": [
         {
           "type": "declaration",
-          "name": "color",
+          "property": "color",
           "value": [ "inherit" ]
         }
       ]

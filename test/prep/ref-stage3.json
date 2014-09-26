@@ -5,27 +5,20 @@
     "type": "element",
     "name": "div",
     "tag": "div",
-    "children": [
+    "declarations": [
       {
-        "type": "element",
-        "name": {
-          "type": "path",
-          "path": "./el/mixin"
-        },
-        "path": "<root>/el/mixin.tl",
-        "attributes": [
-          { "type": "attribute",
-            "name": "bg",
-            "value": "red"
-          }
-        ],
-        "states": [],
-        "mixin": [{
-          "type": "declaration",
-          "name": "color",
-          "value": ["teal"]
-        }]
+        "type": "declaration",
+        "property": "color",
+        "value": "teal"
       },
+      {
+        "type": "declaration",
+        "property": "background",
+        "value": "red"
+      }
+    ],
+    "children": [
+      "Hello ",
       {
         "type": "element",
         "name": {
@@ -34,19 +27,11 @@
         },
         "path": "<root>/el/h1.tl",
         "children": [
-          "Hello world"
+          "world"
         ],
-        "states": [],
-        "tag": "h1"
-      },
-      {
-        "type": "element",
-        "name": {
-          "type": "path",
-          "path": "./el/js"
-        },
-        "path": "<root>/el/js.js",
-        "states": []
+        "tag": "h1",
+        "class": "el-h1",
+        "contentSelectors": {}
       },
       {
         "type": "variable",
@@ -54,7 +39,6 @@
       }
     ],
     "styled": true,
-    "absolute": true,
     "class": "ref",
     "tags": {
       "count": {
@@ -63,8 +47,20 @@
       "styled": {
       }
     },
-    "states": []
+    "declarations" : [
+      {
+        "type": "declaration",
+        "property": "color",
+        "value": "teal"
+      },
+      {
+        "type": "declaration",
+        "property": "background",
+        "value": "red"
+      }
+    ]
   },
   "states": [],
+  "selectors": {},
   "vars": [ "children" ]
 }

@@ -1,5 +1,7 @@
 div {
-  @if $hey ./p { $hey }
-  @else "Ho"
-  @if !$hey "ho"
+  @if true {
+    @if $hey ./p { $hey }
+    @else "Ho"
+    @if !$hey "ho"
+  }
 }

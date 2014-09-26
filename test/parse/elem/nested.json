@@ -2,7 +2,7 @@
   "type": "element",
   "name": "div",
   "children": [
-    { "type": "string", "value": "Hello" },
+    "Hello",
     {
       "type": "element",
       "name": {
@@ -11,16 +11,14 @@
           "type": "variable",
           "name": "href"
         },
-        "truthy": { "type": "string", "value": "a" },
-        "falsy": { "type": "string", "value": "button" }
+        "truthy": "a",
+        "falsy": "button"
       },
-      "children": [
-        { "type": "string", "value": "World" }
-      ],
+      "children": [ "World" ],
       "declarations": [
         {
           "type": "declaration",
-          "name": "background",
+          "property": "background",
           "value": [ "teal" ]
         }
       ]
@@ -29,19 +27,13 @@
       "type": "element",
       "name": "div",
       "class": "foo",
-      "children": [{
-        "type": "string",
-        "value": "foo"
-       }]
+      "children": [ "foo" ]
     },
     {
       "type": "element",
       "name": "div",
       "class": "bar",
-      "children": [{
-        "type": "string",
-        "value": "bar"
-      }]
+      "children": [ "bar" ]
     }
   ]
 }

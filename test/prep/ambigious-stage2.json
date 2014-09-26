@@ -5,7 +5,6 @@
     "type": "element",
     "name": "div",
     "class": "ambigious",
-    "absolute": true,
     "children": [
       {
         "type": "element",
@@ -20,15 +19,13 @@
             "declarations": [
               {
                 "type": "declaration",
-                "name": "color",
+                "property": "color",
                 "value": [ "red" ]
               }
             ],
-            "states": [],
             "tag": "b",
             "styled": true,
-            "class": "ambigious_b_1",
-            "absolute": true
+            "class": "_b_1"
           },
           {
             "type": "element",
@@ -36,15 +33,13 @@
             "declarations": [
               {
                 "type": "declaration",
-                "name": "color",
-                "value": ["green"]
+                "property": "color",
+                "value": [ "green" ]
               }
             ],
-            "states": [],
             "tag": "b",
             "styled": true,
-            "class": "ambigious_b_2",
-            "absolute": true
+            "class": "_b_2"
           },
           {
             "type": "element",
@@ -59,19 +54,17 @@
                 "declarations": [
                   {
                     "type": "declaration",
-                    "name": "color",
-                    "value": ["blue"]
+                    "property": "color",
+                    "value": [ "blue" ]
                   }
                 ],
-                "states": [],
                 "tag": "b",
-                "styled": true,
-                "class": "ambigious_b",
-                "absolute": true
+                "styled": true
               }
             ],
-            "states": [],
             "tag": "h1",
+            "class": "el-h1",
+            "contentSelectors": {},
             "tags": {
               "count": {
                 "b": 1
@@ -82,8 +75,9 @@
             }
           }
         ],
-        "states": [],
         "tag": "div",
+        "class": "el-foo",
+        "contentSelectors": {},
         "tags": {
           "count": {
             "b": 2,
@@ -103,17 +97,16 @@
         "declarations": [
           {
             "type": "declaration",
-            "name": "color",
-            "value": ["yellow"]
+            "property": "color",
+            "value": [ "yellow" ]
           }
         ],
-        "states": [],
         "tag": "div",
         "styled": true,
-        "class": "div_1"
+        "class": "_el-foo_1",
+        "contentSelectors": {}
       }
     ],
-    "states": [],
     "tag": "div",
     "tags": {
       "count": {
@@ -124,5 +117,6 @@
       }
     }
   },
-  "states": []
+  "states": [],
+  "selectors": {}
 }

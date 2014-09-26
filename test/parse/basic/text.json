@@ -1,5 +1,5 @@
 {
   "type": "element",
   "name": "div",
-  "children": [ { "type": "string", "value": "Hello World" }, 1, 2, 3 ]
+  "children": [ "Hello World", 1, 2, 3 ]
 }

@@ -6,13 +6,11 @@
     "name": "div",
     "tag": "div",
     "class": "style",
-    "absolute": true,
     "declarations": [
       {
         "type": "style",
         "selectors": [{ "state": "foo" }],
-        "declarations": [],
-        "states": ["foo"]
+        "declarations": []
       }
     ],
     "children": [
@@ -23,11 +21,9 @@
           {
             "type": "style",
             "selectors": [ { "state": "bar" }],
-            "declarations": [],
-            "states": [ "bar" ]
+            "declarations": []
           }
         ],
-        "states": [ "bar" ],
         "tag": "h1"
       },
       {
@@ -36,14 +32,13 @@
         "declarations": [
           {
             "type": "declaration",
-            "name": "margin-top",
-            "value": [ 0 ]
+            "property": "margin-top",
+            "value": "0"
           }
         ],
-        "states": [],
         "tag": "h1",
         "styled": true,
-        "class": "h1_1",
+        "class": "_h1_1",
         "children": [
           {
             "type": "variable",
@@ -52,7 +47,6 @@
         ]
       }
     ],
-    "states": [ "foo" ],
     "tags": {
       "count": {
         "h1": 2
@@ -66,5 +60,8 @@
     "foo",
     "bar"
   ],
-  "vars": [ "children" ]
+  "vars": [ "children" ],
+  "selectors" : {
+    "children" : "._h1_1 > "
+  }
 }

@@ -1,0 +1,48 @@
+{
+  "type": "root",
+  "file": "<root>/values.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "tag": "div",
+    "class": "values",
+    "styled": true,
+    "declarations": [
+      {
+        "type": "declaration",
+        "property": "background",
+        "value": "url(exposed)"
+      },
+      {
+        "type": "declaration",
+        "property": "color",
+        "value": "#ff8080"
+      },
+      {
+        "type": "declaration",
+        "property": "font-size",
+        "value": "4em"
+      },
+      {
+        "type": "style",
+        "selectors": [":after"],
+        "declarations": [
+          {
+            "type": "declaration",
+            "property": "content",
+            "value": "'!'"
+          }
+        ]
+      }
+    ],
+    "children": [
+      {
+        "type": "variable",
+        "name": "children"
+      }
+    ]
+  },
+  "states": [],
+  "vars": [ "children" ],
+  "selectors" : {}
+}

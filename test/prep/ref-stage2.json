@@ -15,18 +15,31 @@
         "attributes": [
           { "type": "attribute",
             "name": "bg",
-            "value": {
-              "type": "string",
-              "value": "red"
-            }
+            "value": "red"
           }
         ],
-        "states": [],
-        "mixin": [{
-          "type": "declaration",
-          "name": "color",
-          "value": ["teal"]
-        }]
+        "mixin": {
+          "type": "mixin",
+          "children": [ "Hello " ],
+          "declarations": [
+            {
+              "type": "declaration",
+              "property": "color",
+              "value": [ "teal" ]
+            },
+            {
+              "type": "declaration",
+              "property": "background",
+              "value": [
+                {
+                  "type": "variable",
+                  "name": "bg"
+                }
+              ]
+            }
+          ],
+          "styled": true
+        }
       },
       {
         "type": "element",
@@ -34,23 +47,13 @@
           "type": "path",
           "path": "./el/h1"
         },
-        "children": [
-          { "type": "string", "value": "Hello world" }
-        ],
-        "states": [],
-        "tag": "h1"
-      },
-      {
-        "type": "element",
-        "name": {
-          "type": "path",
-          "path": "./el/js"
-        },
-        "states": []
+        "children": [ "world" ],
+        "tag": "h1",
+        "class": "el-h1",
+        "contentSelectors": {}
       }
     ],
     "styled": true,
-    "absolute": true,
     "class": "ref",
     "tags": {
       "count": {
@@ -58,8 +61,8 @@
       },
       "styled": {
       }
-    },
-    "states": []
+    }
   },
-  "states": []
+  "states": [],
+  "selectors": {}
 }

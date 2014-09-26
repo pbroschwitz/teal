@@ -4,6 +4,6 @@ div {
     "World"
     background: teal;
   }
-  div.foo { "foo" }
-  div.bar { "bar" }
+  div#foo { "foo" }
+  div#bar { "bar" }
 }

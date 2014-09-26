@@ -8,16 +8,16 @@
         "type": "variable",
         "name": "foo"
       },
-      "consequent": { "type": "string", "value": "foo!" },
+      "consequent": "foo!",
       "alternate": {
         "type": "block",
         "children": [
           {
             "type": "element",
             "name": "h1",
-            "children": [ { "type": "string", "value": "sorry" } ]
+            "children": [ "sorry" ]
           },
-          { "type": "string", "value": "no foo for you" }
+          "no foo for you"
         ]
       }
     }

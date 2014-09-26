@@ -4,12 +4,12 @@
   "declarations": [
     {
       "type": "declaration",
-      "name": "background",
+      "property": "background",
       "value": [ "teal" ]
     },
     {
       "type": "declaration",
-      "name": "color",
+      "property": "color",
       "value": [ "#fff" ]
     }
   ]

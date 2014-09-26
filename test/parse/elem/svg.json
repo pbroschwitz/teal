@@ -1,6 +1,6 @@
 {
   "type": "element",
-  "name": { "type": "string", "value": "svg:path" },
+  "name": "svg:path",
   "attributes": [
     {
       "type": "attribute",
@@ -8,7 +8,7 @@
       "value": {
         "type": "call",
         "callee": "read",
-        "arguments": [ { "type": "string", "value": "./path.txt" } ]
+        "arguments": [ "./path.txt" ]
       }
     }
   ]

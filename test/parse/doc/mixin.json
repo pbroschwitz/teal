@@ -3,16 +3,11 @@
   "file": "<root>/mixin.tl",
   "root": {
     "type": "mixin",
-    "children": [
-      {
-        "type": "string",
-        "value": "hello"
-      }
-    ],
+    "children": [ "hello" ],
     "declarations": [
       {
         "type": "declaration",
-        "name": "background",
+        "property": "background",
         "value": [
           {
             "type" : "variable",
@@ -26,11 +21,8 @@
         "declarations": [
           {
             "type" : "declaration",
-            "name" : "content",
-            "value" : [
-              { "type": "string", "value": "in the mix" },
-              "\n  "
-            ]
+            "property" : "content",
+            "value" : [ "'in", " ", "the", " ", "mix'", "\n  " ]
           }
         ]
       }

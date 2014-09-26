@@ -13,8 +13,8 @@
           "declarations": [
             {
               "type": "declaration",
-              "name": "max-height",
-              "value": [ 0, " " ]
+              "property": "max-height",
+              "value": [ "0", " " ]
             }
           ]
         },
@@ -24,8 +24,8 @@
           "declarations": [
             {
               "type": "declaration",
-              "name": "max-height",
-              "value": [ 100, "% " ]
+              "property": "max-height",
+              "value": [ "100%", " " ]
             }
           ]
         }

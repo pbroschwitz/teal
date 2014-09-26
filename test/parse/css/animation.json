@@ -4,7 +4,7 @@
   "declarations": [
     {
       "type": "animation",
-      "value": [ 1, "s", " ", "ease", " " ],
+      "value": [ "1s", " ", "ease", " " ],
       "keyframes": {
         "type": "keyframes",
         "frames": [
@@ -14,7 +14,7 @@
             "declarations": [
               {
                 "type": "declaration",
-                "name": "color",
+                "property": "color",
                 "value": [ "transparent", " " ]
               }
             ]
@@ -25,8 +25,8 @@
             "declarations": [
               {
                 "type": "declaration",
-                "name": "color",
-                "value": [ "#000 " ]
+                "property": "color",
+                "value": [ "#000", " " ]
               }
             ]
           }

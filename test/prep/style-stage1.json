@@ -9,8 +9,7 @@
       {
         "type": "style",
         "selectors": [{ "state": "foo" }],
-        "declarations": [],
-        "states": ["foo"]
+        "declarations": []
       }
     ],
     "children": [
@@ -21,10 +20,8 @@
         "declarations": [{
           "type": "style",
           "selectors": [{ "state": "bar" }],
-          "declarations": [],
-          "states": ["bar"]
-        }],
-        "states": ["bar"]
+          "declarations": []
+        }]
       },
       {
         "type": "element",
@@ -33,7 +30,7 @@
         "declarations": [
           {
             "type": "declaration",
-            "name": "margin-top",
+            "property": "margin-top",
             "value": [0]
           }
         ],
@@ -43,11 +40,9 @@
              "name": "children"
            }
         ],
-        "states": [],
         "styled": true
       }
     ],
-    "states": [ "foo" ],
     "tags": {
       "count": {
         "h1": 2

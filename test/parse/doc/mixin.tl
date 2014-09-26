@@ -1,7 +1,7 @@
 @mixin {
   background: $bg-color;
   :after {
-    content: "in the mix"
+    content: 'in the mix'
   }
   "hello"
 }

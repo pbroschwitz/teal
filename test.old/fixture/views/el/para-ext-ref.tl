@@ -1,3 +1,0 @@
-div {
-  ./para-ext { "Hello" }
-}

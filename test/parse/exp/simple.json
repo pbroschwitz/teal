@@ -36,10 +36,7 @@
       "type": "call",
       "callee": "foo",
       "arguments": [
-        {
-          "type": "string",
-          "value": "bar"
-        },
+        "bar",
         123,
         {
           "type": "block",
@@ -52,6 +49,29 @@
           ]
         }
       ]
+    },
+    {
+      "type": "member",
+      "object": {
+        "type": "variable",
+        "name": "foo"
+      },
+      "property": 0
+    },
+    {
+      "type": "range",
+      "start": 1,
+      "end": {
+        "type": "variable",
+        "name": "foo"
+      }
+    }
+  ],
+  "declarations": [
+    {
+      "type": "style",
+      "selectors": [ "[bar]" ],
+      "declarations": []
     }
   ]
 }

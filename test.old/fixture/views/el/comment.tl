@@ -1,3 +1,0 @@
-div {
-  comment('Hello World')
-}

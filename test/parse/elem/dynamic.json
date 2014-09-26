@@ -6,7 +6,7 @@
       "type": "variable",
       "name": "href"
     },
-    "truthy": { "type": "string", "value": "a" },
-    "falsy": { "type": "string", "value": "button" }
+    "truthy": "a",
+    "falsy": "button"
   }
 }

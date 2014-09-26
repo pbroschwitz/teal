@@ -4,56 +4,50 @@
   "declarations": [
     {
       "type": "declaration",
-      "name": "border",
-      "value": [ 10, "% ", "solid", " #fff" ]
+      "property": "border",
+      "value": [ "10%", " ", "solid", " ", "#fff" ]
     },
     {
       "type": "declaration",
-      "name": "background",
+      "property": "background",
       "value": [ "red", " ", {
-        "type": "call",
-        "callee": "linear-gradient",
-        "arguments": [ 1 ]
+        "type": "function",
+        "name": "linear-gradient",
+        "args": [ "1" ]
       }]
     },
     {
       "type": "declaration",
-      "name": "background",
+      "property": "background",
       "value": [
         "teal",
         " ",
         {
-          "type": "call",
-          "callee": "url",
-          "arguments": [
+          "type": "function",
+          "name": "url",
+          "args": [
             {
-              "type": "call",
-              "callee": "data",
-              "arguments": [
-                {
-                  "type": "call",
-                  "callee": "read",
-                  "arguments": [{ "type": "string", "value": "./cat.gif" } ]
-                },
-                { "type": "string", "value": "image/gif" }
-              ]
+              "type": "function",
+              "name": "data",
+              "args": [ "./cat.gif" ]
             }
           ]
         },
-        ",\n    ",
+        ",",
+        "\n    ",
         {
-          "type": "call",
-          "callee": "linear-gradient",
-          "arguments": [ 1 ]
+          "type": "function",
+          "name": "linear-gradient",
+          "args": [ "1" ]
         }
       ]
     },
     {
       "type": "declaration",
-      "name": "font",
+      "property": "font",
       "value": [
         { "type": "variable", "name": "f1" },
-        "/", 1.2, " ", "sans-serif", " !important"
+        "/1.2", " ", "sans-serif", " ", "!important"
       ]
     }
   ]

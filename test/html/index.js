@@ -21,7 +21,7 @@ tl.init()
 //tl.process([settings].concat(files.map(template)))
 
 files.forEach(function(f) {
-  test(path.basename(f), function(t) {
+  test('html/' + path.basename(f), function(t) {
     var exp = fs.readFileSync(f, 'utf8').trim()
     var html = tl.html.render(template(f), data)
     t.deepEqual(html.replace(/&#x2f;/g, '/'), exp)

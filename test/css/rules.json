@@ -45,17 +45,6 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-combo.ready > div > .e-foo"],
-    "declarations" : [
-      {
-        "type" : "declaration",
-        "property" : "border-color",
-        "value" : "teal"
-      }
-    ]
-  },
-  {
-    "type" : "rule",
     "selectors" : [".e-foo"],
     "declarations" : [
       {
@@ -163,6 +152,23 @@
         "type" : "declaration",
         "property" : "float",
         "value" : "left"
+      }
+    ]
+  },
+  {
+    "type" : "media",
+    "media" : "screen",
+    "rules" : [
+      {
+        "type" : "rule",
+        "selectors" : [".e-combo.ready > div > .e-foo"],
+        "declarations" : [
+          {
+            "type" : "declaration",
+            "property" : "border-color",
+            "value" : "teal"
+          }
+        ]
       }
     ]
   }

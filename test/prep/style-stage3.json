@@ -9,10 +9,13 @@
     "declarations": [
       {
         "type": "style",
-        "selectors": [{ "state": "foo" }],
+        "selectors": [{ "state": "foo", "class": "foo" }],
         "declarations": []
       }
     ],
+    "states": {
+      "foo": "foo"
+    },
     "children": [
       {
         "type": "element",
@@ -20,10 +23,13 @@
         "declarations": [
           {
             "type": "style",
-            "selectors": [ { "state": "bar" }],
+            "selectors": [ { "state": "bar", "class": "bar" }],
             "declarations": []
           }
         ],
+        "states": {
+          "bar": "bar"
+        },
         "tag": "h1"
       },
       {

@@ -52,8 +52,5 @@
       }
     }
   },
-  "states": [
-    "foo",
-    "bar"
-  ]
+  "states": []
 }

@@ -1,0 +1,39 @@
+{
+  "type": "element",
+  "name": {
+    "type": "path",
+    "path": "teal-foo/teaser"
+  },
+  "attributes": [
+    {
+      "type": "attribute",
+      "name": "image",
+      "value": {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./image"
+        }
+      }
+    }
+  ],
+  "children": [
+    "Hello",
+    {
+      "type": "element",
+      "name": {
+        "type": "path",
+        "path": "/foo/bar"
+      },
+      "children": [ " world." ]
+    },
+    123,
+    {
+      "type": "element",
+      "name": {
+        "type": "path",
+        "path": "../world"
+      }
+    }
+  ]
+}

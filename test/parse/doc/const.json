@@ -1,0 +1,24 @@
+{
+  "type": "root",
+  "file": "<root>/const.tl",
+  "root": null,
+  "settings": [
+    {
+      "type": "const",
+      "declarations": [
+        {
+          "type": "declaration",
+          "property": "font-color",
+          "value": [ "#333" ]
+        }
+      ],
+      "attributes": [
+        {
+          "type": "attribute",
+          "name": "desktop",
+          "value": "screen and (min-width: 400px)"
+        }
+      ]
+    }
+  ]
+}

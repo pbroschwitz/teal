@@ -1,0 +1,31 @@
+{
+  "type": "root",
+  "file": "<root>/mixin.tl",
+  "root": {
+    "type": "mixin",
+    "children": [ "hello" ],
+    "declarations": [
+      {
+        "type": "declaration",
+        "property": "background",
+        "value": [
+          {
+            "type" : "variable",
+            "name" : "bg-color"
+          }
+        ]
+      },
+      {
+        "type": "style",
+        "selectors" : [ ":after" ],
+        "declarations": [
+          {
+            "type" : "declaration",
+            "property" : "content",
+            "value" : [ "'in", " ", "the", " ", "mix'", "\n  " ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,1 +1,0 @@
-./button { primary "Click Me" }

@@ -1,0 +1,28 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "declaration",
+      "property": "background",
+      "value": [
+        {
+          "type": "function",
+          "name": "url",
+          "args": [ "'http://example.com'" ]
+        }
+      ]
+    },
+    {
+      "type": "style",
+      "selectors": [":after"],
+      "declarations": [
+        {
+          "type": "declaration",
+          "property": "content",
+          "value": [ "'!'" ]
+        }
+      ]
+    }
+  ]
+}

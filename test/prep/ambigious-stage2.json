@@ -1,0 +1,122 @@
+{
+  "type": "root",
+  "file": "<root>/ambigious.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "class": "ambigious",
+    "children": [
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo"
+        },
+        "children": [
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": [ "red" ]
+              }
+            ],
+            "tag": "b",
+            "styled": true,
+            "class": "_b_1"
+          },
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": [ "green" ]
+              }
+            ],
+            "tag": "b",
+            "styled": true,
+            "class": "_b_2"
+          },
+          {
+            "type": "element",
+            "name": {
+              "type": "path",
+              "path": "./el/h1"
+            },
+            "children": [
+              {
+                "type": "element",
+                "name": "b",
+                "declarations": [
+                  {
+                    "type": "declaration",
+                    "property": "color",
+                    "value": [ "blue" ]
+                  }
+                ],
+                "tag": "b",
+                "styled": true
+              }
+            ],
+            "tag": "h1",
+            "class": "el-h1",
+            "contentSelectors": {},
+            "tags": {
+              "count": {
+                "b": 1
+              },
+              "styled": {
+                "b": true
+              }
+            }
+          }
+        ],
+        "tag": "div",
+        "class": "el-foo",
+        "contentSelectors": {},
+        "tags": {
+          "count": {
+            "b": 2,
+            "h1": 1
+          },
+          "styled": {
+            "b": true
+          }
+        }
+      },
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo"
+        },
+        "declarations": [
+          {
+            "type": "declaration",
+            "property": "color",
+            "value": [ "yellow" ]
+          }
+        ],
+        "tag": "div",
+        "styled": true,
+        "class": "_el-foo_1",
+        "contentSelectors": {}
+      }
+    ],
+    "tag": "div",
+    "tags": {
+      "count": {
+        "div": 2
+      },
+      "styled": {
+        "div": true
+      }
+    }
+  },
+  "states": [],
+  "selectors": {}
+}

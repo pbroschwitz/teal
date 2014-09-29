@@ -1,0 +1,175 @@
+[
+  {
+    "type" : "rule",
+    "selectors" : ["@font-face"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "font-family",
+        "value" : "foo"
+      },
+      {
+        "type" : "declaration",
+        "property" : "src",
+        "value" : "url(exposed?#iefix) format('truetype')"
+      }
+    ]
+  },
+  {
+    "type" : "keyframes",
+    "name" : "fade",
+    "keyframes" : [
+      {
+        "type" : "keyframe",
+        "values" : ["100%"],
+        "declarations" : [
+          {
+            "type" : "declaration",
+            "property" : "opacity",
+            "value" : "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-combo > div > .e-foo"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "border",
+        "value" : "1px solid red"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-foo"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "background",
+        "value" : "teal"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-foo > h1"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "font-size",
+        "value" : "2em"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-foo.large > h1"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "font-size",
+        "value" : "4em"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-foo > h1:after"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "content",
+        "value" : "'!'"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-foo > h1:hover:after"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "content",
+        "value" : "'!!!'"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-siblings > input"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "z-index",
+        "value" : "-1"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [
+      ".e-siblings > input:checked + label"
+    ],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "color",
+        "value" : "teal"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-siblings > .indicator"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "background",
+        "value" : "white"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".e-siblings > input:checked ~ .indicator"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "background",
+        "value" : "teal"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : [".l-bar"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "float",
+        "value" : "left"
+      }
+    ]
+  },
+  {
+    "type" : "media",
+    "media" : "screen",
+    "rules" : [
+      {
+        "type" : "rule",
+        "selectors" : [".e-combo.ready > div > .e-foo"],
+        "declarations" : [
+          {
+            "type" : "declaration",
+            "property" : "border-color",
+            "value" : "teal"
+          }
+        ]
+      }
+    ]
+  }
+]

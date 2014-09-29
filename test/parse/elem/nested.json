@@ -1,0 +1,39 @@
+{
+  "type": "element",
+  "name": "div",
+  "children": [
+    "Hello",
+    {
+      "type": "element",
+      "name": {
+        "type": "ternary",
+        "expression": {
+          "type": "variable",
+          "name": "href"
+        },
+        "truthy": "a",
+        "falsy": "button"
+      },
+      "children": [ "World" ],
+      "declarations": [
+        {
+          "type": "declaration",
+          "property": "background",
+          "value": [ "teal" ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "name": "div",
+      "class": "foo",
+      "children": [ "foo" ]
+    },
+    {
+      "type": "element",
+      "name": "div",
+      "class": "bar",
+      "children": [ "bar" ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "type": "root",
+  "file": "<root>/keyframes.tl",
+  "root": null,
+  "settings": [
+    {
+      "type": "keyframes",
+      "name": "expand",
+      "frames": [
+        {
+          "type": "keyframe",
+          "values": [ "0%" ],
+          "declarations": [
+            {
+              "type": "declaration",
+              "property": "max-height",
+              "value": [ "0", " " ]
+            }
+          ]
+        },
+        {
+          "type": "keyframe",
+          "values": [ "100%" ],
+          "declarations": [
+            {
+              "type": "declaration",
+              "property": "max-height",
+              "value": [ "100%", " " ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "element",
+  "name": "div",
+  "declarations": [
+    {
+      "type": "animation",
+      "value": [ "1s", " ", "ease", " " ],
+      "keyframes": {
+        "type": "keyframes",
+        "frames": [
+          {
+            "type": "keyframe",
+            "values": ["from"],
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": [ "transparent", " " ]
+              }
+            ]
+          },
+          {
+            "type": "keyframe",
+            "values": [ "100%" ],
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": [ "#000", " " ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

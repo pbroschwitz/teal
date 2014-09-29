@@ -296,10 +296,10 @@ div {
 
 ```js
 var express = require('express')
-  , teal = require('teal')
+var teal = require('teal')
 
 var app = express()
-  , tl = teal()
+var tl = teal()
 
 app.use(tl)
 

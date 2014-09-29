@@ -1,0 +1,25 @@
+{
+  "type": "element",
+  "name": "div",
+  "children": [
+    {
+      "type": "if",
+      "condition": {
+        "type": "variable",
+        "name": "foo"
+      },
+      "consequent": "foo!",
+      "alternate": {
+        "type": "block",
+        "children": [
+          {
+            "type": "element",
+            "name": "h1",
+            "children": [ "sorry" ]
+          },
+          "no foo for you"
+        ]
+      }
+    }
+  ]
+}

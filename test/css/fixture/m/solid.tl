@@ -1,0 +1,3 @@
+@mixin {
+  background: $bg
+}

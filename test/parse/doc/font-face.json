@@ -1,0 +1,55 @@
+{
+  "type": "root",
+  "file": "<root>/font-face.tl",
+  "root": null,
+  "settings": [
+    {
+      "type": "font",
+      "declarations": [
+        {
+          "type": "declaration",
+          "property": "font-family",
+          "value": [ "foo" ]
+        },
+        {
+          "type": "declaration",
+          "property": "src",
+          "value": [
+            {
+              "type": "function",
+              "name": "url",
+              "args": [ "./foo.ttf" ]
+            },
+            " ",
+            {
+              "type": "function",
+              "name": "format",
+              "args": [ "'truetype'" ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "font",
+      "declarations": [
+        {
+          "type": "declaration",
+          "property": "font-family",
+          "value": [ "bar" ]
+        },
+        {
+          "type": "declaration",
+          "property": "src",
+          "value": [
+            {
+              "type": "function",
+              "name": "url",
+              "args": [ "./bar.ttf" ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

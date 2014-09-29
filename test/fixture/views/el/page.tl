@@ -1,7 +1,0 @@
-html {
-  head {
-    stylesheet()
-  }
-  body {
-  }
-}

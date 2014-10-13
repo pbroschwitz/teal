@@ -29,6 +29,7 @@
     "srls": "^1.0.0",
     "stacked": "^1.0.1",
     "uniqs": "^2.0.0",
+    "vow": "^0.4.5",
     "xtend": "^3.0.0"
   },
   "devDependencies": {

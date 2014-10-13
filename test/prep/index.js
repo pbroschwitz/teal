@@ -14,10 +14,11 @@ Object.keys(stages).forEach(function(name) {
   stages[name].forEach(function(i) {
     test('prepare ' + name + '-stage' + i, function(t) {
       var ctx = prep(__dirname, { stage: i, teal: teal })
-      var ast = ctx.parse('/' + name + '.tl')
-      var exp = require(ctx.resolve('/' + name + '-stage' + i + '.json'))
-      t.deepEqual(simplify(ast, __dirname), exp)
-      t.end()
+      ctx([__dirname + '/' + name + '.tl']).then(function(asts) {
+        var exp = require(__dirname + '/' + name + '-stage' + i + '.json')
+        t.deepEqual(simplify(asts[0], __dirname), exp)
+        t.end()
+      })
     })
   })
 })

@@ -13,9 +13,6 @@
         "declarations": []
       }
     ],
-    "states": {
-      "foo": "foo"
-    },
     "children": [
       {
         "type": "element",
@@ -25,10 +22,7 @@
           "type": "style",
           "selectors": [{ "state": "bar", "class": "bar" }],
           "declarations": []
-        }],
-        "states": {
-          "bar": "bar"
-        }
+        }]
       },
       {
         "type": "element",
@@ -51,6 +45,10 @@
         "styled": true
       }
     ],
+    "states": {
+      "foo": "foo",
+      "bar": "bar"
+    },
     "tags": {
       "count": {
         "h1": 2

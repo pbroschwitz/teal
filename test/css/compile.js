@@ -11,11 +11,12 @@ var ctx = prep(root, { teal: teal })
 var files = ls(root)
 
 test('css/compile', function(t) {
-  ctx(files).then(function(asts) {
-    t.deepEqual(simplify(compile(asts)), require('./rules'))
+  ctx(files).then(function(preped) {
+    t.deepEqual(simplify(compile(preped.asts)), require('./rules'))
     t.end()
   })
   .catch(function(err) {
     t.fail(err)
+    t.end()
   })
 })

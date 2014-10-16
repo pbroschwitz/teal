@@ -14,9 +14,9 @@ Object.keys(stages).forEach(function(name) {
   stages[name].forEach(function(i) {
     test('prepare ' + name + '-stage' + i, function(t) {
       var ctx = prep(__dirname, { stage: i, teal: teal })
-      ctx([__dirname + '/' + name + '.tl']).then(function(asts) {
+      ctx([__dirname + '/' + name + '.tl']).then(function(preped) {
         var exp = require(__dirname + '/' + name + '-stage' + i + '.json')
-        t.deepEqual(simplify(asts[0], __dirname), exp)
+        t.deepEqual(simplify(preped.asts[0], __dirname), exp)
         t.end()
       })
     })

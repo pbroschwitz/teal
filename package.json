@@ -31,7 +31,8 @@
     "stacked": "^1.0.1",
     "uniqs": "^2.0.0",
     "vow": "^0.4.5",
-    "xtend": "^3.0.0"
+    "xtend": "^3.0.0",
+    "debug": "~2.0.0"
   },
   "devDependencies": {
     "express": "^4.6.0",

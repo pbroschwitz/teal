@@ -16,15 +16,22 @@ function template(f) {
   return f.replace('.html', '.tl')
 }
 
-var tl = teal({ root: __dirname, throwOnError: true })
-tl.init()
-//tl.process([settings].concat(files.map(template)))
+test('html', function(t) {
+  var tl = teal({ root: __dirname, throwOnError: true })
+  tl.init()
 
-files.forEach(function(f) {
-  test('html/' + path.basename(f), function(t) {
-    var exp = fs.readFileSync(f, 'utf8').trim()
-    var html = tl.html.render(template(f), data)
-    t.deepEqual(html.replace(/&#x2f;/g, '/'), exp)
+  tl.on('ready', function() {
+
+    files.forEach(function(f) {
+
+      t.test('html/' + path.basename(f), function(t) {
+        var exp = fs.readFileSync(f, 'utf8').trim()
+        var html = tl.html.render(template(f), data)
+        t.deepEqual(html.replace(/&#x2f;/g, '/'), exp)
+        t.end()
+      })
+    })
     t.end()
   })
+
 })

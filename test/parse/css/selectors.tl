@@ -11,7 +11,7 @@ div {
   [disabled] {
     background: gray;
   }
-  * {
+  > * {
     color: inherit;
   }
 }

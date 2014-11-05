@@ -7,7 +7,7 @@ div {
     }
     :after {
       content: '!';
-      ^1:hover {
+      ^:hover {
         content: '!!!';
       }
     }

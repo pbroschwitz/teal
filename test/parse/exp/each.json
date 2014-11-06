@@ -4,13 +4,11 @@
   "children": [
     {
       "type": "each",
+      "variable": "f",
+      "index": null,
       "expression": {
         "name": "foo",
         "type": "variable"
-      },
-      "variable": {
-        "type": "variable",
-        "name": "f"
       },
       "body": {
         "type": "call",
@@ -18,12 +16,25 @@
           "type": "path",
           "path": "/e/a"
         },
-        "arguments" : [
+        "arguments": [
           {
-            "type" : "variable",
-            "name" : "f"
+            "type": "variable",
+            "name": "f"
           }
         ]
+      }
+    },
+    {
+      "type": "each",
+      "variable": "a",
+      "index": "i",
+      "expression": {
+        "type": "variable",
+        "name": "foo"
+      },
+      "body": {
+        "type": "variable",
+        "name": "i"
       }
     }
   ]

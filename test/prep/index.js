@@ -5,6 +5,7 @@ var teal = require('../util/teal-mock.js')
 
 var stages = {
   ref: [ 1, 2, 3 ],
+  emptyref: [ 1 ],
   ambigious: [ 2 ],
   style: [ 1, 2, 3 ],
   values: [ 3 ]

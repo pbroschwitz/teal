@@ -1,0 +1,36 @@
+{
+  "type": "root",
+  "file": "<root>/emptyref.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "tag": "div",
+    "children": [
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "<root>/el/foo.tl"
+        },
+        "tag": "div"
+      },
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "<root>/el/h1.tl"
+        },
+        "tag": "h1"
+      }
+    ],
+    "tags": {
+      "count": {
+        "h1": 1,
+        "div": 1
+      },
+      "styled": {
+      }
+    }
+  },
+  "states": []
+}

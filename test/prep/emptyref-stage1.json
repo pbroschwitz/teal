@@ -13,16 +13,22 @@
           "path": "<root>/el/foo.tl"
         },
         "tag": "div"
-      },
-      {
+      }
+    ],
+    "declarations": [{
+      "type": "style",
+      "selectors": [{
+        "state": "foo"
+      }],
+      "declarations": [{
         "type": "element",
         "name": {
           "type": "path",
           "path": "<root>/el/h1.tl"
         },
         "tag": "h1"
-      }
-    ],
+      }]
+    }],
     "tags": {
       "count": {
         "h1": 1,

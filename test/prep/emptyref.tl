@@ -1,4 +1,6 @@
 div {
   ./el/foo
-  ./el/h1
+  .foo {
+    ./el/h1
+  }
 }

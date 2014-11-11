@@ -8,8 +8,7 @@ div {
   $foo-bar.boo;
   (23) // just a group expression
   foo("bar", 123, { foo=23 });
-  $foo
-  [0]; // member of $foo
+  $foo[0]; // member of $foo
   [bar] {} // attribute selector
   1..$foo
 }

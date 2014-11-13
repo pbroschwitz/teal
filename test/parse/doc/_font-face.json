@@ -1,7 +1,6 @@
 {
   "type": "root",
-  "file": "<root>/font-face.tl",
-  "root": null,
+  "file": "<root>/_font-face.tl",
   "settings": [
     {
       "type": "font",

@@ -34,6 +34,50 @@
   },
   {
     "type" : "rule",
+    "selectors" : ["main", "article"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "display",
+        "value" : "block"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : ["a"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "background",
+        "value" : "transparent"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : ["a:active"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "outline",
+        "value" : "none"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
+    "selectors" : ["svg:not(:root)"],
+    "declarations" : [
+      {
+        "type" : "declaration",
+        "property" : "overflow",
+        "value" : "hidden"
+      }
+    ]
+  },
+  {
+    "type" : "rule",
     "selectors" : [".e-combo > div > .e-foo"],
     "declarations" : [
       {

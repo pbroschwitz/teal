@@ -8,3 +8,10 @@
 @const {
   fav-color: teal;
 }
+
+main, article { display: block; }
+a {
+  background: transparent;
+  :active { outline: none }
+}
+svg:not(:root) { overflow: hidden; }

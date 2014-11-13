@@ -1,7 +1,6 @@
 {
   "type": "root",
-  "file": "<root>/const.tl",
-  "root": null,
+  "file": "<root>/_const.tl",
   "settings": [
     {
       "type": "const",

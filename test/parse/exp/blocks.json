@@ -1,0 +1,43 @@
+{
+  "type" : "element",
+  "name" : "div",
+  "attributes" : [{
+      "type" : "attribute",
+      "name" : "items",
+      "value" : {
+        "type" : "block",
+        "children" : [{
+            "type" : "block",
+            "attributes" : [{
+                "type" : "attribute",
+                "name" : "label",
+                "value" : "foo"
+              }]
+          },{
+            "type" : "block",
+            "attributes" : [{
+                "type" : "attribute",
+                "name" : "label",
+                "value" : "bar"
+              },{
+                "type" : "attribute",
+                "name" : "items",
+                "value" : {
+                  "type" : "block",
+                  "children" : [
+                    {
+                      "type" : "block",
+                      "attributes" : [{
+                          "type" : "attribute",
+                          "name" : "label",
+                          "value" : "baz"
+                        }]
+                    }
+                  ]
+                }
+              }]
+          }]
+      }
+    }]
+
+}

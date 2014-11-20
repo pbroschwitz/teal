@@ -1,9 +1,9 @@
 div {
   "Hello"
-  $href ? "a" : "button" {
+  $href ? "a" : "button" -> {
     "World"
     background: teal;
   }
   div#foo { "foo" }
-  div#bar { "bar" }
+  div #bar { "bar" }
 }

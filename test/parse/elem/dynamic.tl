@@ -1,2 +1,2 @@
-$href ? "a" : "button" {
+$href ? "a" : "button" -> {
 }

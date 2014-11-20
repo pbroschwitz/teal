@@ -1,3 +1,3 @@
-"svg:path" {
+"svg:path" -> {
   path=read("./path.txt")
 }

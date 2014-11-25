@@ -1,6 +1,6 @@
 div {
   "Hello"
-  $href ? "a" : "button" -> {
+  @element $href ? "a" : "button" {
     "World"
     background: teal;
   }

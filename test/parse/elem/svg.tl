@@ -1,3 +1,3 @@
-"svg:path" -> {
+@element "svg:path" {
   path=read("./path.txt")
 }

@@ -4,7 +4,7 @@
   "declarations": [
     {
       "type": "animation",
-      "value": [ "1s", " ", "ease", " " ],
+      "value": [ "1s", " ", "ease" ],
       "keyframes": {
         "type": "keyframes",
         "frames": [

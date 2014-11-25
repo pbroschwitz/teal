@@ -9,8 +9,7 @@
     "declarations": [
       {
         "type": "style",
-        "selectors": [{ "state": "foo", "class": "foo" }],
-        "declarations": []
+        "selectors": [{ "state": "foo", "class": "foo" }]
       }
     ],
     "children": [
@@ -20,8 +19,7 @@
         "declarations": [
           {
             "type": "style",
-            "selectors": [ { "state": "bar", "class": "bar" }],
-            "declarations": []
+            "selectors": [ { "state": "bar", "class": "bar" }]
           }
         ],
         "tag": "h1"

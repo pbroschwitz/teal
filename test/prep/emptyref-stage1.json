@@ -20,7 +20,7 @@
       "selectors": [{
         "state": "foo"
       }],
-      "declarations": [{
+      "children": [{
         "type": "element",
         "name": {
           "type": "path",

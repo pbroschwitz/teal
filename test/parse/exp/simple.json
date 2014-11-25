@@ -70,8 +70,7 @@
   "declarations": [
     {
       "type": "style",
-      "selectors": [ "[bar]" ],
-      "declarations": []
+      "selectors": [ "[bar]" ]
     }
   ]
 }

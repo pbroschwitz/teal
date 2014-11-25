@@ -1,2 +1,2 @@
-$href ? "a" : "button" -> {
+@element $href ? "a" : "button" {
 }

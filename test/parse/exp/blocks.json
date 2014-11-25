@@ -24,20 +24,24 @@
                 "name" : "items",
                 "value" : {
                   "type" : "block",
-                  "children" : [
-                    {
+                  "children" : [{
                       "type" : "block",
                       "attributes" : [{
                           "type" : "attribute",
                           "name" : "label",
                           "value" : "baz"
                         }]
-                    }
-                  ]
+                    },{
+                      "type" : "block",
+                      "attributes" : [{
+                          "type" : "attribute",
+                          "name" : "label",
+                          "value" : "boo"
+                        }]
+                    }]
                 }
               }]
           }]
       }
     }]
-
 }

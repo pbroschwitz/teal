@@ -1,0 +1,37 @@
+{
+  "type": "element",
+  "name": "input",
+  "attributes": [
+    {
+      "type": "attribute",
+      "name": "name",
+      "value": "foo"
+    },
+    {
+      "type": "attribute",
+      "name": "disabled",
+      "value": true
+    },
+    {
+      "type": "attribute",
+      "name": "readonly",
+      "value": {
+        "type": "unary",
+        "op": "!",
+        "expression": {
+          "type": "member",
+          "object": {
+            "type": "variable",
+            "name": "foo"
+          },
+          "property": "bar"         
+        }
+      }
+    },
+    {
+      "type": "attribute",
+      "name": "value",
+      "value": 23
+    }
+  ]
+}

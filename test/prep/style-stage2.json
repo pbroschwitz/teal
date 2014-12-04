@@ -61,6 +61,6 @@
     "bar"
   ],
   "selectors" : {
-    "children" : "._h1_1 > "
+    "children" : " > ._h1_1"
   }
 }

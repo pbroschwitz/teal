@@ -10,5 +10,6 @@ div {
   foo("bar", 123, { foo=23 });
   $foo[0]; // member of $foo
   [bar] {} // attribute selector
+  $foo.bar().baz(2)[3]
   1..$foo
 }

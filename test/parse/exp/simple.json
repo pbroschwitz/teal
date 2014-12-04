@@ -22,7 +22,8 @@
       "callee": {
         "type": "member",
         "object": { "type": "variable", "name": "foo-bar" },
-        "property": "boo"
+        "property": "boo",
+        "method": true
       },
       "arguments": [ 23 ]
     },
@@ -56,7 +57,35 @@
         "type": "variable",
         "name": "foo"
       },
-      "property": 0
+      "property": 0,
+      "dynamic": true
+    },
+    {
+      "type": "member",
+      "property": 3,
+      "dynamic": true,
+      "object": {
+        "type": "call",
+        "arguments": [2],
+        "callee": {
+          "type": "member",
+          "property": "baz",
+          "method": true,
+          "object": {
+            "type": "call",
+            "callee": {
+              "type": "member",
+              "object": {
+                "type": "variable",
+                "name": "foo"
+              },
+              "property": "bar",
+              "method": true
+            },
+            "arguments": []
+          }
+        }
+      }
     },
     {
       "type": "range",

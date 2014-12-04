@@ -10,7 +10,8 @@
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/mixin.tl"
+          "path": "<root>/el/mixin.tl",
+          "ref" : "/el/mixin.tl"
         },
         "attributes": [
           { "type": "attribute",
@@ -45,7 +46,8 @@
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/h1.tl"
+          "path": "<root>/el/h1.tl",
+          "ref" : "/el/h1.tl"
         },
         "tag": "h1",
         "children": [ "world" ]

@@ -10,7 +10,8 @@
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/foo.tl"
+          "path": "<root>/el/foo.tl",
+          "ref" : "/el/foo.tl"
         },
         "children": [
           {
@@ -45,7 +46,8 @@
             "type": "element",
             "name": {
               "type": "path",
-              "path": "<root>/el/h1.tl"
+              "path": "<root>/el/h1.tl",
+              "ref" : "/el/h1.tl"
             },
             "children": [
               {
@@ -92,7 +94,8 @@
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/foo.tl"
+          "path": "<root>/el/foo.tl",
+          "ref" : "/el/foo.tl"
         },
         "declarations": [
           {

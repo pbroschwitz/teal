@@ -23,7 +23,8 @@
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/h1.tl"
+          "path": "<root>/el/h1.tl",
+          "ref" : "/el/h1.tl"
         },
         "children": [
           "world"

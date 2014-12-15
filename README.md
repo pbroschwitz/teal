@@ -22,12 +22,10 @@ appropriate CSS rules and class names in a BEM/SMACSS-like fashion.
 In other words Teal transforms `.tl` files into a stylesheet and a bunch of
 templates. By default these templates are compiled to JavaScript (supporting
 both Node.JS and browsers) but you can also plug in other language adapters to
-compile them to PHP or whatever runtime you would like to use.
+[compile them to PHP](https://github.com/teal-lang/teal-php) or whatever runtime you would like to use.
 
-The [teal-react](https://github.com/fgnass/teal-react) add-on for example
-compiles `.tl` files into React components. Adapters for
-[kirby](http://getkirby.com) and [wintersmith](http://wintersmith.io) will
-follow soon.
+The [teal-react](https://github.com/teal-lang/teal-react) add-on for example
+compiles `.tl` files into React components.
 
 
 # Syntax
@@ -217,10 +215,10 @@ _naming hints_ like this:
 
 ```
 div {
-  div.left {
+  div#left {
     ...
   }
-  div.right {
+  div#right {
     ...
   }
 }
@@ -296,15 +294,13 @@ div {
 
 ```js
 var express = require('express')
-var teal = require('teal')
+var teal = require('teal-express')
 
 var app = express()
-var tl = teal()
-
-app.use(tl)
+var tl = teal(app)
 
 app.get('/', function(req, res) {
-  res.render('page', { title: 'Hello', children: 'Hello World.' })
+  res.render('page', { title: 'Hello world.' })
 })
 ```
 
@@ -322,7 +318,7 @@ app.get('/', function(req, res) {
   components in browser apps and/or to easily create browserify bundles from
   within a .tl file.
 
-* [teal-instant](https://github.com/teal-lang/teal-instant) to live-reload the
+* [teal-watch](https://github.com/teal-lang/teal-watch) to live-reload the
   HTML/CSS when a file is modified
 
 * [teal-autoprefixer](https://github.com/teal-lang/teal-autoprefixer) to
@@ -330,6 +326,3 @@ app.get('/', function(req, res) {
 
 * [teal-react](https://github.com/teal-lang/teal-react) to compile .tl files
   into React components
-
-* [teal-markdown](https://github.com/teal-lang/teal-markdown) to render
-  markdown text

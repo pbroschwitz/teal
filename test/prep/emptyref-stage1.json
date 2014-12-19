@@ -1,6 +1,7 @@
 {
   "type": "root",
   "file": "<root>/emptyref.tl",
+  "path": "/emptyref.tl",
   "root": {
     "type": "element",
     "name": "div",

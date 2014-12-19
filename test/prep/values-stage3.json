@@ -1,6 +1,7 @@
 {
   "type": "root",
   "file": "<root>/values.tl",
+  "path": "/values.tl",
   "root": {
     "type": "element",
     "name": "div",

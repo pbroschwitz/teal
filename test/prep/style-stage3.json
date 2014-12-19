@@ -1,6 +1,7 @@
 {
   "type": "root",
   "file": "<root>/style.tl",
+  "path": "/style.tl",
   "root": {
     "type": "element",
     "name": "div",

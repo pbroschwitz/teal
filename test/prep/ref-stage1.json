@@ -1,6 +1,7 @@
 {
   "type": "root",
   "file": "<root>/ref.tl",
+  "path": "/ref.tl",
   "root": {
     "type": "element",
     "name": "div",

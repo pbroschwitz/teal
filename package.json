@@ -13,7 +13,6 @@
   "author": "Felix Gnass",
   "license": "MIT",
   "dependencies": {
-    "browser-resolve-sync": "^1.0.0",
     "css-color-function": "^1.1.1",
     "css-stringify": "^1.4.1",
     "csscolormin": "0.0.4",

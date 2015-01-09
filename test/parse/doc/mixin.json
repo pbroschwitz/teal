@@ -3,17 +3,15 @@
   "file": "<root>/mixin.tl",
   "root": {
     "type": "mixin",
-    "children": [ "hello" ],
-    "declarations": [
+    "content": [
       {
         "type": "declaration",
         "property": "background",
-        "value": [
-          {
-            "type" : "variable",
-            "name" : "bg-color"
-          }
-        ]
+        "value": {
+          "type": "function",
+          "name": "param",
+          "arg": "bg-color"
+        }
       },
       {
         "type": "style",
@@ -22,10 +20,11 @@
           {
             "type" : "declaration",
             "property" : "content",
-            "value" : [ "'in", " ", "the", " ", "mix'", "\n  " ]
+            "value" : { "type": "tokens", "tokens": [ "'in", " ", "the", " ", "mix'" ] }
           }
         ]
-      }
+      },
+      "hello"
     ]
   }
 }

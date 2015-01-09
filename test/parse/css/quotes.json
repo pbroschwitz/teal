@@ -1,17 +1,15 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
       "type": "declaration",
       "property": "background",
-      "value": [
-        {
-          "type": "function",
-          "name": "url",
-          "args": [ "'http://example.com'" ]
-        }
-      ]
+      "value": {
+        "type": "function",
+        "name": "url",
+        "arg": "'http://example.com'"
+      }
     },
     {
       "type": "style",
@@ -20,7 +18,7 @@
         {
           "type": "declaration",
           "property": "content",
-          "value": [ "'!'" ]
+          "value": "'!'"
         }
       ]
     }

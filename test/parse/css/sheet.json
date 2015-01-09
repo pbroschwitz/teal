@@ -1,11 +1,11 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
      "type": "declaration",
      "property": "float",
-     "value": [ "left" ]
+     "value": "left"
     },
     {
       "type": "media",
@@ -15,7 +15,7 @@
         {
           "type": "declaration",
           "property": "float",
-          "value": [ "none" ]
+          "value": "none"
         }
       ]
     },
@@ -31,7 +31,7 @@
             {
               "type": "declaration",
               "property": "background",
-              "value": [ "red" ]
+              "value": "red"
             }
           ]
         }

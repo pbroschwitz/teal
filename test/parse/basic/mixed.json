@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "textarea",
-  "attributes": [
+  "content": [
     {
       "type": "attribute",
       "name": "name",
@@ -11,14 +11,12 @@
       "type": "attribute",
       "name": "disabled",
       "value": true
-    }
-  ],
-  "declarations": [
+    },
     {
       "type": "declaration",
       "property": "background",
-      "value": [ "teal" ]
-    }
-  ],
-  "children": [ "Hello World" ]
+      "value": "teal"
+    },
+    "Hello World"
+  ]
 }

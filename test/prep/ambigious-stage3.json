@@ -5,15 +5,16 @@
   "root": {
     "type": "element",
     "name": "div",
-    "class": "ambigious",
+    "class": "Ambigious",
     "children": [
       {
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/foo.tl",
-          "ref" : "/el/foo.tl"
+          "path": "./el/foo",
+          "file": "<root>/el/foo.tl"
         },
+        "ref" : "/el/foo.tl",
         "children": [
           {
             "type": "element",
@@ -22,12 +23,11 @@
               {
                 "type": "declaration",
                 "property": "color",
-                "value": [ "red" ]
+                "value": "red"
               }
             ],
             "tag": "b",
-            "styled": true,
-            "class": "_b_1"
+            "class": "Ambigious__b"
           },
           {
             "type": "element",
@@ -36,20 +36,20 @@
               {
                 "type": "declaration",
                 "property": "color",
-                "value": [ "green" ]
+                "value": "green"
               }
             ],
             "tag": "b",
-            "styled": true,
-            "class": "_b_2"
+            "class": "Ambigious__b-2"
           },
           {
             "type": "element",
             "name": {
               "type": "path",
-              "path": "<root>/el/h1.tl",
-              "ref" : "/el/h1.tl"
+              "path": "./el/h1",
+              "file": "<root>/el/h1.tl"
             },
+            "ref" : "/el/h1.tl",
             "children": [
               {
                 "type": "element",
@@ -58,69 +58,43 @@
                   {
                     "type": "declaration",
                     "property": "color",
-                    "value": [ "blue" ]
+                    "value": "blue"
                   }
                 ],
                 "tag": "b",
-                "styled": true
+                "class": "Ambigious__b-3"
               }
             ],
-            "tag": "h1",
-            "class": "el-h1",
-            "contentSelectors": {},
-            "tags": {
-              "count": {
-                "b": 1
-              },
-              "styled": {
-                "b": true
-              }
-            }
+            "tag": "h1"
           }
         ],
-        "tag": "div",
-        "class": "el-foo",
-        "contentSelectors": {},
-        "tags": {
-          "count": {
-            "b": 2,
-            "h1": 1
-          },
-          "styled": {
-            "b": true
-          }
-        }
+        "tag": "div"
       },
       {
         "type": "element",
         "name": {
           "type": "path",
-          "path": "<root>/el/foo.tl",
-          "ref" : "/el/foo.tl"
+          "path": "./el/foo",
+          "file": "<root>/el/foo.tl"
         },
+        "ref": "/el/foo.tl",
         "declarations": [
           {
             "type": "declaration",
             "property": "color",
-            "value": [ "yellow" ]
+            "value": "yellow"
           }
         ],
         "tag": "div",
-        "styled": true,
-        "class": "_el-foo_1",
-        "contentSelectors": {}
+        "class": "Ambigious_el-Foo"
+      },
+      {
+        "type": "variable",
+        "name": "children"
       }
     ],
-    "tag": "div",
-    "tags": {
-      "count": {
-        "div": 2
-      },
-      "styled": {
-        "div": true
-      }
-    }
+    "tag": "div"
   },
-  "states": [],
-  "selectors": {}
+  "vars": ["children"],
+  "states": []
 }

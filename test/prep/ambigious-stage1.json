@@ -1,0 +1,89 @@
+{
+  "type": "root",
+  "file": "<root>/ambigious.tl",
+  "path": "/ambigious.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "children": [
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo",
+          "file": "<root>/el/foo.tl"
+        },
+        "ref" : "/el/foo.tl",
+        "children": [
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": "red"
+              }
+            ],
+            "tag": "b"
+          },
+          {
+            "type": "element",
+            "name": "b",
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": "green"
+              }
+            ],
+            "tag": "b"
+          },
+          {
+            "type": "element",
+            "name": {
+              "type": "path",
+              "path": "./el/h1",
+              "file": "<root>/el/h1.tl"
+            },
+            "tag": "h1",
+            "ref": "/el/h1.tl",
+            "children": [
+              {
+                "type": "element",
+                "name": "b",
+                "declarations": [
+                  {
+                    "type": "declaration",
+                    "property": "color",
+                    "value": "blue"
+                  }
+                ],
+                "tag": "b"
+              }
+            ]
+          }
+        ],
+        "tag": "div"
+      },
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/foo",
+          "file": "<root>/el/foo.tl"
+        },
+        "ref": "/el/foo.tl",
+        "declarations": [
+          {
+            "type": "declaration",
+            "property": "color",
+            "value": "yellow"
+          }
+        ],
+        "tag": "div"
+      }
+    ],
+    "tag": "div"
+  }
+}

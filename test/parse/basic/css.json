@@ -1,16 +1,16 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
       "type": "declaration",
       "property": "background",
-      "value": [ "teal" ]
+      "value": "teal"
     },
     {
       "type": "declaration",
       "property": "color",
-      "value": [ "#fff" ]
+      "value":"#fff"
     }
   ]
 }

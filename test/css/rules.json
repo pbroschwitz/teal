@@ -78,7 +78,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-combo > div > .e-foo"],
+    "selectors" : [".e-Combo_e-Foo"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -89,7 +89,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-foo"],
+    "selectors" : [".e-Foo"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -100,7 +100,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-foo > h1"],
+    "selectors" : [".e-Foo__h1"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -111,7 +111,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-foo.large > h1"],
+    "selectors" : [".e-Foo__h1.large"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -122,7 +122,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-foo > h1:after"],
+    "selectors" : [".e-Foo__h1:after"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -133,7 +133,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-foo > h1:hover:after"],
+    "selectors" : [".e-Foo__h1:hover:after"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -145,7 +145,7 @@
   {
     "type" : "rule",
     "selectors" : [
-      ".foo .e-prefix"
+      ".foo .e-Prefix"
     ],
     "declarations" : [
       {
@@ -158,8 +158,8 @@
   {
     "type" : "rule",
     "selectors" : [
-      ".e-prefix:before",
-      ".e-prefix"
+      ".e-Prefix:before",
+      ".e-Prefix"
     ],
     "declarations" : [
       {
@@ -171,7 +171,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-siblings > input"],
+    "selectors" : [".e-Siblings__input"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -183,7 +183,7 @@
   {
     "type" : "rule",
     "selectors" : [
-      ".e-siblings > input:checked + label"
+      ".e-Siblings__input:checked + .e-Siblings__label"
     ],
     "declarations" : [
       {
@@ -195,7 +195,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-siblings > .indicator"],
+    "selectors" : [".e-Siblings_indicator"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -206,7 +206,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".e-siblings > input:checked ~ .indicator"],
+    "selectors" : [".e-Siblings__input:checked ~ .e-Siblings_indicator"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -217,7 +217,7 @@
   },
   {
     "type" : "rule",
-    "selectors" : [".l-bar"],
+    "selectors" : [".l-Bar"],
     "declarations" : [
       {
         "type" : "declaration",
@@ -228,11 +228,11 @@
   },
   {
     "type" : "media",
-    "media" : "screen",
+    "media" : "(min-width: 900px)",
     "rules" : [
       {
         "type" : "rule",
-        "selectors" : [".e-combo.ready > div > .e-foo"],
+        "selectors" : [".e-Combo_e-Foo.ready"],
         "declarations" : [
           {
             "type" : "declaration",

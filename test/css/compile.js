@@ -16,6 +16,7 @@ test('css/compile', function(t) {
     t.end()
   })
   .catch(function(err) {
+    console.log(err.stack)
     t.fail(err)
     t.end()
   })

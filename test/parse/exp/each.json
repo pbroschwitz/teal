@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "children": [
+  "content": [
     {
       "type": "each",
       "variable": "f",

@@ -1,5 +1,5 @@
 @mixin {
   color: teal;
-  background: $bg;
+  background: param(bg);
   "Hello "
 }

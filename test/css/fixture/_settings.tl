@@ -6,6 +6,7 @@
   src: url(src(./e/foo.tl)?#iefix) format('truetype');
 }
 @const {
+  desktop: (min-width: 900px);
   fav-color: teal;
 }
 

@@ -24,6 +24,7 @@
     "materialize": "^1.0.0",
     "mime": "^1.2.11",
     "mkdirp": "^0.5.0",
+    "pascal-case": "^1.0.0",
     "pegjs": "^0.8.0",
     "ranged": "0.0.3",
     "reduce-css-calc": "^1.1.3",

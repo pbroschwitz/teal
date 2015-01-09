@@ -1,54 +1,76 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
       "type": "declaration",
-      "property": "border",
-      "value": [ "10%", " ", "solid", " ", "#fff" ]
+      "property": "margin",
+      "value": {
+        "type": "tokens",
+        "tokens": [
+          "0",
+          " ",
+          "-",
+          {
+            "type": "function",
+            "name": "calc",
+            "arg": "5%*2"
+          }
+        ]
+      }
     },
     {
       "type": "declaration",
       "property": "background",
-      "value": [ "red", " ", {
-        "type": "function",
-        "name": "linear-gradient",
-        "args": [ "1" ]
-      }]
+      "value": {
+        "type": "tokens", "tokens": [
+          "red",
+          " ",
+          {
+            "type": "function",
+            "name": "linear-gradient",
+            "arg": "1"
+          }
+        ]
+      }
     },
     {
       "type": "declaration",
       "property": "background",
-      "value": [
-        "teal",
-        " ",
-        {
-          "type": "function",
-          "name": "url",
-          "args": [
-            {
+      "value": {
+        "type": "tokens",
+        "tokens": [
+          "teal",
+          " ",
+          {
+            "type": "function",
+            "name": "url",
+            "arg": {
               "type": "function",
               "name": "data",
-              "args": [ "./cat.gif" ]
+              "arg": "./cat.gif"
             }
-          ]
-        },
-        ",",
-        "\n    ",
-        {
-          "type": "function",
-          "name": "linear-gradient",
-          "args": [ "1" ]
-        }
-      ]
+          },
+          ",",
+          "\n    ",
+          {
+            "type": "function",
+            "name": "linear-gradient",
+            "arg": "1"
+          }
+        ]
+      }
     },
     {
       "type": "declaration",
       "property": "font",
-      "value": [
-        { "type": "variable", "name": "f1" },
-        "/1.2", " ", "sans-serif", " ", "!important"
-      ]
+      "value": {
+        "type": "tokens",
+        "tokens": [
+          { "type": "function", "name": "const", "arg": "f1" },
+          "/1.2", " ", "sans-serif", " ", "!important"
+        ]
+      }
     }
   ]
 }

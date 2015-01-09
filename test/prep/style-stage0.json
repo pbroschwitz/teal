@@ -1,0 +1,43 @@
+{
+  "type": "root",
+  "file": "<root>/style.tl",
+  "path": "/style.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "tag": "div",
+    "content": [
+      {
+        "type": "style",
+        "selectors": [{ "state": "foo" }],
+        "declarations": []
+      },
+      {
+        "type": "element",
+        "name": "h1",
+        "tag": "h1",
+        "content": [{
+          "type": "style",
+          "selectors": [{ "state": "bar" }],
+          "declarations": []
+        }]
+      },
+      {
+        "type": "element",
+        "name": "h1",
+        "tag": "h1",
+        "content": [
+          {
+            "type": "declaration",
+            "property": "margin-top",
+            "value": 0
+          },
+          {
+            "type": "variable",
+            "name": "children"
+          }
+        ]
+      }
+    ]
+  }
+}

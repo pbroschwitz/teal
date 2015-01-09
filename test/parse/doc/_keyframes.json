@@ -13,7 +13,7 @@
             {
               "type": "declaration",
               "property": "max-height",
-              "value": [ "0", " " ]
+              "value": "0"
             }
           ]
         },
@@ -24,7 +24,7 @@
             {
               "type": "declaration",
               "property": "max-height",
-              "value": [ "100%", " " ]
+              "value": "100%"
             }
           ]
         }

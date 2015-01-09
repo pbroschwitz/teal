@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "children": [
+  "content": [
     {
       "type": "if",
       "condition": {
@@ -11,11 +11,11 @@
       "consequent": "foo!",
       "alternate": {
         "type": "block",
-        "children": [
+        "content": [
           {
             "type": "element",
             "name": "h1",
-            "children": [ "sorry" ]
+            "content": [ "sorry" ]
           },
           "no foo for you"
         ]

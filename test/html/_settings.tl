@@ -1,3 +1,3 @@
 @const {
-  desktop="(min-width:800px)"
+  desktop: (min-width:800px);
 }

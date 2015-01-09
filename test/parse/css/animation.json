@@ -1,10 +1,10 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
       "type": "animation",
-      "value": [ "1s", " ", "ease" ],
+      "value": { "type": "tokens", "tokens": [ "1s", " ", "ease" ] },
       "keyframes": {
         "type": "keyframes",
         "frames": [
@@ -15,18 +15,18 @@
               {
                 "type": "declaration",
                 "property": "color",
-                "value": [ "transparent", " " ]
+                "value": "transparent"
               }
             ]
           },
           {
             "type": "keyframe",
-            "values": [ "100%" ],
+            "values": ["100%"],
             "declarations": [
               {
                 "type": "declaration",
                 "property": "color",
-                "value": [ "#000", " " ]
+                "value": "#000"
               }
             ]
           }

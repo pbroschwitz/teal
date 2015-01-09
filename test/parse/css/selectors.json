@@ -1,16 +1,16 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
       "type": "declaration",
       "property": "color",
-      "value": [ "white" ]
+      "value": "white"
     },
     {
       "type": "declaration",
       "property": "background",
-      "value": [ "teal" ]
+      "value": "teal"
     },
     {
       "type": "style",
@@ -19,7 +19,7 @@
         {
           "type": "declaration",
           "property": "background",
-          "value": [ "coral", "\n  " ]
+          "value": "coral"
         }
       ]
     },
@@ -30,7 +30,7 @@
         {
           "type": "declaration",
           "property": "font-size",
-          "value": [ "4em" ]
+          "value": "4em"
         }
       ]
     },
@@ -41,7 +41,7 @@
         {
           "type": "declaration",
           "property": "background",
-          "value": [ "gray" ]
+          "value": "gray"
         }
       ]
     },
@@ -52,7 +52,7 @@
         {
           "type": "declaration",
           "property": "color",
-          "value": [ "inherit" ]
+          "value": "inherit"
         }
       ]
     }

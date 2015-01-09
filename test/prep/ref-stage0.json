@@ -1,0 +1,58 @@
+{
+  "type": "root",
+  "file": "<root>/ref.tl",
+  "path": "/ref.tl",
+  "root": {
+    "type": "element",
+    "name": "div",
+    "tag": "div",
+    "content": [
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/mixin",
+          "file": "<root>/el/mixin.tl"
+        },
+        "ref": "/el/mixin.tl",
+        "content": [
+          { "type": "declaration",
+            "property": "bg",
+            "value": "red"
+          }
+        ],
+        "mixin": {
+          "type": "mixin",
+          "content": [
+            {
+              "type": "declaration",
+              "property": "color",
+              "value": "teal"
+            },
+            {
+              "type": "declaration",
+              "property": "background",
+              "value": {
+                "type": "function",
+                "name": "param",
+                "arg": "bg"
+              }
+            },
+            "Hello "
+          ]
+        }
+      },
+      {
+        "type": "element",
+        "name": {
+          "type": "path",
+          "path": "./el/h1",
+          "file": "<root>/el/h1.tl"
+        },
+        "ref": "/el/h1.tl",
+        "tag": "h1",
+        "content": [ "world" ]
+      }
+    ]
+  }
+}

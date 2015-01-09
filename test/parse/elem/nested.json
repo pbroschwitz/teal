@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "children": [
+  "content": [
     "Hello",
     {
       "type": "element",
@@ -14,12 +14,12 @@
         "truthy": "a",
         "falsy": "button"
       },
-      "children": [ "World" ],
-      "declarations": [
+      "content": [
+        "World",
         {
           "type": "declaration",
           "property": "background",
-          "value": [ "teal" ]
+          "value": "teal"
         }
       ]
     },
@@ -27,13 +27,13 @@
       "type": "element",
       "name": "div",
       "class": "foo",
-      "children": [ "foo" ]
+      "content": [ "foo" ]
     },
     {
       "type": "element",
       "name": "div",
       "class": "bar",
-      "children": [ "bar" ]
+      "content": [ "bar" ]
     }
   ]
 }

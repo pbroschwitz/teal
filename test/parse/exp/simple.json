@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "div",
-  "children": [
+  "content": [
     1,
     2,
     { "type": "binary", "left": 1, "op": "+", "right": 2 },
@@ -41,7 +41,7 @@
         123,
         {
           "type": "block",
-          "attributes": [
+          "content": [
             {
               "type": "attribute",
               "name": "foo",
@@ -59,6 +59,11 @@
       },
       "property": 0,
       "dynamic": true
+    },
+    {
+      "type": "style",
+      "selectors": [ "[bar]" ],
+      "declarations": []
     },
     {
       "type": "member",
@@ -94,12 +99,6 @@
         "type": "variable",
         "name": "foo"
       }
-    }
-  ],
-  "declarations": [
-    {
-      "type": "style",
-      "selectors": [ "[bar]" ]
     }
   ]
 }

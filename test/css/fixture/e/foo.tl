@@ -1,5 +1,5 @@
 div {
-  /m/solid { bg="teal" }
+  /m/solid { bg: teal; }
   h1 {
     font-size: 2em;
     .large {

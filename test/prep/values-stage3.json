@@ -6,8 +6,7 @@
     "type": "element",
     "name": "div",
     "tag": "div",
-    "class": "values",
-    "styled": true,
+    "class": "Values",
     "declarations": [
       {
         "type": "declaration",
@@ -44,6 +43,5 @@
     ]
   },
   "states": [],
-  "vars": [ "children" ],
-  "selectors" : {}
+  "vars": [ "children" ]
 }

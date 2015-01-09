@@ -1,7 +1,7 @@
 {
   "type": "element",
   "name": "svg:path",
-  "attributes": [
+  "content": [
     {
       "type": "attribute",
       "name": "path",

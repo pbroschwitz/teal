@@ -8,14 +8,17 @@
         {
           "type": "declaration",
           "property": "font-color",
-          "value": [ "#333" ]
-        }
-      ],
-      "attributes": [
+          "value": "#333"
+        },
         {
-          "type": "attribute",
-          "name": "desktop",
-          "value": "screen and (min-width: 400px)"
+          "type": "declaration",
+          "property": "desktop",
+          "value": {
+            "type": "tokens",
+            "tokens": [
+              "screen", " ", "and", " ", "(", "min-width:", " ", "400px", ")"
+            ]
+          }
         }
       ]
     }

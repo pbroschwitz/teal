@@ -1,40 +1,36 @@
 {
   "type": "element",
   "name": "div",
-  "declarations": [
+  "content": [
     {
      "type" : "declaration",
      "property" : "padding",
-     "value" : [ "1em" ]
+     "value" : "1em"
     },
     {
       "type" : "media",
-      "media" : [ "print" ],
+      "media" : "print",
       "declarations" : [
         {
           "type" : "declaration",
           "property" : "background",
-          "value" : [ "none" ]
+          "value" : "none"
         }
       ]
     },
     {
       "type" : "media",
-      "media" : [
-        "(min-width:",
-        "600px",
-        ")",
-        ",",
-        " ",
-        { "type": "variable", "name": "desktop" }
-      ],
+      "media" : { "type": "tokens", "tokens": [
+        "(", "min-width:", " ", "600px", ")", ",", " ",
+        { "type": "function", "name": "const", "arg": "desktop" }
+      ]},
       "declarations" : [
         {
           "type" : "declaration",
           "property" : "margin",
-          "value" : [ "0", " ", "auto" ]
+          "value" : { "type": "tokens", "tokens": [ "0", " ", "auto" ] }
         }
       ]
-     }
+    }
    ]
 }

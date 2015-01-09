@@ -1,5 +1,5 @@
 picture {
   source {
-    media=$desktop
+    media=const(desktop)
   }
 }

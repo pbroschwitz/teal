@@ -4,10 +4,10 @@ var simplify = require('../util/simplify')
 var teal = require('../util/teal-mock.js')
 
 var stages = {
-  ref: [ 1, 2, 3 ],
-  emptyref: [ 1 ],
-  ambigious: [ 2 ],
-  style: [ 1, 2, 3 ],
+  ref: [ 0, 1, 3 ],
+  emptyref: [ 0 ],
+  ambigious: [ 1, 3 ],
+  style: [ 0, 1, 3 ],
   values: [ 3 ]
 }
 
@@ -19,6 +19,10 @@ Object.keys(stages).forEach(function(name) {
         var exp = require(__dirname + '/' + name + '-stage' + i + '.json')
         t.deepEqual(simplify(preped.asts[0], __dirname), exp)
         t.end()
+      })
+      .catch(function(err) {
+        console.log(err.stack)
+        t.end(err.message)
       })
     })
   })

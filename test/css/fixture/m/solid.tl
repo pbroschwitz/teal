@@ -1,3 +1,3 @@
 @mixin {
-  background: $bg
+  background: param(bg);
 }

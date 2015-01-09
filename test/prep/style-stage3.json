@@ -6,11 +6,12 @@
     "type": "element",
     "name": "div",
     "tag": "div",
-    "class": "style",
+    "class": "Style",
     "declarations": [
       {
         "type": "style",
-        "selectors": [{ "state": "foo", "class": "foo" }]
+        "selectors": [{ "state": "foo", "class": "foo" }],
+        "declarations": []
       }
     ],
     "children": [
@@ -20,10 +21,15 @@
         "declarations": [
           {
             "type": "style",
-            "selectors": [ { "state": "bar", "class": "bar" }]
+            "selectors": [ { "state": "bar", "class": "bar" }],
+            "declarations": []
           }
         ],
-        "tag": "h1"
+        "tag": "h1",
+        "class": "Style__h1",
+        "states": {
+          "bar": "bar"
+        }
       },
       {
         "type": "element",
@@ -36,8 +42,7 @@
           }
         ],
         "tag": "h1",
-        "styled": true,
-        "class": "_h1_1",
+        "class": "Style__h1-2",
         "children": [
           {
             "type": "variable",
@@ -47,24 +52,12 @@
       }
     ],
     "states": {
-      "foo": "foo",
-      "bar": "bar"
-    },
-    "tags": {
-      "count": {
-        "h1": 2
-      },
-      "styled": {
-        "h1": true
-      }
+      "foo": "foo"
     }
   },
   "states": [
-    "foo",
-    "bar"
+    "bar",
+    "foo"
   ],
-  "vars": [ "children" ],
-  "selectors" : {
-    "children" : " > ._h1_1"
-  }
+  "vars": [ "children" ]
 }

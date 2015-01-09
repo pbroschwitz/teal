@@ -4,7 +4,7 @@
     "type": "path",
     "path": "teal-foo/teaser"
   },
-  "attributes": [
+  "content": [
     {
       "type": "attribute",
       "name": "image",
@@ -13,11 +13,10 @@
         "name": {
           "type": "path",
           "path": "./image"
-        }
+        },
+        "content": []
       }
-    }
-  ],
-  "children": [
+    },
     "Hello",
     {
       "type": "element",
@@ -25,7 +24,7 @@
         "type": "path",
         "path": "/foo/bar"
       },
-      "children": [ " world." ]
+      "content": [ " world." ]
     },
     123,
     {
@@ -33,7 +32,8 @@
       "name": {
         "type": "path",
         "path": "../world"
-      }
+      },
+      "content": []
     }
   ]
 }

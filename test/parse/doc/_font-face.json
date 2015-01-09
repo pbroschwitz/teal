@@ -8,24 +8,27 @@
         {
           "type": "declaration",
           "property": "font-family",
-          "value": [ "foo" ]
+          "value": "foo"
         },
         {
           "type": "declaration",
           "property": "src",
-          "value": [
-            {
-              "type": "function",
-              "name": "url",
-              "args": [ "./foo.ttf" ]
-            },
-            " ",
-            {
-              "type": "function",
-              "name": "format",
-              "args": [ "'truetype'" ]
-            }
-          ]
+          "value": {
+            "type": "tokens",
+            "tokens": [
+              {
+                "type": "function",
+                "name": "url",
+                "arg": "./foo.ttf"
+              },
+              " ",
+              {
+                "type": "function",
+                "name": "format",
+                "arg": "'truetype'"
+              }
+            ]
+          }
         }
       ]
     },
@@ -35,18 +38,16 @@
         {
           "type": "declaration",
           "property": "font-family",
-          "value": [ "bar" ]
+          "value": "bar"
         },
         {
           "type": "declaration",
           "property": "src",
-          "value": [
-            {
-              "type": "function",
-              "name": "url",
-              "args": [ "./bar.ttf" ]
-            }
-          ]
+          "value": {
+            "type": "function",
+            "name": "url",
+            "arg": "./bar.ttf"
+          }
         }
       ]
     }

@@ -1,9 +1,9 @@
 ./section {
   ./foo {
     border: 1px solid red;
-    @media screen {
+    @media const(desktop) {
       .ready {
-        border-color: $fav-color;
+        border-color: const(fav-color);
       }
     }
   }

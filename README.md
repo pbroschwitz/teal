@@ -240,6 +240,13 @@ directory.
 }
 ```
 
+You access `@const` properties with `const()` function like in this example:
+```
+div.error {
+  color: const(error);
+}
+```
+
 ### Media Queries
 
 With Teal you can define all media-specific styles right next to the rest of
